@@ -1,0 +1,191 @@
+/* ======================================================
+   HERO + VIDEO SECTIONS — v3 (clean)
+   Uses Typography Strip Lab roles (typo-*)
+   hero.css = layout + video readability only
+====================================================== */
+
+:root{
+  --header-h: calc(var(--utility-h, 40px) + var(--topbar-h, 76px));
+  --overlay: .45;
+}
+
+/* Snap scroll container (optional) */
+.ishare-landing{
+  height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.ishare-landing section{
+  position: relative;
+  height: calc(100vh - var(--header-h));
+  min-height: 560px;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  overflow: hidden;
+  scroll-snap-align: start;
+  color: #fff;
+}
+
+/* Video layer */
+.video-bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay layer */
+.overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,var(--overlay));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* HERO content wrapper — EXACT page geometry like Strip Lab */
+#hero .content{
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 84px 0; /* Strip Lab section rhythm (no side padding) */
+}
+
+/* Reading width */
+/* HERO — make block visually wider */
+#hero .hero-copy{
+  width: 100%;
+  max-width: 1040px;   
+  text-align: left;
+  
+  
+}
+
+
+/* Keep Strip Lab spacing */
+#hero .typo-hero{ margin: 0 0 26px; }
+#hero .typo-sub{  margin-bottom: 22px; }
+#hero .typo-ui{   margin-bottom: 12px; }
+
+/* Video readability only (no typography resizing here) */
+#hero .typo-label,
+#hero .typo-sub,
+#hero .typo-ui,
+#hero .typo-util{
+  color: rgba(255,255,255,.92);
+}
+
+#hero .typo-label{ opacity: .70; }
+#hero .typo-util{ opacity: .72; }
+
+#hero .typo-hero{
+  text-shadow: 0 12px 40px rgba(0,0,0,.35);
+  font-size: clamp(40px, 5vw, 84px);
+}
+
+
+
+#hero .footnote{
+  font-size: .65rem;
+  line-height: 1.5;
+  opacity: .65;
+  max-width: 85vw;
+}
+
+/* Mobile safety padding (same idea as before) */
+@media (max-width: 520px){
+  #hero .content{
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  #hero .hero-copy{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px){
+  #hero .hero-copy{ max-width: 90%; }
+  #hero .footnote{ font-size: .5rem; }
+}
+/* ---- SAFETY: force correct layer order ---- */
+#hero{
+  position: relative;
+  isolation: isolate; /* creates a clean stacking context */
+}
+
+#hero .video-bg{ z-index: 0; }
+#hero .overlay{  z-index: 1; }
+#hero .content{  z-index: 2; position: relative; }
+
+
+
+#hero .hero-layout{
+  position: relative;
+  z-index: 2;
+
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 84px 0; /* Strip Lab rhythm */
+}
+#hero .hero-layout{
+  position: relative;
+  z-index: 2;
+
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 84px 0; /* Strip Lab rhythm */
+}
+/* HERO vertical layout */
+#hero .hero-layout{
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 30vh;
+}
+
+
+
+
+#hero{
+  position: relative; /* обязательно */
+}
+
+#hero .footnote-block{
+  position: absolute;
+  left: 50%;
+  top: 98%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: 50%;
+  
+ 
+  
+}
+
+#hero{
+  scroll-margin-top: 90px; 

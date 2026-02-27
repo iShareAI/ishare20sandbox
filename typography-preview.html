@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISHARE — Typography Strip Lab v1</title>
+
+<!-- ================= GOOGLE FONTS ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   BASE / RESET
+===================================================== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body{
+  background:#ffffff;
+  color:#000000;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+.page{
+  width:min(1200px,94vw);
+  margin:0 auto;
+  padding:64px 0 140px;
+}
+
+.page-title{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin-bottom:64px;
+}
+
+.page-title small{
+  display:block;
+  margin-top:8px;
+  font-size:14px;
+  opacity:.6;
+}
+
+/* =====================================================
+   TYPO STRIP
+===================================================== */
+.typo-strip{
+  padding:84px 0;
+  border-top:1px solid rgba(0,0,0,.15);
+}
+
+.typo-strip:first-of-type{
+  border-top:none;
+}
+
+/* LABEL */
+.typo-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:20px;
+  opacity:.6;
+}
+
+/* =====================================================
+   HERO (SORA)
+===================================================== */
+.typo-hero{
+  font-family: "Sora", system-ui, sans-serif;
+  font-size:clamp(48px,6vw,88px);
+  font-weight:800;
+  line-height:1.05;
+  margin:0 0 26px;
+}
+
+/* HERO GRADIENT VARIANT */
+.typo-hero.gradient{
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #4f46e5 35%,
+    #06b6d4 65%,
+    #22c55e 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGradient 6s ease-in-out infinite;
+}
+
+@keyframes heroGradient{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =====================================================
+   TEXT ROLES (PLUS JAKARTA)
+===================================================== */
+.typo-sub{
+  font-size:20px;
+  line-height:1.55;
+  max-width:72ch;
+  margin-bottom:22px;
+  font-weight:600;
+}
+
+.typo-body{
+  font-size:17px;
+  line-height:1.65;
+  max-width:70ch;
+  margin-bottom:28px;
+  font-weight:400;
+}
+
+.typo-ui{
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.typo-util{
+  font-size:13px;
+  opacity:.65;
+}
+
+/* =====================================================
+   BUTTON SYSTEM (FLAT)
+===================================================== */
+.button-row{
+  display:flex;
+  gap:14px;
+  margin-top:34px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:46px;
+  padding:0 26px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+  background:none;
+  border:1.5px solid #000;
+  color:#000;
+}
+
+.btn-primary{
+  background:#000;
+  color:#fff;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:#000;
+}
+
+</style>
+
+<style>
+/* =========================
+   MOBILE PREVIEW (iPhone frame)
+========================= */
+.mobile-preview{
+  padding:84px 0;
+  border-top:1px solid rgba(0,0,0,.15);
+}
+
+.mobile-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+/* desktop layout */
+@media (min-width: 860px){
+  .mobile-grid{
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 44px;
+    align-items: start;           /* key: align both columns from the top */
+  }
+}
+
+.preview-note{
+  max-width:70ch;
+  font-size:16px;
+  line-height:1.7;
+  opacity:.75;
+}
+
+/* --- iPhone mock --- */
+.iphone17pro{
+  width: min(420px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  padding: 14px;
+  border-radius: 54px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(0,0,0,.18) 0%, rgba(0,0,0,.04) 52%, rgba(0,0,0,.10) 100%),
+    linear-gradient(180deg, #1a1a1a 0%, #0b0b0b 100%);
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.18),
+    0 4px 16px rgba(0,0,0,.12);
+}
+
+.iphone17pro::before{
+  /* outer metal ring */
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 56px;
+  background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0) 28%, rgba(255,255,255,.10) 100%);
+  pointer-events:none;
+  mix-blend-mode: overlay;
+}
+
+.iphone17pro .bezel{
+  border-radius: 46px;
+  background: #0a0a0a;
+  padding: 12px;
+  position: relative;
+}
+
+.iphone17pro .screen{
+  border-radius: 36px;
+  overflow: hidden;
+  background:#fff;
+  min-height: 760px; /* "phone height" */
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  position: relative;
+}
+
+/* Dynamic island */
+.iphone17pro .island{
+  position:absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 128px;
+  height: 34px;
+  background:#000;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.28);
+  z-index: 5;
+}
+
+.iphone17pro .island::after{
+  /* small highlight */
+  content:"";
+  position:absolute;
+  inset: 3px 10px auto 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,0));
+  opacity: .6;
+}
+
+/* side buttons (decor) */
+.iphone17pro .btn-side{
+  position:absolute;
+  width: 4px;
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+  left: -5px;
+  top: 150px;
+  height: 56px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+}
+.iphone17pro .btn-side.b2{ top: 220px; height: 46px; }
+.iphone17pro .btn-side.b3{ top: 278px; height: 46px; }
+
+/* mobile content inside screen */
+.mobile-stage{
+  padding: 56px 18px 20px; /* top space for island */
+}
+
+/* shrink typography for mobile preview */
+.mobile-stage .typo-hero{
+  font-size: 40px;
+  line-height: 1.06;
+  margin: 0 0 18px;
+}
+
+.mobile-stage .typo-sub{
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.mobile-stage .typo-body{
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.mobile-stage .typo-ui{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.mobile-stage .button-row{
+  gap:10px;
+  margin-top: 18px;
+}
+
+.mobile-stage .btn{
+  height: 44px;
+  padding: 0 18px;
+  font-size: 12px;
+}
+
+/* =========================
+   MOBILE PREVIEW — ALIGN PATCH
+   (add this at the very end)
+========================= */
+
+/* Desktop: stick phone to the right */
+@media (min-width: 860px){
+  .iphone17pro{
+    margin: 0;            /* override margin:0 auto */
+    justify-self: end;    /* right column alignment */
+  }
+}
+
+/* Mobile: keep centered */
+@media (max-width: 859px){
+  .iphone17pro{
+    margin: 0 auto;
+    justify-self: center;
+  }
+}
+
+/* Optical alignment: lift the left text a bit */
+@media (min-width: 860px){
+  .mobile-grid > div:first-child{
+    padding-top: 8px;
+  }
+}
+
+/* Clean spacing for the title inside section 2 */
+
+.mobile-title{
+  font-family: "Sora", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+/* =========================
+   SECTION SIZE NORMALIZATION
+   Make section #1 and #2 feel equal
+========================= */
+
+/* same vertical size for both sections */
+.typo-strip,
+.mobile-preview{
+  min-height: 100vh;          /* each section = one screen */
+  display: grid;
+  align-content: center;      /* vertical centering of section content */
+  padding: 84px 0;            /* keep your rhythm */
+}
+
+/* keep the first section border behavior */
+.typo-strip:first-of-type{
+  border-top: none;
+}
+
+/* =========================
+   SECTION 2: centered content + safe side paddings
+========================= */
+
+/* limit readable width and add consistent side padding */
+.mobile-preview > .mobile-grid{
+  width: min(1200px, 94vw);   /* same as .page width logic */
+  margin: 0 auto;
+  padding: 0 2vw;             /* extra safety on ultra-wide */
+}
+
+/* ensure left/right padding is NEVER too small on phones */
+@media (max-width: 520px){
+  .mobile-preview > .mobile-grid{
+    width: 100%;
+    padding: 0 18px;          /* guaranteed side padding */
+  }
+}
+
+/* keep desktop phone aligned right, mobile centered */
+@media (min-width: 860px){
+  .iphone17pro{ justify-self: end; }
+}
+@media (max-width: 859px){
+  .iphone17pro{ justify-self: center; }
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+<div class="page">
+
+  <div class="page-title">
+    ISHARE — Typography Strip Lab
+    <small>Sora for hero · Plus Jakarta Sans for everything else</small>
+  </div>
+
+  <!-- ================= STRIP ================= -->
+  <section class="typo-strip">
+    <div class="typo-label">Selected Direction</div>
+
+    <!-- HERO WITH GRADIENT -->
+    <h1 class="typo-hero gradient">
+      Immersive Campaign Experiences
+    </h1>
+
+    <!-- SUBLINE -->
+    <div class="typo-sub">
+      Futuristic, immersive storytelling designed for next-generation
+      philanthropic and institutional campaigns.
+    </div>
+
+    <!-- BODY TEXT -->
+    <div class="typo-body">
+      iShare transforms traditional campaign communication into immersive,
+      explorable environments. Visitors can navigate spaces, understand context,
+      and build trust through spatial storytelling before engaging or donating.
+    </div>
+
+    <!-- UI SAMPLE -->
+    <div class="typo-ui">
+      Campaigns · Projects · Impact · Contact
+    </div>
+
+    <!-- UTILITY -->
+    <div class="typo-util">
+      Utility text — BuilderBillAI
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+      <button class="btn btn-primary">Become a Partner</button>
+      <button class="btn btn-secondary">View Campaigns</button>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE PREVIEW ================= -->
+<section class="mobile-preview">
+  <div class="typo-label">Mobile Preview</div>
+
+  <div class="mobile-grid">
+    <!-- Left column -->
+    <div>
+      <h2 class="mobile-title">Mobile View Preview</h2>
+
+  Mobile View Preview
+</h2>
+
+
+      <div class="preview-note">
+        On the right, the same block is shown inside a mobile screen.
+        This helps quickly evaluate scale, readability, and typographic rhythm.
+      </div>
+    </div>
+
+    <!-- Right column: iPhone frame -->
+    <div class="iphone17pro" aria-label="iPhone 17 Pro mock frame">
+      <div class="btn-side b1"></div>
+      <div class="btn-side b2"></div>
+      <div class="btn-side b3"></div>
+
+      <div class="bezel">
+        <div class="screen">
+          <div class="island"></div>
+
+          <!-- YOUR CONTENT (mobile scaled) -->
+          <div class="mobile-stage">
+            <div class="typo-label" style="margin-bottom:14px;">Selected Direction</div>
+
+            <h1 class="typo-hero gradient">
+              Immersive Campaign Experiences
+            </h1>
+
+            <div class="typo-sub">
+              Futuristic, immersive storytelling designed for next-generation
+              philanthropic and institutional campaigns.
+            </div>
+
+            <div class="typo-body">
+              iShare transforms traditional campaign communication into immersive,
+              explorable environments. Visitors can navigate spaces, understand context,
+              and build trust through spatial storytelling before engaging or donating.
+            </div>
+
+            <div class="typo-ui">
+              Campaigns · Projects · Impact · Contact
+            </div>
+
+            <div class="typo-util">
+              Utility text — BuilderBillAI
+            </div>
+
+            <div class="button-row">
+              <button class="btn btn-primary">Become a Partner</button>
+              <button class="btn btn-secondary">View Campaigns</button>
+            </div>
+          </div>
+          <!-- /YOUR CONTENT -->
+
+        </div>
+      </div>
+    </div>
+    <!-- /Right column -->
+  </div>
+</section>
+
+
+
+</div>
+</body>
+</html>

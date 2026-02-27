@@ -1,0 +1,60 @@
+/* ======================================================
+   BASE LAYOUT
+   Project: iShare®
+   Purpose: Global containers & structural layout
+   ====================================================== */
+
+/* Main page wrapper */
+.ishare-landing {
+  scroll-snap-type: y mandatory;
+}
+
+/* Central alignment container */
+.align-container {
+  width: min(var(--maxw), calc(100% - var(--page-pad)));
+  margin: 0 auto;
+
+  padding-left: var(--header-pad-x);
+  padding-right: var(--header-pad-x);
+
+  box-sizing: border-box;
+}
+
+/* Generic full-height section */
+.ishare-landing section {
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+/* Shared section content wrapper */
+.content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  min-height: 100vh;
+  padding-top: 10vh;
+}
+
+/* Keep video overflow contained */
+.ishare-landing section#hero,
+.ishare-landing section#sec2 {
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+#hero .content,
+#sec2 .content {
+  width: 100%;
+}

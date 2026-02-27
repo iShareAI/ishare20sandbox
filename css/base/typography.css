@@ -1,0 +1,658 @@
+/* =========================
+   ISHARE HEADER — v1
+   Utility bar + support tab + topbar + dropdowns + mobile drawer
+========================= */
+
+*{ box-sizing:border-box; }
+
+body{
+  background:#fff; /* page background */
+}
+
+/* =========================
+   UTILITY BAR
+========================= */
+.utility-bar{
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  height: var(--utility-h);
+  background: var(--bg-glass-2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.utility-inner{
+  max-width: var(--maxw);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+  display: flex;
+  align-items: center;
+}
+
+.utility-nav{
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.utility-nav::-webkit-scrollbar{ display:none; }
+
+.utility-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  white-space: nowrap;
+}
+
+.utility-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+
+.utility-ico{ font-size: 14px; line-height: 1; }
+.utility-text{ font-size: 13px; color: var(--muted); }
+
+/* =========================
+   SUPPORT TAB (left slide)
+========================= */
+.support-tab{
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2500;
+  display: flex;
+  align-items: stretch;
+  border-radius: 0 var(--radius-1) var(--radius-1) 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+.support-tab__label{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 14px 10px;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-900);
+  font-size: 12px;
+  letter-spacing: var(--ls-nav);
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.06);
+}
+
+.support-tab__panel{
+  width: 0;
+  padding: 14px 0;
+  opacity: 0;
+  transition: width .22s ease, opacity .18s ease;
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.support-tab__cta{ display:inline-block; margin-top:8px; font-weight: var(--fw-800); }
+
+.support-tab:hover .support-tab__panel{
+  width: 210px;
+  padding: 14px 14px;
+  opacity: 1;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar{
+  position: sticky;
+  top: var(--utility-h);
+  z-index: 1900;
+  height: var(--topbar-h);
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo{
+  height: 30px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.45));
+}
+
+/* =========================
+   DESKTOP NAV
+========================= */
+.nav-desktop{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* all nav items */
+.nav-desktop > a,
+.nav-parent{
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: var(--fw-700);
+  color: rgba(255,255,255,.88);
+  padding: 10px 10px;
+  border-radius: var(--radius-1);
+  transition: background .15s ease, color .15s ease;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+}
+
+.nav-desktop > a:hover,
+.nav-parent:hover{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.nav-dropdown{ position: relative; }
+.nav-arrow{ font-size: 12px; opacity: .85; margin-left: 6px; display:inline-block; transition: transform .18s ease; }
+
+/* =========================
+   DROPDOWN MENU (HOVER)
+========================= */
+.nav-menu{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 240px;
+  background: rgba(12,14,20,.95);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow);
+  padding: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+}
+
+.nav-menu a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--radius-1);
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: var(--fw-600);
+  color: rgba(255,255,255,.90);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+}
+
+.nav-menu a:hover{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+/* open on hover + keyboard focus */
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown:focus-within .nav-menu{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown:hover .nav-arrow,
+.nav-dropdown:focus-within .nav-arrow{
+  transform: rotate(180deg);
+}
+
+/* hover safety zone (anti flicker) */
+.nav-dropdown::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:100%;
+  height: 10px;
+}
+
+/* =========================
+   RIGHT ACTIONS
+========================= */
+.topbar-actions{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-icons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn{
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-1);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+.icon-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.20);
+}
+
+.icon-btn svg{ width: 18px; height: 18px; }
+
+.topbar-cta{
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  font-family: var(--ff-display);
+  font-weight: var(--fw-800);
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.topbar-cta:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.26);
+}
+
+/* Burger */
+.burger{
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-1);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  cursor: pointer;
+  display: none;
+}
+
+.burger-lines{
+  width: 20px;
+  height: 16px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.burger-lines span{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255,255,255,.88);
+  border-radius: 999px;
+}
+
+.burger-lines span:nth-child(1){ top: 0; }
+.burger-lines span:nth-child(2){ top: 7px; opacity: .85; }
+.burger-lines span:nth-child(3){ top: 14px; opacity: .7; }
+
+/* =========================
+   MOBILE DRAWER
+========================= */
+.mobile-menu-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+  z-index: 1700;
+}
+
+.mobile-menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(86vw, 360px);
+  transform: translateX(110%);
+  transition: transform .22s ease;
+  z-index: 1800;
+  background: rgba(10,12,16,.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu-inner{
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 14px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  margin-bottom: 6px;
+}
+
+.mobile-menu-title{
+  font-family: var(--ff-body);
+  font-weight: var(--fw-900);
+  letter-spacing: .16em;
+  font-size: 12px;
+  color: rgba(255,255,255,.8);
+  text-transform: uppercase;
+}
+
+.mobile-close{
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-1);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.m-link{
+  display: block;
+  padding: 12px 12px;
+  border-radius: var(--radius-2);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-800);
+  font-size: 15px;
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+}
+
+.m-link:hover{ background: rgba(255,255,255,.08); }
+
+.m-cta{
+  margin-top: auto;
+  height: 44px;
+  border-radius: var(--radius-2);
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-family: var(--ff-display);
+  font-weight: var(--fw-900);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-nav);
+}
+
+/* open state (JS toggles body.mobile-open) */
+body.mobile-open .mobile-menu{ transform: translateX(0); }
+body.mobile-open .mobile-menu-backdrop{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 980px){
+  .nav-desktop{ display:none; }
+  .burger{ display:inline-flex; align-items:center; justify-content:center; }
+  .topbar-cta{ display:none; }
+  .topbar-icons{ display:none; }
+  .support-tab{ display:none; }
+}
+
+/* =========================
+   TYPO-UI (role binding)
+========================= */
+.typo-ui{
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
+  letter-spacing: var(--ui-letter-spacing);
+  text-transform: var(--ui-text-transform);
+
+  color: var(--ui-color);
+}
+/* ======================================================
+   ISHARE — TYPOGRAPHY ROLES (Typography Strip Lab)
+   This file defines reusable text roles (typo-*).
+   Header / hero should only "use" these roles.
+====================================================== */
+
+/* Optional: if you already define these fonts elsewhere, keep them consistent */
+:root{
+  /* Font families */
+  --ff-body: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ff-display: "Sora", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* UI role tokens (used by header + anywhere) */
+  --ui-font-family: var(--ff-body);
+  --ui-font-size: 14px;
+  --ui-font-weight: 800;
+  --ui-letter-spacing: 0.12em;
+  --ui-text-transform: uppercase;
+  --ui-color: rgba(0,0,0,.78);
+  --ui-color-hover: rgba(0,0,0,1);
+}
+
+/* ======================================================
+   TYPO ROLES
+====================================================== */
+
+/* TYPO-LABEL (Overline / section context) */
+.typo-label{
+  font-family: var(--ff-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  opacity: 0.6;
+}
+
+/* TYPO-HERO (Display) */
+.typo-hero{
+  font-family: var(--ff-display);
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0 0 26px;
+}
+
+/* HERO GRADIENT VARIANT */
+.typo-hero.gradient{
+  background: linear-gradient(
+    90deg,
+    #e2f6ff 0%,
+    #ffd3f8 35%,
+    #ecfcff 65%,
+    #ffffff 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGradient 6s ease-in-out infinite;
+}
+
+@keyframes heroGradient{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* TYPO-SUB (Lead) */
+.typo-sub{
+  font-family: var(--ff-body);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 72ch;
+  margin: 0 0 22px;
+  font-weight: 600;
+}
+
+/* TYPO-BODY (Paragraph) */
+.typo-body{
+  font-family: var(--ff-body);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 70ch;
+  margin: 0 0 28px;
+  font-weight: 400;
+}
+
+/* TYPO-UI (Navigation / UI labels) */
+.typo-ui{
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
+  letter-spacing: var(--ui-letter-spacing);
+  text-transform: var(--ui-text-transform);
+  margin: 0 0 12px;
+  color: var(--ui-color);
+}
+
+/* TYPO-UTIL (Small utility) */
+.typo-util{
+  font-family: var(--ff-body);
+  font-size: 13px;
+  opacity: 0.65;
+  margin: 0;
+}
+
+/* ======================================================
+   SAFE DEFAULT: remove underline from role links if any
+====================================================== */
+.typo-ui a,
+.typo-util a,
+.typo-label a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================================
+   BUTTON SYSTEM (from Typography Strip Lab)
+===================================================== */
+.button-row{
+  display:flex;
+  gap:14px;
+  margin-top:34px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:46px;
+  padding:0 26px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+  background:none;
+  border:1.5px solid currentColor;
+  text-decoration: none;
+  line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: var(--ff-display);
+}
+
+.btn-primary{
+  background:#ffffff;
+  color:#000000;
+  border-color:#ffffff;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:#ffffff;
+  border-color: rgba(255,255,255,.85);
+}
+
+.typo-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.6;
+  margin-bottom:20px;
+}
+
+.typo-hero{
+  font-family:"Sora", system-ui, sans-serif;
+  font-size:clamp(48px,6vw,88px);
+  font-weight:800;
+  line-height:1.05;
+  margin:0 0 26px;
+}
+
+.typo-sub{
+  font-size:20px;
+  line-height:1.55;
+  max-width:72ch;
+  margin-bottom:22px;
+  font-weight:600;
+}
+
+.typo-body{
+  font-size:17px;
+  line-height:1.65;
+  max-width:70ch;
+  margin-bottom:28px;
+  font-weight:400;
+}
+
+.typo-ui{
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.typo-util{
+  font-size:13px;
+  opacity:1.65;
+}

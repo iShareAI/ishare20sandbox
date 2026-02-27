@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISHARE — Color Palette Lab (Sora)</title>
+
+<!-- ================= FONT ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  font-family: "Sora", system-ui, sans-serif;
+  background:#ffffff;
+  color:#000;
+}
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+.page{
+  width:min(1200px,94vw);
+  margin:0 auto;
+  padding:56px 0 140px;
+}
+
+.title{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.subtitle{
+  font-size:14px;
+  opacity:.6;
+  margin-bottom:56px;
+}
+
+/* =====================================================
+   COLOR STRIP
+===================================================== */
+.color-strip{
+  padding:80px 0;
+  border-top:1px solid rgba(0,0,0,.15);
+}
+
+.color-strip:first-of-type{
+  border-top:none;
+}
+
+/* LABEL */
+.color-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  opacity:.7;
+}
+
+/* HERO */
+.color-hero{
+  font-size:clamp(44px,6vw,88px);
+  font-weight:800;
+  line-height:1.03;
+  margin:0 0 22px;
+}
+
+/* DESCRIPTION */
+.color-desc{
+  font-size:18px;
+  max-width:70ch;
+  line-height:1.55;
+  opacity:.75;
+}
+
+/* =====================================================
+   THEMES
+===================================================== */
+.theme-dark{
+  background:#0b0c10;
+  color:#fff;
+}
+
+.theme-light{
+  background:#ffffff;
+  color:#000;
+}
+
+/* NEON ACCENTS */
+.neon-blue   { color:#66ccff; }
+.neon-pink   { color:#f35ca3; }
+.neon-cyan   { color:#5df2e6; }
+.neon-violet { color:#a78bfa; }
+.neon-green  { color:#6ee7b7; }
+
+/* MUTED DARK */
+.gray-900 { color:#0f172a; }
+.gray-700 { color:#334155; }
+.gray-500 { color:#64748b; }
+
+/* SOFT LIGHT */
+.soft-blue  { color:#1e40af; }
+.soft-indigo{ color:#4338ca; }
+.soft-teal  { color:#0f766e; }
+.soft-emerald{ color:#047857; }
+
+/* WARM */
+.warm-amber { color:#92400e; }
+.warm-rose  { color:#9f1239; }
+.warm-coral { color:#be123c; }
+
+/* =====================================================
+   SECTION BACKGROUNDS
+===================================================== */
+.bg-dark     { background:#0b0c10; }
+.bg-graphite { background:#0a0f14; }
+.bg-light    { background:#ffffff; }
+.bg-snow     { background:#f8fafc; }
+
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="title">ISHARE — Color Palette Lab</div>
+  <div class="subtitle">
+    SORA · 20 palettes · ~30% neon · vertical comparison
+  </div>
+
+  <!-- 01 NEON BLUE -->
+  <section class="color-strip bg-dark theme-dark">
+    <div class="color-label">01 · Neon Blue</div>
+    <h1 class="color-hero neon-blue">Immersive Campaign Experiences</h1>
+    <div class="color-desc">
+      Primary neon accent. Feels technological, transparent, trustworthy.
+    </div>
+  </section>
+
+  <!-- 02 NEON PINK -->
+  <section class="color-strip bg-dark theme-dark">
+    <div class="color-label">02 · Neon Pink</div>
+    <h1 class="color-hero neon-pink">Immersive Campaign Experiences</h1>
+    <div class="color-desc">
+      Emotional, human, donor-centric highlight.
+    </div>
+  </section>
+
+  <!-- 03 NEON CYAN -->
+  <section class="color-strip bg-dark theme-dark">
+    <div class="color-label">03 · Neon Cyan</div>
+    <h1 class="color-hero neon-cyan">Immersive Campaign Experiences</h1>
+    <div class="color-desc">
+      Futuristic, immersive, spatial feeling.
+    </div>
+  </section>
+
+  <!-- 04 NEON VIOLET -->
+  <section class="color-strip bg-dark theme-dark">
+    <div class="color-label">04 · Neon Violet</div>
+    <h1 class="color-hero neon-violet">Immersive Campaign Experiences</h1>
+    <div class="color-desc">
+      Cultural, intellectual, visionary tone.
+    </div>
+  </section>
+
+  <!-- 05 NEON GREEN -->
+  <section class="color-strip bg-dark theme-dark">
+    <div class="color-label">05 · Neon Green</div>
+    <h1 class="color-hero neon-green">Immersive Campaign Experiences</h1>
+    <div class="color-desc">
+      Sustainability, growth, future focus.
+    </div>
+  </section>
+
+  <!-- ===== MUTED / NEUTRAL (15) ===== -->
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">06 · Graphite Black</div>
+    <h1 class="color-hero gray-900">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Serious, architectural, institutional.</div>
+  </section>
+
+  <section class="color-strip bg-snow theme-light">
+    <div class="color-label">07 · Slate Gray</div>
+    <h1 class="color-hero gray-700">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Neutral UI backbone.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">08 · Soft Gray</div>
+    <h1 class="color-hero gray-500">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Secondary text & calm layouts.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">09 · Soft Blue</div>
+    <h1 class="color-hero soft-blue">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Trust, healthcare, education.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">10 · Indigo</div>
+    <h1 class="color-hero soft-indigo">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Academic & strategic.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">11 · Teal</div>
+    <h1 class="color-hero soft-teal">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Balanced, calm, modern.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">12 · Emerald</div>
+    <h1 class="color-hero soft-emerald">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Growth & responsibility.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">13 · Warm Amber</div>
+    <h1 class="color-hero warm-amber">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Heritage, warmth.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">14 · Warm Rose</div>
+    <h1 class="color-hero warm-rose">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Human & emotional.</div>
+  </section>
+
+  <section class="color-strip bg-light theme-light">
+    <div class="color-label">15 · Coral</div>
+    <h1 class="color-hero warm-coral">Immersive Campaign Experiences</h1>
+    <div class="color-desc">Friendly accent.</div>
+  </section>
+
+</div>
+</body>
+</html>

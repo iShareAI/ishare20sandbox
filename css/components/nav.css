@@ -1,0 +1,142 @@
+/* ======================================================
+   NAVIGATION (DESKTOP + DROPDOWNS)
+   Project: iShare®
+   ====================================================== */
+
+/* Desktop nav — TYPO UTIL */
+.nav-desktop{
+  display:none;
+  align-items:center;
+  gap:16px;
+}
+
+.nav-desktop a{
+  font-family: var(--ff-body, Inter, system-ui, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+
+  padding: 0;          /* ← ключ */
+  background: none;    /* ← ключ */
+  border: none;        /* ← ключ */
+
+  transition: color .15s ease, opacity .15s ease;
+  opacity: .9;
+}
+
+.nav-desktop a:hover{
+  color: rgba(255,255,255,.9);
+  opacity: 1;
+}
+
+/* Show desktop nav */
+@media (min-width:900px){
+  .nav-desktop{ display:flex; }
+}
+
+
+/* =========================
+   NAV DROPDOWN (FIX)
+   ========================= */
+
+.nav-dropdown{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-parent{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-arrow{
+  font-size: .8em;
+  opacity: .6;
+}
+
+/* The dropdown menu */
+.nav-menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+
+  min-width: 220px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  background: rgba(10,10,14,.78);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 9999;
+}
+
+.nav-menu a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  font-family:'Lato', sans-serif;
+  font-size:.78rem;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  color: rgba(255,255,255,.88);
+  text-decoration:none;
+
+  transition: background .18s ease, border-color .18s ease, transform .18s ease, opacity .18s ease;
+  opacity: .92;
+}
+
+.nav-menu a:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.10);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* =========================
+   NAV DROPDOWN — STICKY FIX
+   (hover tunnel between parent and menu)
+   ========================= */
+
+.nav-dropdown::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  height:14px;
+}
+
+/* Open on desktop hover */
+@media (hover: hover) and (pointer: fine){
+  .nav-dropdown:hover .nav-menu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* Open on touch/click (JS adds .open) */
+.nav-dropdown.open .nav-menu{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

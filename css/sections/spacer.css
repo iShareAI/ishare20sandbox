@@ -1,0 +1,218 @@
+/* ======================================================
+   SPACER — PARTNERS MARQUEE
+   First spacer after HERO
+====================================================== */
+
+.spacer{
+  width: 100%;
+  overflow: hidden;
+}
+
+.spacer-partners{
+  padding: 48px 0;                 /* вертикальный ритм */
+  background: #fff;               /* отделяем от hero */
+}
+
+/* viewport */
+.partners-marquee{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* moving track */
+.partners-track{
+  display: flex;
+  align-items: center;
+  gap: 56px;
+
+  width: max-content;
+  animation: partners-scroll 99s linear infinite;
+}
+
+/* logos */
+.partners-track img{
+  height: 42px;                    /* master-size */
+  width: auto;
+  opacity: .75;
+  filter: grayscale(100%);
+  transition: opacity .2s ease, filter .2s ease;
+}
+
+.partners-track img:hover{
+  opacity: 1;
+  filter: none;
+}
+
+/* animation */
+@keyframes partners-scroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+/* mobile tuning */
+@media (max-width: 768px){
+  .spacer-partners{
+    padding: 36px 0;
+  }
+
+  .partners-track{
+    gap: 40px;
+  }
+
+  .partners-track img{
+    height: 34px;
+  }
+}
+
+/* =========================
+   REVIEWS - PRO (AUTO + DRAG)
+   ========================= */
+
+.spacer-reviews{
+  height: 28vh;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  padding: 10px 0;
+}
+
+#reviews .spacer-inner{
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Full width ribbon like your marquees */
+#reviews .reviews-marquee{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  overflow: hidden;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+
+  position: relative;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+#reviews .reviews-marquee::-webkit-scrollbar{
+  display:none; /* Chrome/Safari */
+}
+
+#reviews .reviews-marquee:active{
+  cursor: grabbing;
+}
+
+/* Track is just a flex row with auto scroll */
+#reviews .reviews-track{
+  display:flex;
+  gap: 18px;
+  width: max-content;
+  padding: 10px 18px 18px;
+  will-change: transform;
+  animation: reviews-scroll 75s linear infinite;
+}
+
+/* Review card */
+#reviews .review-card{
+  width: 320px;
+  flex: 0 0 auto;
+
+  background: rgba(255,255,255,0);
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+
+  font-family: 'Roboto', sans-serif;
+  color:#111;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+#reviews .review-head{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+#reviews .avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.12);
+  border: 1px solid rgba(0,0,0,.10);
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+#reviews .review-meta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap: 2px;
+  line-height:1.1;
+}
+
+#reviews .review-name{
+  font-weight:700;
+  font-size:.95rem;
+  color: rgb(29,160,184);
+}
+
+#reviews .review-role{
+  font-size:.78rem;
+  opacity:.65;
+}
+
+#reviews .review-stars{
+  font-size:.8rem;
+  letter-spacing:1px;
+  opacity:.85;
+  color:#6e4405;
+}
+
+#reviews .review-text{
+  font-family: var(--font-ui, "Plus Jakarta Sans", sans-serif);
+  font-size: var(--reviews-text-size, .86rem);
+  line-height:1.35;
+  
+}
+
+/* Mobile tuning */
+@media (max-width: 767px){
+  .spacer-reviews{ height:auto; padding: 18px 0; }
+  #reviews .review-card{ width: 78vw; }
+  #reviews .reviews-track{ gap: 14px; padding-left: 16px; padding-right: 16px; }
+}
+
+/* Reduce motion: keep it manual only */
+@media (prefers-reduced-motion: reduce){
+  #reviews .reviews-marquee{
+    scroll-behavior: auto;
+  }
+  #reviews .reviews-track{
+    animation: none;
+  }
+}
+
+@keyframes reviews-scroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}

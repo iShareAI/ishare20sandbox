@@ -1,0 +1,118 @@
+/* ======================================================
+   MOBILE MENU (DRAWER)
+   Project: iShare®
+   ====================================================== */
+
+/* Backdrop */
+.mobile-menu-backdrop{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.58);
+  z-index:9998;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .25s ease;
+}
+
+/* Drawer */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-92%;
+  width:92%;
+  max-width:420px;
+  height:100vh;
+  z-index:9999;
+  transition: right .3s ease;
+  display:flex;
+
+  background: rgba(10,10,14,.78);
+  backdrop-filter: blur(18px);
+  border-left:1px solid rgba(255,255,255,.10);
+  box-shadow:-10px 0 30px rgba(0,0,0,.25);
+}
+
+.mobile-menu-inner{
+  width:100%;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  font-family:'Lato', sans-serif;
+  color:#fff;
+}
+
+.mobile-menu-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.mobile-menu-title{
+  font-family:'Staatliches', sans-serif;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-size:1.1rem;
+  opacity:.92;
+}
+
+.mobile-close{
+  border:none;
+  background:transparent;
+  font-size:2rem;
+  line-height:1;
+  cursor:pointer;
+  color:#fff;
+  padding:0 6px;
+}
+
+/* Links */
+.m-link{
+  text-decoration:none;
+  color:#fff;
+  padding:14px 14px;
+  border-radius:16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  font-weight:700;
+  font-size:.9rem;
+  backdrop-filter: blur(6px);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.m-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* CTA */
+.m-cta{
+  margin-top:8px;
+  padding:14px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: linear-gradient(90deg, rgba(102,204,255,.22), rgba(243,92,163,.18));
+  color:#fff;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-weight:700;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+
+.m-cta:hover{
+  transform: translateY(-1px);
+  background: linear-gradient(90deg, rgba(102,204,255,.30), rgba(243,92,163,.26));
+}
+
+/* Open state (CSS expects body.mobile-open) */
+.mobile-open .mobile-menu{ right:0; }
+
+.mobile-open .mobile-menu-backdrop{
+  opacity:1;
+  pointer-events:auto;
+}

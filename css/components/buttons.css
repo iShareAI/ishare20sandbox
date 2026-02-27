@@ -1,0 +1,122 @@
+/* ======================================================
+   BUTTONS
+   Project: iShare®
+   Purpose: Reusable button styles
+   ====================================================== */
+
+/* =========================
+   PRIMARY CTA (hero / general)
+   ========================= */
+
+.cta-button{
+  margin-top: 20px;
+  padding: 12px 32px;
+
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: transparent;
+
+  border: 0.5px solid #fff;
+  border-radius: 40px;
+
+  cursor: pointer;
+
+  transition: 
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.cta-button:hover{
+  background: #fff;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   ICON BUTTONS (header icons)
+   ========================= */
+
+.icon-btn{
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.icon-btn:hover{
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+
+.icon-btn svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* =========================
+   GENERIC PILL BUTTON (utility)
+   ========================= */
+
+.btn-pill{
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  font-family: 'Staatliches', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-pill:hover{
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+}
+
+/* utility class for a button that stretches to fill remaining space in a flex row */
+.btn-flex{
+  /* grow to fill, but allow shrinkage to zero; basis zero helps equal distribution */
+  flex:1 1 0;
+  min-width:0;               /* allow shrinking below intrinsic content */
+  max-width:100%;            /* never overflow parent */
+  text-align:center;
+}
+
+/* ensure layout stays inside viewport on tight mobile widths */
+@media (max-width: 520px){
+  .button-row{
+    justify-content: center;   /* stack or center items when wrapped */
+  }
+  .btn-flex{
+    flex-basis: 100%;          /* full width on extra-small screens */
+    margin-top: 12px;          /* spacing after previous buttons */
+  }
+}
+
+/* previously gradient border, now unused */
+.btn-gradient{
+  /* kept for legacy markup, but no special styling */
+}

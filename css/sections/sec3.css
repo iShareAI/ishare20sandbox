@@ -1,0 +1,228 @@
+/* ======================================================
+   SEC3 — Campaigns Grid
+====================================================== */
+
+.sec3{
+  background: #ffffff;
+  color: #0e141b;
+  width: 100%;
+  min-height: auto;
+}
+
+.sec3-inner{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 84px;
+}
+
+.sec3-title{
+  margin: 0 0 28px;
+  padding: 0 4vw;
+}
+
+.sec3-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+/* ================= CARD ================= */
+.campaign-card{
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #f2f3f5;
+
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-card:hover{
+  background: #e8eaee;
+  border-color: rgba(101, 215, 235, 0.89);
+}
+
+/* label always above */
+.campaign-label{
+  font-size: clamp(14px, 1.4vw, 20px);
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}   
+
+/* ================= MEDIA BACKGROUND ================= */
+/* сюда ставим картинку, и делаем grayscale */
+.campaign-media{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* базово ч/б */
+  filter: grayscale(100%) contrast(1.05) brightness(.75);
+  transform: scale(1.01);
+
+  transition: filter .45s ease, transform .6s ease;
+}
+
+/* hover = возвращаем цвет */
+.campaign-card:hover .campaign-media{
+  filter: grayscale(0%) contrast(1.02) brightness(.95);
+  transform: scale(1.06);
+}
+
+/* Video element inside campaign media (used for Sporting Venues) */
+.campaign-media video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  display: block;
+  filter: grayscale(100%) contrast(1.05) brightness(.75);
+  transform: scale(1.01);
+  transition: filter .45s ease, transform .6s ease;
+  pointer-events: none;
+}
+
+.campaign-card:hover .campaign-media video{
+  filter: grayscale(0%) contrast(1.02) brightness(.95);
+  transform: scale(1.06);
+}
+
+/* ================= OVERLAY FOR READABILITY ================= */
+.campaign-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.35) 45%,
+    rgba(0,0,0,.10) 100%
+  );
+  pointer-events:none;
+  transition: opacity .45s ease;
+  opacity: .95;
+}
+
+.campaign-card:hover::after{
+  opacity: .55;
+}
+
+/* ================= IMAGES PER TILE ================= */
+
+
+.campaign-card.tone-1 .campaign-media{ background-image: url("../../img/healthcare.jpg"); }
+.campaign-card.tone-2 .campaign-media{ background-image: url("../../img/holodomor1.png"); }
+.campaign-card.tone-3 .campaign-media{ background-image: url("../../img/culture.jpg"); }
+.campaign-card.tone-4 .campaign-media{ background-image: url("../../img/sport.jpg"); }
+.campaign-card.tone-5 .campaign-media{ background-image: url("../../img/international-aid.png"); }
+.campaign-card.tone-6 .campaign-media{ background-image: url("../../img/social services.png"); }
+.campaign-card.tone-7 .campaign-media{ background-image: url("../../img/tourism.png"); }
+
+/* Make last item full width on desktop */
+.campaign-card.is-wide{
+  grid-column: 1 / -1;
+}
+
+/* Keep Tourism height same as other cards on desktop */
+@media (min-width: 1025px){
+  .campaign-card.is-wide{
+    aspect-ratio: 3 / 1;
+  }
+}
+
+/* Mobile: stack blocks */
+@media (max-width: 1024px){
+  .sec3-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .sec3-grid{
+    grid-template-columns: 1fr;
+  }
+  .campaign-card{
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ======================================================
+   PANORAMA TILE EFFECT
+   360 panorama image used as moving background
+====================================================== */
+
+/* media layer */
+.campaign-media{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /* panorama behavior */
+  background-repeat: repeat-x;
+  background-position: 50% 50%;
+  background-size: auto 115%;
+
+  /* default look: black & white */
+  filter: grayscale(1) contrast(1.05) brightness(.9);
+
+  /* smooth transitions */
+  transition: filter .35s ease, transform .35s ease;
+  will-change: background-position, filter, transform;
+}
+
+/* hover: restore color + subtle zoom + movement */
+.campaign-card:hover .campaign-media{
+  filter: grayscale(0) contrast(1.05) brightness(1);
+  transform: scale(1.02);
+  animation: panorama-drift 14s linear infinite;
+}
+
+/* horizontal movement (simulates camera rotation) */
+@keyframes panorama-drift{
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+/* accessibility: reduce motion support */
+@media (prefers-reduced-motion: reduce){
+  .campaign-card:hover .campaign-media{
+    animation: none;
+  }
+}
+
+/* ======================================================
+   HEALTHCARE — 360 PANORAMA EFFECT
+====================================================== */
+
+.campaign-card.tone-1 .campaign-media{
+  background-image: url("../../img/healthcare360.jpg");
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+}
+
+/* movement only for healthcare */
+.campaign-card.tone-1:hover .campaign-media{
+  animation: healthcare-panorama 30s linear infinite;
+}
+
+/* horizontal movement simulating camera rotation */
+@keyframes healthcare-panorama{
+  from { background-position: 50% 90%; }
+  to   { background-position: 100% 50%; }
+}

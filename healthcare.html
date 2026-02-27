@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthcare — iShare</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS split -->
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/sections/hero.css">
+  <link rel="stylesheet" href="css/sections/spacer.css">
+  <link rel="stylesheet" href="css/sections/sec2.css">
+  <link rel="stylesheet" href="css/sections/sec3.css">
+
+  <!-- healthcare page responsive styles -->
+  <style>
+    #healthcare-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    #healthcare-hero .container {
+      width: 100%;
+      color: #fff;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #healthcare-hero h1 {
+      margin-bottom: 20px;
+    }
+
+    #healthcare-hero p {
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      #healthcare-hero {
+        min-height: auto;
+        padding: 60px 20px;
+      }
+
+      #healthcare-hero h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 16px;
+      }
+
+      #healthcare-hero p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #healthcare-hero {
+        padding: 40px 16px;
+      }
+
+      #healthcare-hero h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin-bottom: 12px;
+      }
+
+      #healthcare-hero p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER (reused from index)
+       ========================= -->
+
+  <!-- UTILITY BAR -->
+  <div class="utility-bar" id="utilityBar" aria-label="Partner navigation">
+    <div class="container">
+      <nav class="utility-nav" aria-label="Partner links">
+        <a class="utility-link" href="https://fundingmatters.com/" target="_blank" rel="noopener">
+          <span class="utility-ico" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 16.5v-13h-.25a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H16v13h.25a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-3.5a.75.75 0 0 1 0-1.5H4Z"/>
+            </svg>
+          </span>
+          <span class="utility-text">FUNDING matters® Inc.</span>
+        </a>
+        <a class="utility-link" href="https://www.giftabulator.com/" target="_blank" rel="noopener">
+          <span class="utility-ico" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M15.5 2A1.5 1.5 0 0 0 14 3.5v13a1.5 1.5 0 0 0 1.5 1.5h1a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 16.5 2h-1ZM9.5 6A1.5 1.5 0 0 0 8 7.5v9A1.5 1.5 0 0 0 9.5 18h1a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 10.5 6h-1ZM3.5 10A1.5 1.5 0 0 0 2 11.5v5A1.5 1.5 0 0 0 3.5 18h1A1.5 1.5 0 0 0 6 16.5v-5A1.5 1.5 0 0 0 4.5 10h-1Z"/>
+            </svg>
+          </span>
+          <span class="utility-text">GIFTABULATOR®</span>
+        </a>
+        <a class="utility-link" href="https://philanthropylab.ca/" target="_blank" rel="noopener">
+          <span class="utility-ico" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5l4.091 4.091a2.25 2.25 0 0 0 1.591.659h2.636a2.25 2.25 0 0 0 1.591-.659L19.8 15.3l-4.891-4.891a2.25 2.25 0 0 1-.659-1.591V3.104"/>
+            </svg>
+          </span>
+          <span class="utility-text">PhilanthropyLab®</span>
+        </a>
+        <a class="utility-link" href="#blog">
+          <span class="utility-ico" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2l1.2 4.2L17.4 8 13.2 9.2 12 13.4 10.8 9.2 6.6 8l4.2-1.8L12 2z"/>
+            </svg>
+          </span>
+          <span class="utility-text">BuilderBillAI</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TOPBAR -->
+  <header class="topbar" id="topbar" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="iShare Home">
+        <img src="img/lg2.png" alt="iShare" class="brand-logo" />
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <div class="nav-dropdown">
+          <a href="index.html#directions" class="nav-parent" aria-haspopup="true" aria-expanded="false">
+            Campaigns <span class="nav-arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="nav-menu" role="menu" aria-label="Campaigns submenu">
+            <a role="menuitem" href="healthcare.html">Healthcare</a>
+            <a role="menuitem" href="#education">Education</a>
+            <a role="menuitem" href="#culture">Culture</a>
+            <a role="menuitem" href="#sporting-venues">Sporting Venues</a>
+            <a role="menuitem" href="#international-aid">International Aid</a>
+            <a role="menuitem" href="#social-services">Social Services</a>
+            <a role="menuitem" href="#tourism">Tourism</a>
+          </div>
+        </div>
+        <a href="index.html#projects">Projects</a>
+        <div class="nav-dropdown">
+          <a href="#pricing" class="nav-parent" aria-haspopup="true" aria-expanded="false">
+            Packages <span class="nav-arrow" aria-hidden="true">▾</span>
+          </a>
+          <div class="nav-menu" role="menu" aria-label="Packages submenu">
+            <a role="menuitem" href="index.html#pricing-basic">Basic</a>
+            <a role="menuitem" href="index.html#pricing-pro">Pro</a>
+            <a role="menuitem" href="index.html#pricing-enterprise">Enterprise</a>
+          </div>
+        </div>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="topbar-cta" type="button">Book a Demo</button>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <div class="burger-lines" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-head">
+        <div class="mobile-menu-title">MENU</div>
+        <button class="mobile-close" id="mobileClose" type="button" aria-label="Close menu">×</button>
+      </div>
+      <a href="index.html" class="m-link">Home</a>
+      <a href="index.html#about" class="m-link">About</a>
+      <a href="healthcare.html" class="m-link">Campaigns</a>
+      <a href="index.html#projects" class="m-link">Projects</a>
+      <a href="index.html#pricing" class="m-link">Packages</a>
+      <a href="index.html#impact" class="m-link">Impact</a>
+      <a href="index.html#contact" class="m-link">Contact</a>
+      <button class="m-cta" type="button">Book a Demo</button>
+    </div>
+  </div>
+  <div class="mobile-menu-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+  <main>
+
+    <!-- Healthcare Category Hero Section -->
+    <section id="healthcare-hero" style="background: linear-gradient(135deg, #1a5f7a 0%, #0d3d52 100%);">
+      <div class="container">
+        <h1 class="typo-hero">Healthcare Solutions</h1>
+        <p class="typo-body">
+          Transform healthcare communication through immersive virtual environments. Help donors and stakeholders visualize the impact of medical initiatives and facility improvements.
+        </p>
+        <button class="btn btn-primary" type="button">Explore Projects</button>
+      </div>
+    </section>
+
+    <!-- Projects Gallery Section (sec3 style) -->
+    <section id="healthcare-projects" class="sec3">
+      <div class="sec3-inner">
+        <h2 class="sec3-title typo-hero">Featured Healthcare Projects</h2>
+
+        <div class="sec3-grid" role="list">
+          <!-- Project Card 1: Hospital Wing -->
+          <a class="campaign-card tone-1" href="#" role="listitem">
+            <div class="campaign-media" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">Hospital Wing Renovation</span>
+          </a>
+
+          <!-- Project Card 2: Research Lab -->
+          <a class="campaign-card tone-2" href="#" role="listitem">
+            <div class="campaign-media" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">Research Lab Showcase</span>
+          </a>
+
+          <!-- Project Card 3: Patient Care -->
+          <a class="campaign-card tone-3" href="#" role="listitem">
+            <div class="campaign-media" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">Patient Care Center</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="js/header.js" defer></script>
+
+</body>
+</html>

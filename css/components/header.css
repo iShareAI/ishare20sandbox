@@ -1,0 +1,445 @@
+/* =====================================================
+   ISHARE HEADER MODULE
+   Utility Bar + Topbar + Mobile Drawer
+===================================================== */
+
+/* Shared container: controls content width inside full-width bg */
+.container{
+  width: 100%;
+  max-width: var(--maxw, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--page-pad, 14px);
+}
+
+/* =====================================================
+   UTILITY BAR — TYPO-UTIL (GRAY, RIGHT-ALIGNED)
+===================================================== */
+
+.utility-bar{
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  height: var(--utility-h, 40px);
+  background: rgba(255, 255, 255, 0.895);   /* neutral, light */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+
+  display: flex;
+  align-items: center;
+}
+
+.utility-nav{
+  display: flex;
+  gap: 20px;
+
+  width: 100%;
+  justify-content: flex-end;   /* ← KEY: stick to the right */
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.utility-nav::-webkit-scrollbar{ display:none; }
+
+/* Typographic link (NOT a button) */
+.utility-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
+  background: none;
+  border: none;
+
+  white-space: nowrap;
+  text-decoration: none;
+
+  transition: opacity .15s ease, color .15s ease;
+}
+
+.utility-link:hover{
+  opacity: .8;
+}
+
+/* Icon */
+.utility-ico{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,.45);
+}
+.utility-ico svg{
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* TYPO-UTIL text */
+.utility-text{
+  font-family: var(--ff-body, Inter, system-ui, Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  line-height: 1;
+
+  color: rgba(0,0,0,.55);
+}
+
+/* Hover = subtle emphasis, still typographic */
+.utility-link:hover .utility-text,
+.utility-link:hover .utility-ico{
+  color: rgba(0,0,0,.85);
+}
+
+
+
+
+/* ===== Topbar (Site navigation) ===== */
+.topbar{
+  position: sticky;
+  top: var(--utility-h, 40px);
+  z-index: 1900;
+
+  height: var(--topbar-h, 76px);
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0,0,0,.10);
+
+  display: flex;
+  align-items: center;
+}
+
+.topbar-inner{
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+}
+
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-logo{
+  height: 30px;
+  width: auto;
+  display:block;
+}
+
+.nav-desktop{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+}
+
+.nav-desktop > a,
+.nav-parent{
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0,0,0,.78);
+  padding: 10px 10px;
+  border-radius: 12px;
+  transition: background .15s ease, color .15s ease;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.nav-desktop > a:hover,
+.nav-parent:hover{
+  background: rgba(0,0,0,.06);
+  color: #000;
+}
+
+.nav-dropdown{ position: relative; }
+.nav-arrow{ font-size: 12px; opacity: .7; margin-left: 6px; transition: transform .18s ease; }
+
+.nav-menu{
+  position:absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+
+  padding: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.nav-menu a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: rgba(0,0,0,.78);
+}
+.nav-menu a:hover{
+  background: rgba(0,0,0,.06);
+  color: #000000;
+}
+
+.nav-dropdown:hover .nav-menu{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.nav-dropdown:hover .nav-arrow{ transform: rotate(180deg); }
+
+/* Right actions */
+.topbar-actions{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.topbar-cta{
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: rgba(0,0,0,.65);
+  cursor: pointer;
+}
+
+.topbar-cta:hover{
+  transform: translateY(-1px);
+  background: rgba(0,0,0,.10);
+  border-color: rgba(0,0,0,.22);
+}
+
+/* Burger */
+.burger{
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  outline: none;
+  box-shadow: none;
+
+  cursor: pointer;
+}
+
+.burger-lines{
+  width: 20px;
+  height: 16px;
+  margin: 0 auto;
+  position: relative;
+}
+.burger-lines span{
+  position:absolute;
+  left:0;
+  right:0;
+  height: 2px;
+  background: rgba(0,0,0,.78);
+  border-radius: 999px;
+}
+.burger-lines span:nth-child(1){ top:0; }
+.burger-lines span:nth-child(2){ top:7px; opacity:.8; }
+.burger-lines span:nth-child(3){ top:14px; opacity:.6; }
+
+/* ===== Mobile drawer ===== */
+.mobile-menu-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+  z-index: 1700;
+}
+
+.mobile-menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100vh;
+  width: min(86vw, 360px);
+
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+
+  z-index: 3000;
+
+  transform: translateX(110%);
+  transition: transform .22s ease;
+}
+
+
+.mobile-menu-inner{
+  height: 100%;
+  padding: 16px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.mobile-menu-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 8px 0 14px;
+  border-bottom: 1px solid rgba(0,0,0,.10);
+  margin-bottom: 6px;
+}
+.mobile-menu-title{
+  font-weight: 900;
+  letter-spacing: .16em;
+  font-size: 12px;
+  color: rgba(0,0,0,.60);
+}
+.mobile-close{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+  color: #000;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.m-link{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color: rgba(0,0,0,.82);
+  text-decoration: none;
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.08);
+}
+.m-link:hover{ background: rgba(0,0,0,.06); }
+
+.m-cta{
+  margin-top: auto;
+  height: 44px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.14);
+  background: rgba(0,0,0,.06);
+  color:#000;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* Open state (controlled by body class) */
+body.mobile-open .mobile-menu{
+  transform: translateX(0);
+}
+
+body.mobile-open .mobile-menu-backdrop{
+  opacity: 1;
+  pointer-events: auto;
+}
+body.mobile-open{
+  overflow: hidden;
+}
+
+
+/* Responsive */
+@media (max-width: 980px){
+  .nav-desktop{ display:none; }
+  .burger{ display:inline-flex; align-items:center; justify-content:center; }
+  .topbar-cta{ display:none; }
+}
+
+
+/* Remove browser default underline for header links */
+.utility-bar a,
+.utility-bar a:visited,
+.utility-bar a:hover,
+.utility-bar a:active,
+.utility-bar a:focus,
+
+.topbar a,
+.topbar a:visited,
+.topbar a:hover,
+.topbar a:active,
+.topbar a:focus,
+
+.mobile-menu a,
+.mobile-menu a:visited,
+.mobile-menu a:hover,
+.mobile-menu a:active,
+.mobile-menu a:focus{
+  text-decoration: none !important;
+}
+/* TOPBAR NAV uses TYPO-UI role */
+.nav-desktop a,
+.nav-parent,
+.nav-menu a{
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
+  letter-spacing: var(--ui-letter-spacing);
+  text-transform: var(--ui-text-transform);
+
+  color: var(--ui-color);
+  text-decoration: none;
+
+  padding: 0;
+  background: none;
+  border: none;
+
+  transition: color .15s ease;
+}
+
+.nav-desktop a:hover,
+.nav-parent:hover,
+.nav-menu a:hover{
+  color: var(--ui-color-hover);
+}
+.nav-desktop a,
+.nav-parent{
+  line-height: 3.8; /* ←  */
+}
+/* =====================================================
+   HEADER FONT LOCK (freeze current header typography)
+   Put this at the VERY END of header.css
+===================================================== */
+
+.topbar .nav-desktop > a,
+.topbar .nav-parent,
+.topbar .nav-menu a,
+.topbar .topbar-cta,
+.topbar .mobile-menu-title,
+.mobile-menu .m-link,
+.mobile-menu .m-cta{
+  font-family: Inter, system-ui, Arial, sans-serif !important; /* keep current */
+  font-size: 12px !important;                                  /* keep current */
+  font-weight: 600 !important;                                 /* keep current */
+  letter-spacing: 0.08em !important;                            /* keep current */
+  text-transform: uppercase !important;                         /* keep current */
+  --ui-color: rgb(0, 0, 0);
+}
+
+/* If dropdown items should match too (usually yes) */
+.topbar .nav-menu a{
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* Safety: kill underline in header no matter what */
+.topbar a,
+.topbar a:visited,
+.topbar a:hover,
+.topbar a:active{
+  text-decoration: none !important;
+}

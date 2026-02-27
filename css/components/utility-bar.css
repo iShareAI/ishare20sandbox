@@ -1,0 +1,72 @@
+/* ======================================================
+   TOP UTILITY BAR (ABOVE HEADER)
+   Project: iShare®
+   Note: This file styles ONLY .utility-* elements.
+   ====================================================== */
+
+/* Full width thin bar */
+.utility-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--utility-h);
+  z-index: 10050;
+}
+
+/* Inner aligned container */
+.utility-inner{
+  height: 100%;
+  width: min(var(--maxw), calc(100% - var(--page-pad)));
+  margin: 0 auto;
+  padding: 0 var(--header-pad-x);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* links on the right */
+}
+
+.utility-nav{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.utility-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+
+  font-family: 'Lato', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  padding: 6px 4px;
+  border-radius: 999px;
+
+  transition: color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.utility-link:hover{
+  color: rgb(255, 217, 0);
+  background: rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.utility-ico{
+  font-size: 14px;
+  line-height: 1;
+  opacity: .8;
+}
+
+/* Mobile simplification */
+@media (max-width: 767px){
+  :root{ --utility-h: 34px; } /* ok to adjust variable on small screens */
+  .utility-nav{ gap: 10px; }
+  .utility-text{ display: none; } /* show only icons on mobile */
+  .utility-link{ padding: 6px 10px; }
+}
