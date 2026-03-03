@@ -1,0 +1,258 @@
+/* ======================================================
+   FOOTER (iShare) — Typography Strip Lab roles
+====================================================== */
+
+.site-footer{
+  background-color: rgba(236, 173, 44);
+  color: rgba(255,255,255,.86);
+  margin-top: 120px;
+}
+
+/* Main grid */
+.footer-inner{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 70px;
+  padding: 90px 0 70px;
+}
+
+/* Left contact column */
+.footer-title{
+  margin-bottom: 22px;
+  color: rgba(255,255,255,.92);
+}
+
+.footer-block{
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-block:first-of-type{
+  border-top: none;
+  padding-top: 0;
+}
+
+.footer-subtitle{
+  margin-bottom: 10px;
+  color: rgba(255,255,255,.90);
+}
+
+.footer-text{
+  margin: 0 0 8px;
+  color: rgba(255,255,255,.70);
+}
+
+/* email link (no underline by default) */
+.footer-link{
+  display: inline-block;
+  margin-top: 6px;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+}
+
+.footer-link:hover{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Right side */
+.footer-quote{
+  max-width: 50ch;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 22px;
+}
+
+/* CTA as typographic link (not button) */
+.footer-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
+  letter-spacing: var(--ui-letter-spacing);
+  text-transform: var(--ui-text-transform);
+
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+
+  padding: 12px 0;
+}
+
+.footer-cta:hover{
+  text-decoration: underline;
+}
+
+/* Find us on */
+.footer-find{
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-social{
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-social-link{
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-social-link:hover{
+  color:#fff;
+  text-decoration: underline;
+}
+
+/* Back to top */
+.footer-top{
+  display: inline-block;
+  margin-top: 26px;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+}
+
+.footer-top:hover{
+  color:#fff;
+}
+
+/* Bottom area */
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 20px 0;
+}
+
+.footer-bottom-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-mini-nav,
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-mini-nav a,
+.footer-links a{
+  color: rgba(255,255,255,.60);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.footer-mini-nav a:hover,
+.footer-links a:hover{
+  color:#fff;
+  text-decoration: underline;
+}
+
+.footer-copyright{
+  color: rgba(255,255,255,.55);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .footer-inner{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 0 50px;
+  }
+
+  .footer-bottom-inner{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===============================
+   Footer Header Clone (reversed)
+================================ */
+
+.footer-header-clone {
+  margin-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Инверсия общего ощущения */
+.utility-bar--footer,
+.topbar--footer {
+  background: #0b0f14;
+}
+
+/* Подкрутка отступов в футере */
+.utility-bar--footer {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Главная “инверсия”: порядок в ряду */
+.topbar-inner--footer {
+  flex-direction: row-reverse; /* меняем местами автоматически */
+}
+
+/* Ссылки футера */
+.nav-desktop--footer a,
+.utility-bar--footer .utility-link {
+  color: rgba(255,255,255,0.82);
+}
+
+.nav-desktop--footer a:hover,
+.utility-bar--footer .utility-link:hover {
+  color: #ffffff;
+}
+
+/* CTA в футере “наоборот” */
+.topbar-actions--footer .topbar-cta {
+  background: #ffffff;
+  color: #0b0f14;
+}
+
+.topbar-actions--footer .topbar-cta:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* Если логотип тёмный — инвертируем (можешь убрать, если не нужно) */
+.brand--footer .brand-logo {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+/* Dropdown меню в футере лучше открывать ВВЕРХ */
+.topbar--footer .nav-menu {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+
+/* FIX: make footer clone light */
+.utility-bar--footer,
+.topbar--footer {
+  background: transparent !important; /* или #fff */
+}
+
+/* links like header */
+.utility-bar--footer .utility-link,
+.nav-desktop--footer a {
+  color: inherit !important;
+  opacity: 1;
+}
+
+/* disable logo invert */
+.brand--footer .brand-logo {
+  filter: none !important;
+  opacity: 1;
+}
