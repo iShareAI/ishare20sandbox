@@ -59,7 +59,7 @@
 }   
 
 /* ================= MEDIA BACKGROUND ================= */
-/* сюда ставим картинку, и делаем grayscale */
+/* put image here and apply grayscale */
 .campaign-media{
   position: absolute;
   inset: 0;
@@ -69,14 +69,14 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  /* базово ч/б */
+  /* basically b/w */
   filter: grayscale(100%) contrast(1.05) brightness(.75);
   transform: scale(1.01);
 
-  transition: filter .45s ease, transform .6s ease;
+  transition: filter .9s ease, transform 1.2s ease;
 }
 
-/* hover = возвращаем цвет */
+/* hover = return color */
 .campaign-card:hover .campaign-media{
   filter: grayscale(0%) contrast(1.02) brightness(.95);
   transform: scale(1.06);
@@ -93,7 +93,7 @@
   display: block;
   filter: grayscale(100%) contrast(1.05) brightness(.75);
   transform: scale(1.01);
-  transition: filter .45s ease, transform .6s ease;
+  transition: filter .9s ease, transform 1.2s ease;
   pointer-events: none;
 }
 
@@ -115,7 +115,7 @@
     rgba(0,0,0,.10) 100%
   );
   pointer-events:none;
-  transition: opacity .45s ease;
+  transition: opacity .9s ease;
   opacity: .95;
 }
 
@@ -182,7 +182,7 @@
   filter: grayscale(1) contrast(1.05) brightness(.9);
 
   /* smooth transitions */
-  transition: filter .35s ease, transform .35s ease;
+  transition: filter .7s ease, transform .7s ease;
   will-change: background-position, filter, transform;
 }
 
@@ -190,7 +190,7 @@
 .campaign-card:hover .campaign-media{
   filter: grayscale(0) contrast(1.05) brightness(1);
   transform: scale(1.02);
-  animation: panorama-drift 14s linear infinite;
+  animation: panorama-drift 28s linear infinite;
 }
 
 /* horizontal movement (simulates camera rotation) */
@@ -218,11 +218,51 @@
 
 /* movement only for healthcare */
 .campaign-card.tone-1:hover .campaign-media{
-  animation: healthcare-panorama 30s linear infinite;
+  animation: healthcare-panorama 60s linear infinite;
+}
+
+/* General Hospital card uses a 360 panorama source too */
+#healthcare-projects .campaign-card.tone-2 .campaign-media{
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+}
+
+#healthcare-projects .campaign-card.tone-3 .campaign-media{
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+  background-position: 80% 50%;
+}
+
+#healthcare-projects .campaign-card.tone-4 .campaign-media{
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+  background-position: 84% 50%;
+}
+
+#healthcare-projects .campaign-card.tone-2:hover .campaign-media{
+  animation: healthcare-panorama 60s linear infinite;
+}
+
+#healthcare-projects .campaign-card.tone-3:hover .campaign-media{
+  animation: healthcare-panorama-ksh 60s linear infinite;
+}
+
+#healthcare-projects .campaign-card.tone-4:hover .campaign-media{
+  animation: healthcare-panorama-coc 60s linear infinite;
 }
 
 /* horizontal movement simulating camera rotation */
 @keyframes healthcare-panorama{
   from { background-position: 50% 90%; }
   to   { background-position: 100% 50%; }
+}
+
+@keyframes healthcare-panorama-ksh{
+  from { background-position: 80% 50%; }
+  to   { background-position: 128% 50%; }
+}
+
+@keyframes healthcare-panorama-coc{
+  from { background-position: 84% 50%; }
+  to   { background-position: 132% 50%; }
 }

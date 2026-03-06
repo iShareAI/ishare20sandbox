@@ -1,0 +1,65 @@
+main.healthcare-detail {
+  background: #ffffff;
+  color: #0e141b;
+  padding: 40px 20px 72px;
+}
+
+.healthcare-detail .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.healthcare-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1b6b86;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.healthcare-back:hover {
+  text-decoration: underline;
+}
+
+.healthcare-hero-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f5f7fa;
+}
+
+.healthcare-hero-media {
+  min-height: 320px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.healthcare-hero-body {
+  padding: 26px;
+  display: grid;
+  gap: 14px;
+}
+
+.healthcare-hero-body .typo-hero {
+  margin: 0;
+}
+
+.healthcare-hero-body .typo-body {
+  margin: 0;
+  max-width: 78ch;
+}
+
+@media (max-width: 768px) {
+  main.healthcare-detail {
+    padding: 24px 16px 56px;
+  }
+
+  .healthcare-hero-media {
+    min-height: 220px;
+  }
+
+  .healthcare-hero-body {
+    padding: 18px;
+  }
+}

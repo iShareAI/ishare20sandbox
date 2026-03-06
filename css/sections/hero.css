@@ -172,7 +172,7 @@
 
 
 #hero{
-  position: relative; /* обязательно */
+  position: relative; /* required */
 }
 
 #hero .footnote-block{
