@@ -18,24 +18,296 @@
   <div id="site-header"></div>
 
   <main class="healthcare-detail">
-    <div class="wrap">
-      <a class="healthcare-back" href="../healthcare.html">Back to Healthcare Projects</a>
+    <section class="video-hero" aria-label="Project intro video">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="../img/pano/qch.jpg">
+        <source src="../img/general.mp4" type="video/mp4">
+      </video>
 
-      <article class="healthcare-hero-card">
-        <div class="healthcare-hero-media" style="background-image: url('../img/pano/qch.jpg');" aria-hidden="true"></div>
-        <div class="healthcare-hero-body">
-          <h1 class="typo-hero">General Hospital</h1>
-          <p class="typo-body">This page can host a full case profile for General Hospital, including campaign goals and visual storytelling assets.</p>
-          <p class="typo-body">Add milestones, projected outcomes, and stewardship highlights to guide donor engagement.</p>
+      <div class="video-hero-inner wrap">
+        <a class="healthcare-back video-hero-back" href="../healthcare.html">Back to Healthcare Projects</a>
+
+        <div class="video-hero-kicker">Healthcare Project</div>
+
+        <h1 class="video-hero-title typo-hero">
+          <span class="grad">General Hospital</span>
+        </h1>
+
+        <p class="video-hero-lead typo-body">
+          Transforming inpatient care through expansion, modern clinical environments, and visionary philanthropy.
+        </p>
+      </div>
+
+      <div class="video-hero-scroll" aria-hidden="true">
+        Scroll <i></i>
+      </div>
+    </section>
+
+    <section class="section section-spaced"></section>
+
+    <section class="section">
+      <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Philanthropy hero">
+        <div class="hero-right">
+          <h1 class="hero-title typo-hero">
+            <span class="hero-line">General Hospital Inpatient Care Pavilion</span>
+            <span class="hero-line gradient">Transforming Care Together</span>
+          </h1>
+
+          <div class="hero-meta" aria-label="Project meta">
+            <span>Part 4 Expansion</span><span class="dot"></span>
+            <span>Levels 5–7</span>
+          </div>
+
+          <p class="hero-subtitle">
+            Your leadership gift helps expand compassionate, world-class care for our growing community — today and for generations to come.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#naming" class="btn btn-primary">Explore Opportunities</a>
+
+            <a
+              href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+              class="btn btn-orange btn-pill"
+              target="_blank"
+              rel="noopener"
+              title="Discover how to make tax efficient donations">
+              Discover How To Make Tax Efficient Donations
+            </a>
+
+            <a href="#survey" class="btn btn-primary btn-pill open-survey" role="button">
+              Start Survey
+            </a>
+          </div>
+
+          <ul class="hero-stats card" aria-label="Impact highlights">
+            <li><strong>2.5×</strong><span>ED Expansion</span></li>
+            <li><strong>+90</strong><span>New Inpatient Beds</span></li>
+            <li><strong>80K+</strong><span>ED Visits / Year</span></li>
+            <li><strong>500K</strong><span>Residents Served</span></li>
+            <li><strong>50%</strong><span>of Ottawa Population</span></li>
+            <li><strong>$20M</strong><span>Emergency Dept.</span></li>
+            <li><strong>Government 100%</strong><span>Operations</span></li>
+            <li><strong>Govt 90% · Foundation 10%</strong><span>Capital Expansion</span></li>
+            <li><strong>Foundation 100% (Govt 0%)</strong><span>Equipment</span></li>
+            
+          </ul>
+
+         
         </div>
-      </article>
+      </header>
+    </section>
+
+    <section id="viewer" aria-label="360 viewer">
+      <div class="viewer-ui">
+        <select id="panoSelect" aria-label="Select your object">
+          <option value="" selected disabled hidden>Select your object</option>
+          <option value="https://app.seekbeak.com/v/A0zrX6AMqvQ">Emergency — $20,000,000</option>
+          <option value="https://app.seekbeak.com/v/lVjK3DDxjBb">Inpatient Bed Floors — $5,000,000</option>
+          <option value="https://app.seekbeak.com/v/A0zrX8XmqvQ">Inpatient Bed Floor Wings — $1,000,000</option>
+          <option value="https://app.seekbeak.com/v/A0zrX6GmqvQ">Reception Centre — $500,000</option>
+          <option value="https://app.seekbeak.com/v/5VjYMx75job">Dining / Activity Room — $250,000</option>
+          <option value="https://app.seekbeak.com/v/lVjK3DlLjBb">Multi Use Lounge / Activity Room — $250,000</option>
+          <option value="https://app.seekbeak.com/v/40zdKe5Y1DR">Nursing Stations — $250,000</option>
+          <option value="https://app.seekbeak.com/v/rNj7D9mGqJd">Report Meeting Room — $100,000</option>
+          <option value="https://app.seekbeak.com/v/7MqRlb5PzdW">Staff Facility / Lounge — $100,000</option>
+          <option value="https://app.seekbeak.com/v/EB15JgM5zgV">Allied Health Team Room — $100,000</option>
+          <option value="https://app.seekbeak.com/v/vPq48e3JqAw">Quiet / Consultant — $100,000</option>
+          <option value="https://app.seekbeak.com/v/531BpwmrjBL">Galley / Servery — $50,000</option>
+          <option value="https://app.seekbeak.com/v/Ap1PNXRmjXo">Inpatient Bed Rooms — $50,000</option>
+        </select>
+      </div>
+
+      <iframe
+        id="panoFrame"
+        src="https://app.seekbeak.com/v/A0zrX6AMqvQ"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+    <section class="section">
+      <h2 class="table-title" id="naming">Campaign Priorities</h2>
+    </section>
+
+    <div class="table-wrap">
+      <table class="naming-table">
+        <thead>
+          <tr>
+            <th>Space</th>
+            <th>Cost</th>
+            <th># Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-pano="https://app.seekbeak.com/v/A0zrX6AMqvQ"><td>Emergency</td><td class="cost">$20,000,000</td><td class="avail">1</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/lVjK3DDxjBb"><td>Inpatient Bed Floors</td><td class="cost">$5,000,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/A0zrX8XmqvQ"><td>Inpatient Bed Floor Wings</td><td class="cost">$1,000,000</td><td class="avail">6</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/A0zrX6GmqvQ"><td>Reception Centre</td><td class="cost">$500,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/5VjYMx75job"><td>Dining/ Activity Room</td><td class="cost">$250,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/lVjK3DlLjBb"><td>Multi Use Lounge/ Activity Room</td><td class="cost">$250,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/40zdKe5Y1DR"><td>Nursing Stations</td><td class="cost">$250,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/rNj7D9mGqJd"><td>Report Meeting Room</td><td class="cost">$100,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/7MqRlb5PzdW"><td>Staff Facility / Lounge</td><td class="cost">$100,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/EB15JgM5zgV"><td>Allied Health Team Room</td><td class="cost">$100,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/vPq48e3JqAw"><td>Quiet/ Consultant</td><td class="cost">$100,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/531BpwmrjBL"><td>Galley/ Servery</td><td class="cost">$50,000</td><td class="avail">3</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/Ap1PNXRmjXo"><td>Inpatient Bed Rooms</td><td class="cost">$50,000</td><td class="avail">90</td></tr>
+          <tr data-pano="https://app.seekbeak.com/v/7MqRlb5PzdW"><td>Office Shared Care Facilitator / SDU Nurse</td><td class="cost">$50,000</td><td class="avail">18</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+
+    <div class="wf">
+      <div class="wf-title">Our Process · workflow</div>
+      <div class="wf-grid">
+        <div class="wf-video">
+          <iframe src="https://www.youtube.com/embed/zF-baikA_dw?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=zF-baikA_dw" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="wf-text">
+          <h3 class="wf-h">Stage One — Intake & Analysis</h3>
+          <p class="wf-lead"><strong>Goal:</strong> Gather all source materials and understand the project well enough to convert them accurately into 3D.</p>
+
+          <h4 class="wf-sub">What we collect</h4>
+          <ul class="wf-list">
+            <li><strong>Architectural drawings:</strong> floor plans, sections, elevations, details, MEP/structural (if available).</li>
+            <li><strong>References:</strong> site photos, finishes schedules, mood boards, material specs (R-values, colors, textures), furniture lists.</li>
+            <li><strong>CAD/BIM files:</strong> DWG/DXF, RVT/IFC, PDFs (to scale), plus any coordinate system notes.</li>
+            <li><strong>Constraints:</strong> target LOD (e.g., LOD 200/300), performance budget (polycount), target platform (UE5, WebGL, mobile), deadlines.</li>
+          </ul>
+
+          <h4 class="wf-sub">What we do</h4>
+          <ul class="wf-list">
+            <li><strong>Verification & scaling</strong> — Check dimensions, drawing scale, and units; confirm north, levels, and key datums.</li>
+            <li><strong>Clash/consistency check</strong> — Cross-check plans vs. elevations/sections; note missing heights, window schedules, stair details, etc.</li>
+            <li><strong>Scope definition</strong> — Define inclusion list (shell, interior partitions, FF&E, landscape), LOD per category, render vs. real-time needs.</li>
+            <li><strong>Delivery plan</strong> — Choose pipeline (e.g., Revit → IFC → Blender → Unreal), file formats, naming conventions, and review milestones.</li>
+          </ul>
+
+          <h4 class="wf-sub">Deliverables</h4>
+          <ul class="wf-list">
+            <li>Intake report with questions/RFIs.</li>
+            <li>Confirmed scope + LOD matrix.</li>
+            <li>Schedule with milestones and review checkpoints.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wf">
+      <div class="wf-grid alt">
+        <div class="wf-text">
+          <h3 class="wf-h">Stage Two — Conversion from 2D to 3D</h3>
+          <p class="wf-lead"><strong>Goal:</strong> Build an accurate, optimized 3D model from 2D drawings suitable for visualization, coordination, or real-time use.</p>
+
+          <h4 class="wf-sub">Inputs</h4>
+          <ul class="wf-list">
+            <li>Clean, scaled 2D drawings (DWG/DXF/PDF), reference photos, material schedules.</li>
+          </ul>
+
+          <h4 class="wf-sub">Pipeline (high level)</h4>
+          <ul class="wf-list">
+            <li><strong>Set up the project</strong> — Establish units, origin, levels, and grids. Import DWGs on locked reference layers.</li>
+            <li><strong>Massing & structural shell</strong> — Create slabs, walls, roofs from plan/section profiles; apply true heights from levels.</li>
+            <li><strong>Openings & components</strong> — Add doors, windows, stairs, railings from schedules/details; keep parametric sizes when possible.</li>
+            <li><strong>Interior build-out</strong> — Partitions, ceilings, built-ins, sanitary ware, casework. Place key FF&E for scale/context.</li>
+            <li><strong>Site & context (if in scope)</strong> — Terrain from contours, adjacent masses, curb lines, vegetation placeholders.</li>
+            <li><strong>Materials & UVs</strong> — Logical material names (e.g., Floor_Tile_600x600), UV scale matches real size.</li>
+            <li><strong>Optimization for target platform</strong> — Instance repeats, generate LODs, lightmap UVs for real-time, tidy naming (Category_Type_Size_V##).</li>
+            <li><strong>QA & dimensional checks</strong> — Spot-measure spans, door heights, stair risers; validate vs. drawings/RFIs.</li>
+            <li><strong>Packaging & export</strong> — Deliver native file + exports (FBX/GLB/IFC/UAsset) and a readme (versions, units).</li>
+          </ul>
+        </div>
+
+        <div class="wf-video">
+          <iframe src="https://www.youtube.com/embed/O0hyodrVwE8?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=O0hyodrVwE8" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="wf">
+      <div class="wf-grid">
+        <div class="wf-video">
+          <iframe src="https://www.youtube.com/embed/yP8u3NFmKkQ?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=yP8u3NFmKkQ" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="wf-text">
+          <h3 class="wf-h">Stage Three — Rendering (Lookdev, Lighting & Output)</h3>
+          <p class="wf-lead"><strong>Goal:</strong> Produce photoreal (or stylized) stills, 360° panoramas, and/or animation from the approved 3D model.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wf wf-full">
+      <div class="wf-video full">
+        <iframe src="https://www.youtube.com/embed/DtJShgf8Zm4?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=DtJShgf8Zm4" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="wf-text wide">
+        <h3 class="wf-h">Stage Four — Cinematic Walkthrough (film through the interior)</h3>
+        <p class="wf-lead">At this stage, we create a smooth, story-driven walkthrough that highlights circulation, light, and materials while conveying the design intent.</p>
+      </div>
+    </div>
+
+    <div class="wf">
+      <div class="wf-grid alt">
+        <div class="wf-text">
+          <h3 class="wf-h">Stage Five — Campaign Priorities (Objects & Placements)</h3>
+          <p class="wf-lead">At this stage, we create a mapped, tiered system of physical and digital placements for sponsor and donor names—tested in 3D for scale, visibility, and accessibility.</p>
+        </div>
+
+        <div class="wf-video">
+          <iframe src="https://www.youtube.com/embed/1HixZRdJEec?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1HixZRdJEec" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="wf-bleed">
+      <div class="hero-video">
+        <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=gNnFtDIplMM" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="wf">
+      <div class="wf-text wide">
+        <h3 class="wf-h">Stage Six — Data Population (filling the model with data)</h3>
+        <p class="wf-lead">At this stage, we populate the 3D/BIM model with structured metadata so it’s searchable, exportable, and ready for operations, fundraising, and visualization pipelines.</p>
+      </div>
     </div>
   </main>
 
   <div id="site-footer"></div>
 
+  
+
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js" defer></script>
   <script src="../js/header.js" defer></script>
+  
+  <script src="../js/generalhospital-survey.js" defer></script>
+  <script src="../js/generalhospital-viewer.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("panoSelect");
+  const frame = document.getElementById("panoFrame");
+
+  console.log("select:", select);
+  console.log("frame:", frame);
+
+  if (!select || !frame) return;
+
+  select.addEventListener("change", () => {
+    console.log("changed to:", select.value);
+    frame.src = select.value;
+  });
+});
+</script>
+  
 </body>
 </html>

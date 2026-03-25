@@ -18,18 +18,190 @@
   <div id="site-header"></div>
 
   <main class="healthcare-detail">
-    <div class="wrap">
-      <a class="healthcare-back" href="../healthcare.html">Back to Healthcare Projects</a>
+    <section class="video-hero" aria-label="Project intro video">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="../img/medicine-hero-poster.jpg">
+        <source src="../img/cancerresearch.mp4" type="video/mp4">
+      </video>
 
-      <article class="healthcare-hero-card">
-        <div class="healthcare-hero-media" style="background-image: url('../img/healthcare360.jpg');" aria-hidden="true"></div>
-        <div class="healthcare-hero-body">
-          <h1 class="typo-hero">Cancer Research</h1>
-          <p class="typo-body">This page is ready for the Cancer Research case profile with project narrative, donor impact, and campaign priorities.</p>
-          <p class="typo-body">Use it to present measurable outcomes and the long-term vision for clinical and research advancement.</p>
-        </div>
-      </article>
+      <div class="video-hero-inner wrap">
+        <a class="healthcare-back video-hero-back" href="../healthcare.html">Back to Healthcare Projects</a>
+
+        <div class="video-hero-kicker">Healthcare Project</div>
+
+        <h1 class="video-hero-title typo-hero">
+          <span class="grad">Cancer Research</span>
+        </h1>
+
+        <p class="video-hero-lead typo-body">
+          Advancing oncology through research, innovation, and immersive storytelling —
+          explore the future of cancer treatment and patient care.
+        </p>
+      </div>
+
+      <div class="video-hero-scroll" aria-hidden="true">
+        Scroll <i></i>
+      </div>
+    </section>
+
+    <section class="section section-spaced"></section>
+
+<section class="section">
+  <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Philanthropy hero">
+    <div class="hero-right">
+      <h1 class="hero-title typo-hero">
+        <span class="hero-line">The Precision Oncology Centre</span>
+        <span class="hero-line gradient">Transforming Cancer Care. Personalizing Every Treatment.</span>
+      </h1>
+
+      <div class="hero-meta" aria-label="Project meta">
+        <span>Lead Campaign Priority — $10,000,000</span><span class="dot"></span>
+        <span>Precision Medicine</span><span class="dot"></span>
+        <span>Personalized Cancer Care</span>
+      </div>
+
+      <p class="hero-subtitle">
+        Cancer is not one disease. It is thousands. And for too long, patients have been treated as if it were one. That changes now.
+      </p>
+
+      <p class="hero-subtitle">
+        The Precision Oncology Centre represents a fundamental shift in how we fight cancer — moving
+        from broad, generalized treatment to hyper-targeted therapies guided by each patient’s unique
+        genetic and molecular profile. Every diagnosis is analyzed at the cellular level. Every
+        treatment plan is engineered for the individual. Every outcome is informed by the most
+        advanced science in the world.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#naming" class="btn btn-primary">Explore Campaign Priorities</a>
+        <a href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+           class="btn btn-orange btn-pill"
+           target="_blank"
+           rel="noopener"
+           title="Discover how to make Tax efficient donations">
+          Discover How To Make Tax Efficient Donations
+        </a>
+      </div>
+
+      <ul class="hero-stats card" aria-label="Project highlights">
+        <li><strong>$10M</strong><span>Lead Campaign Priority</span></li>
+        <li><strong>Genomics</strong><span>Precision Molecular Profiling</span></li>
+        <li><strong>AI</strong><span>Smart Treatment Matching</span></li>
+        <li><strong>Clinical Trials</strong><span>Advanced Therapy Access</span></li>
+        <li><strong>Research</strong><span>Breakthrough Innovation</span></li>
+        <li><strong>Multidisciplinary</strong><span>Integrated Care Teams</span></li>
+      </ul>
     </div>
+  </header>
+</section>
+
+
+
+
+<section id="viewer" aria-label="360 viewer">
+  <div class="viewer-ui">
+    <label class="viewer-label" for="panoSelect">Campaign Priority</label>
+    <select id="panoSelect" aria-label="Select campaign priority view">
+      <option value="https://app.seekbeak.com/v/LrqVwvy51bp">Precision Oncology Centre</option>
+      <option value="https://app.seekbeak.com/v/Xw1bKaVEz5k">Welcome Area</option>
+      <option value="https://app.seekbeak.com/v/4wjndop31md">Patient Waiting Area</option>
+      <option value="https://app.seekbeak.com/v/Xw1bKaVEz5k">Reception Desk</option>
+      <option value="https://app.seekbeak.com/v/lVjK3MrxjBb">Patient Recovery Area</option>
+      <option value="https://app.seekbeak.com/v/GEjEQrR6jQv">Clinical Examination Room</option>
+      <option value="https://app.seekbeak.com/v/y2qmPEpDjwO">Infusion & Treatment Suites 2</option>
+      <option value="https://app.seekbeak.com/v/e0jDPbL7jr9">Infusion & Treatment Suites</option>
+      <option value="https://app.seekbeak.com/v/40zdKag41DR">Boardroom</option>
+    </select>
+  </div>
+
+  <iframe
+    id="panoFrame"
+    src="https://app.seekbeak.com/v/LrqVwvy51bp"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</section>
+
+    <section class="section" id="naming">
+
+  <h2 class="table-title">Campaign Priorities</h2>
+
+  <p class="table-subtitle">
+    Explore opportunities to support precision oncology and directly impact patient care.
+  </p>
+
+  <div class="table-wrap">
+    <table class="naming-table">
+
+      <thead>
+        <tr>
+          <th>Space</th>
+          <th>Cost</th>
+          <th># Available</th>
+          <th>Recognition</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr data-story="centre">
+          <td>Precision Oncology Centre</td>
+          <td class="cost">$10,000,000</td>
+          <td class="avail">1</td>
+          <td class="donor">Lead Naming</td>
+        </tr>
+
+        <tr data-story="welcome">
+          <td>Welcome Area</td>
+          <td class="cost">$5,000,000</td>
+          <td class="avail">1</td>
+          <td class="donor">Major Naming</td>
+        </tr>
+
+        <tr data-story="waiting">
+          <td>Patient Waiting Area</td>
+          <td class="cost">$2,500,000</td>
+          <td class="avail">1</td>
+          <td class="donor">Major Naming</td>
+        </tr>
+
+        <tr data-story="reception">
+          <td>Reception Desk</td>
+          <td class="cost">$1,000,000</td>
+          <td class="avail">1</td>
+          <td class="donor">Signature Naming</td>
+        </tr>
+
+        <tr data-story="recovery">
+          <td>Patient Recovery Area</td>
+          <td class="cost">$500,000</td>
+          <td class="avail">1</td>
+          <td class="donor">Named Space</td>
+        </tr>
+
+        <tr data-story="exam">
+          <td>Clinical Examination Room</td>
+          <td class="cost">$250,000</td>
+          <td class="avail">8</td>
+          <td class="donor">Named Room</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 🔥 STORY PANEL (очень важно для будущего UX) -->
+  <div id="story-panel" class="story-panel"></div>
+
+</section>
+
+
+
   </main>
 
   <div id="site-footer"></div>
@@ -37,5 +209,7 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js" defer></script>
   <script src="../js/header.js" defer></script>
+  <script src="../js/cancerresearch-story.js" defer></script>
+  <script src="../js/cancerresearch-viewer.js" defer></script>
 </body>
 </html>
