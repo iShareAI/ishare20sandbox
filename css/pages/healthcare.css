@@ -66,6 +66,10 @@
   height: 56px;
 }
 
+#about .healthcare-about-title {
+  color: #ff7a1a;
+}
+
 /* Slightly stronger bottom shading for healthcare project labels */
 #healthcare-projects .campaign-card::after {
   background: linear-gradient(
