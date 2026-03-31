@@ -6,6 +6,11 @@
   <title>Campus of Care | ISHARE Healthcare</title>
   <link rel="icon" type="image/svg+xml" href="../img/isharefavicon.svg" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Campus of Care - Connected Spaces, Compassionate Living" />
+  <meta property="og:description" content="Explore naming opportunities and immersive views for the Campus of Care campaign." />
+  <meta property="og:image" content="https://ishareai.github.io/360-charitie/img/og-general-hospital.jpg" />
+
   <link rel="stylesheet" href="../css/base/variables.css" />
   <link rel="stylesheet" href="../css/base/reset.css" />
   <link rel="stylesheet" href="../css/base/typography.css" />
@@ -13,23 +18,193 @@
   <link rel="stylesheet" href="../css/components/header.css" />
   <link rel="stylesheet" href="../css/sections/footer.css" />
   <link rel="stylesheet" href="../css/pages/healthcare-detail.css" />
+  <link rel="stylesheet" href="../css/pages/campusofcare.css" />
 </head>
 <body>
   <div id="site-header"></div>
 
   <main class="healthcare-detail">
-    <div class="wrap">
+    <section class="section section-spaced"></section>
+
+    <section class="section">
       <a class="healthcare-back" href="../healthcare.html">Back to Healthcare Projects</a>
 
-      <article class="healthcare-hero-card">
-        <div class="healthcare-hero-media" style="background-image: url('../img/pano/coc.jpg');" aria-hidden="true"></div>
-        <div class="healthcare-hero-body">
-          <h1 class="typo-hero">Campus of Care</h1>
-          <p class="typo-body">This section can become the full Campus of Care case page with immersive media, donor messaging, and investment rationale.</p>
-          <p class="typo-body">Add campaign pillars, naming opportunities, and implementation roadmap details here.</p>
+      <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Campus of Care hero">
+        <div class="hero-right">
+          <h1 class="hero-title typo-hero">
+            <span class="hero-line">Campus of Care</span>
+            <span class="hero-line gradient">Connected Spaces, Compassionate Living</span>
+          </h1>
+
+          <div class="hero-meta" aria-label="Project meta">
+            <span>Mississauga, Ontario</span><span class="dot"></span>
+            <span>Issued for 50% Client Review - Dec 13, 2024</span><span class="dot"></span>
+            <span>3 Storeys</span>
+          </div>
+
+          <p class="hero-subtitle">
+            Part of a connected continuum of care - supportive housing with private suites and shared amenities.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#naming" class="btn btn-primary">Explore Opportunities</a>
+            <a
+              href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+              class="btn btn-orange btn-pill"
+              target="_blank"
+              rel="noopener"
+              title="Discover how to make tax efficient donations">
+              Discover How To Make Tax Efficient Donations
+            </a>
+          </div>
+
+          <ul class="hero-stats card" aria-label="Project highlights">
+            <li><strong>96</strong><span>Suites</span></li>
+            <li><strong>8,400 m2</strong><span>Total Floor Area (approx. 90,400 ft2)</span></li>
+            <li><strong>2,800 m2</strong><span>Building Footprint (approx. 30,100 ft2)</span></li>
+            <li><strong>16,000 m2</strong><span>Site Area (approx. 172,200 ft2)</span></li>
+            <li><strong>115</strong><span>Parking Stalls (8 barrier-free)</span></li>
+            <li><strong>110</strong><span>Parking Required</span></li>
+          </ul>
         </div>
-      </article>
-    </div>
+      </header>
+    </section>
+
+    <section id="viewer" aria-label="360 viewer">
+      <div class="viewer-ui">
+        <label class="viewer-label" for="panoSelect">Campaign Priorities</label>
+        <select id="panoSelect" aria-label="Select a panorama">
+          <option value="https://app.seekbeak.com/v/VvjMv2MRqlJ">Campus of Care - Overall</option>
+          <option value="https://app.seekbeak.com/v/rNj7vNVPzJd">Campus of Care - $10,000,000</option>
+          <option value="https://app.seekbeak.com/v/EB15Y0581gV">Centre of Aging and Longevity - $5,000,000</option>
+          <option value="https://app.seekbeak.com/v/5VjYMvkYjob">Festival Hall and Courtyard - $2,000,000</option>
+          <option value="https://app.seekbeak.com/v/YojXWO25z8e">Main Entrance and Roundabout - $1,000,000</option>
+          <option value="https://app.seekbeak.com/v/A0zreAQm1vQ">2nd Floor South - $1,000,000</option>
+          <option value="https://app.seekbeak.com/v/Ap1PxOdO1Xo">2nd Floor North - $1,000,000</option>
+          <option value="https://app.seekbeak.com/v/7MqROAVn1dW">Kitchen - $500,000</option>
+          <option value="https://app.seekbeak.com/v/y2qmn9lD1wO">Lobby - $300,000</option>
+        </select>
+      </div>
+
+      <iframe
+        id="panoFrame"
+        src="https://app.seekbeak.com/v/VvjMv2MRqlJ"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+    <section class="section" id="naming">
+      <h2 class="table-title">Campaign Priorities</h2>
+
+      <div class="table-wrap">
+        <table class="naming-table">
+          <thead>
+            <tr>
+              <th>Space</th>
+              <th>Cost</th>
+              <th># Available</th>
+              <th>Donor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-pano="https://app.seekbeak.com/v/rNj7vNVPzJd"><td>Campus of Care</td><td class="cost">$10,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/EB15Y0581gV"><td>Centre of Aging and Longevity</td><td class="cost">$5,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/5VjYMvkYjob"><td>Festival Hall and Courtyard</td><td class="cost">$2,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/YojXWO25z8e"><td>Main Entrance and Roundabout</td><td class="cost">$1,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/v8jkB0lmz49"><td>Named 3rd Floor - South</td><td class="cost">$1,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/A0zreAQm1vQ"><td>2nd Floor - South</td><td class="cost">$1,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/Ap1PxOdO1Xo"><td>2nd Floor - North</td><td class="cost">$1,000,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/7MqROAVn1dW"><td>Kitchen</td><td class="cost">$500,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/ogzwyXReqE9"><td>Nursing Communication Centres (per centre)</td><td class="cost">$500,000</td><td class="avail">5</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/y2qmn9lD1wO"><td>Lobby</td><td class="cost">$300,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/A0zreAQm1vQ"><td>Balcony</td><td class="cost">$250,000</td><td class="avail">8</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/Xw1LWA0pqL8"><td>Named Elevators</td><td class="cost">$150,000</td><td class="avail">3</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/76j0KWDWzK9"><td>Cafe</td><td class="cost">$150,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/RgqgMl7Lz96"><td>Library</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/GEjEw9J61Qv"><td>Private Residents Room</td><td class="cost">$60,000</td><td class="avail">1</td><td class="donor"></td></tr>
+            <tr data-pano="https://app.seekbeak.com/v/gd1p0Zl71XJ"><td>Semi-Private Residents Room</td><td class="cost">$60,000</td><td class="avail">1</td><td class="donor"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="campus-showcase">
+      <div class="media-hero">
+        <div class="frame">
+          <iframe
+            src="https://www.youtube.com/embed/XpV5CmB3bvw?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=XpV5CmB3bvw"
+            title="Campus of Care teaser"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <section class="feature alt" data-reveal>
+        <figure class="media bleed-right">
+          <img src="../img/campusofcare/cc9.jpg" alt="Campus exterior perspective" loading="lazy" />
+        </figure>
+        <div class="copy">
+          <h2 class="fx-title">Campus of Care</h2>
+          <p class="fx-lead">
+            A calm, green courtyard designed for reflection and connection. Surrounded by light-filled spaces,
+            the Campus of Care brings people together in a natural setting that promotes well-being and community.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature" data-reveal>
+        <figure class="media bleed-left">
+          <img src="../img/campusofcare/cc3.png" alt="Garden courtyard and circulation paths" loading="lazy" />
+        </figure>
+        <div class="copy">
+          <h2 class="fx-title">Garden Courtyard at the Heart</h2>
+          <p class="fx-lead">
+            A sunlit inner garden with looping paths and seasonal planting offers places to sit, stroll, and gather,
+            connecting all wings of the campus and bringing nature into daily routines.
+          </p>
+        </div>
+      </section>
+
+      <section class="full-bleed-photo">
+        <div class="frame">
+          <img src="../img/campusofcare/cc8.png" alt="Campus of Care site view" loading="lazy" />
+        </div>
+      </section>
+
+      <section class="feature" data-reveal>
+        <figure class="media bleed-left">
+          <img src="../img/campusofcare/cc7.png" alt="Resident-focused interior spaces" loading="lazy" />
+        </figure>
+        <div class="copy">
+          <h2 class="fx-title">Designed for Families</h2>
+          <p class="fx-lead">
+            Soft finishes, clear wayfinding, and abundant daylight support dignified, unhurried daily life for residents and loved ones.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature alt" data-reveal>
+        <figure class="media bleed-right">
+          <img src="../img/campusofcare/cc5.png" alt="Modern facade with landscape" loading="lazy" />
+        </figure>
+        <div class="copy">
+          <h2 class="fx-title">Modern Facade with Character</h2>
+          <p class="fx-lead">
+            Vertical panels, bright glazing, and open balconies create a welcoming identity.
+            Soft landscaping and clear pathways connect the building with a sense of openness and care.
+          </p>
+        </div>
+      </section>
+
+      <div class="wf-bleed">
+        <div class="hero-video">
+          <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1X_Co8E2RHI" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div id="site-footer"></div>
@@ -37,5 +212,7 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js" defer></script>
   <script src="../js/header.js" defer></script>
+  <script src="../js/campusofcare-viewer.js" defer></script>
+  <script src="../js/campusofcare-reveal.js" defer></script>
 </body>
 </html>

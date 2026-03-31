@@ -68,10 +68,32 @@
         <div class="typo-util">Find us on</div>
 
         <div class="footer-social">
-          <a class="footer-social-link" href="#" aria-label="Facebook"><span>Facebook</span></a>
-          <a class="footer-social-link" href="#" aria-label="LinkedIn"><span>LinkedIn</span></a>
-          <a class="footer-social-link" href="#" aria-label="YouTube"><span>YouTube</span></a>
-          <a class="footer-social-link" href="#" aria-label="Instagram"><span>Instagram</span></a>
+          <a class="footer-social-link" href="https://www.facebook.com/FUNDINGmattersInc" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="currentColor" d="M13.5 22v-8h2.7l.5-3h-3.2V9.2c0-.9.3-1.5 1.6-1.5H17V5c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3V11H8v3h2.4v8h3.1z"/>
+            </svg>
+            <span>Facebook</span>
+          </a>
+          <a class="footer-social-link" href="https://linkedin.com/company/fundingmattersinc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="currentColor" d="M6.9 8.5a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM5.3 9.8h3.2V19H5.3V9.8zm5 0h3v1.3h.1c.4-.8 1.5-1.6 3-1.6 3.2 0 3.8 2.1 3.8 4.8V19H17v-4.1c0-1 0-2.2-1.4-2.2s-1.6 1.1-1.6 2.1V19h-3.2V9.8z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="footer-social-link" href="https://www.youtube.com/channel/UCzwWF6gotc6EvtsCdPwV4eg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="currentColor" d="M23.5 7.2a3 3 0 0 0-2.1-2.1C19.6 4.6 12 4.6 12 4.6s-7.6 0-9.4.5A3 3 0 0 0 .5 7.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-4.8zM9.6 15.3V8.7l6 3.3-6 3.3z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+          <a class="footer-social-link" href="https://www.instagram.com/fundingmatters/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4z"/>
+              <path fill="currentColor" d="M18.3 3.8H5.7A3.7 3.7 0 0 0 2 7.5v9A3.7 3.7 0 0 0 5.7 20h12.6a3.7 3.7 0 0 0 3.7-3.5v-9a3.7 3.7 0 0 0-3.7-3.7zm1.9 12.7c0 1-.8 1.8-1.9 1.8H5.7a1.8 1.8 0 0 1-1.9-1.8v-9c0-1 .8-1.9 1.9-1.9h12.6c1 0 1.9.9 1.9 1.9v9z"/>
+              <circle cx="17.8" cy="6.2" r="1.1" fill="currentColor"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
         </div>
       </div>
 
