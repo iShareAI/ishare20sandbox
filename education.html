@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Healthcare — iShare</title>
+  <title>ISHARE® Education</title>
   <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
 
   <!-- Fonts -->
@@ -25,73 +25,7 @@
   <link rel="stylesheet" href="css/sections/sec2.css">
   <link rel="stylesheet" href="css/sections/sec3.css">
   <link rel="stylesheet" href="css/sections/footer.css">
-
-  <!-- healthcare page responsive styles -->
-  <style>
-    #healthcare-hero {
-      min-height: 60vh;
-      display: flex;
-      align-items: center;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    #healthcare-hero .container {
-      width: 100%;
-      color: #fff;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    #healthcare-hero h1 {
-      margin-bottom: 20px;
-    }
-
-    #healthcare-hero p {
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    @media (max-width: 768px) {
-      #healthcare-hero {
-        min-height: auto;
-        padding: 60px 20px;
-      }
-
-      #healthcare-hero h1 {
-        font-size: clamp(32px, 5vw, 48px);
-        margin-bottom: 16px;
-      }
-
-      #healthcare-hero p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 24px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      #healthcare-hero {
-        padding: 40px 16px;
-      }
-
-      #healthcare-hero h1 {
-        font-size: clamp(28px, 4vw, 40px);
-        margin-bottom: 12px;
-      }
-
-      #healthcare-hero p {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/pages/education.css">
 </head>
 
 <body>
@@ -104,38 +38,82 @@
   <main>
 
     <!-- Education Category Hero Section -->
-    <section id="healthcare-hero" style="background: #ff6b4a;">
+    <section id="education-hero">
+      <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="img/education.jpg">
+        <source src="img/educationalcluster/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
       <div class="container">
         <h1 class="typo-hero">Education Solutions</h1>
         <p class="typo-body">
-          Transform healthcare communication through immersive virtual environments. Help donors and stakeholders visualize the impact of medical initiatives and facility improvements.
+          Bring donors, educators, and communities inside your vision for learning with immersive storytelling. Show how every contribution improves classrooms, student outcomes, and long-term opportunity.
         </p>
-        <button class="btn btn-primary" type="button">Explore Projects</button>
+        <a class="btn btn-primary" href="#projects-grid">Explore Projects</a>
       </div>
     </section>
 
+    <div class="spacer section-spacer" aria-hidden="true"></div>
+
+    <section id="about" class="sec2">
+      <div class="content">
+        <div class="align-container">
+          <div class="sec2-grid">
+            <div class="sec2-zone sec2-zone--visual">
+              <img
+                src="img/education.jpg"
+                alt="Education initiatives"
+                class="sec2-visual-img"
+              >
+            </div>
+
+            <div class="sec2-zone sec2-zone--text">
+              <div class="sec2-text">
+                <h2 class="typo-hero education-about-title">Why ISHARE Education Matters?</h2>
+
+                <p class="typo-body">
+                  Schools, colleges, and community learning centers are under pressure to modernize spaces, expand access, and support student success while managing limited public funding. Philanthropy helps close that gap by funding technology, inclusive programs, scholarships, and future-ready environments.
+                </p>
+
+                <p class="typo-body">
+                  iShare.ai Education helps organizations present those priorities with clarity and impact. Through immersive digital experiences, stakeholders can explore real projects, understand goals, and see exactly how support translates into better learning outcomes.
+                </p>
+
+                <p class="typo-body">
+                  By combining virtual tours, visual storytelling, and transparent project narratives, iShare.ai makes education fundraising more engaging and measurable. It gives advancement teams a modern way to inspire trust, deepen donor relationships, and accelerate mission-critical initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer section-spacer" aria-hidden="true"></div>
+
     <!-- Projects Gallery Section (sec3 style) -->
-    <section id="healthcare-projects" class="sec3">
+    <section id="education-projects" class="sec3">
       <div class="sec3-inner">
-        <h2 class="sec3-title typo-hero">Featured Healthcare Projects</h2>
+        <h2 class="sec3-title typo-hero">Educational Cluster</h2>
 
-        <div class="sec3-grid" role="list">
-          <!-- Project Card 1: Hospital Wing -->
-          <a class="campaign-card tone-1" href="#" role="listitem">
-            <div class="campaign-media" aria-hidden="true"></div>
-            <span class="campaign-label typo-util">Hospital Wing Renovation</span>
+        <div id="projects-grid" class="sec3-grid" role="list">
+          <a class="campaign-card tone-1" href="johnson-faculty-of-business.html" role="listitem">
+            <div class="campaign-media" style="background-image: url('img/johnsonfacultyofbusiness/132.png'); background-size: auto 115%; background-repeat: repeat-x;" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">Johnson Faculty of Business</span>
           </a>
 
-          <!-- Project Card 2: Research Lab -->
-          <a class="campaign-card tone-2" href="#" role="listitem">
-            <div class="campaign-media" aria-hidden="true"></div>
-            <span class="campaign-label typo-util">Research Lab Showcase</span>
+          <a class="campaign-card tone-2" href="harris-school-of-medicine.html" role="listitem">
+            <div class="campaign-media" style="background-image: url('img/harrisschoolofmed/1.jpg'); background-size: auto 115%; background-repeat: repeat-x;" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">Harris School of Medicine</span>
           </a>
 
-          <!-- Project Card 3: Patient Care -->
-          <a class="campaign-card tone-3" href="#" role="listitem">
-            <div class="campaign-media" aria-hidden="true"></div>
-            <span class="campaign-label typo-util">Patient Care Center</span>
+          <a class="campaign-card tone-3" href="state-university.html" role="listitem">
+            <div class="campaign-media" style="background-image: url('img/pano/coc.jpg');" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">State University</span>
+          </a>
+
+          <a class="campaign-card tone-4" href="nbcc.html" role="listitem">
+            <div class="campaign-media" style="background-image: url('img/nbcc/14.png'); background-size: auto 115%; background-repeat: repeat-x;" aria-hidden="true"></div>
+            <span class="campaign-label typo-util">NBCC</span>
           </a>
         </div>
       </div>

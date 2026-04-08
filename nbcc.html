@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBCC | ISHARE Education</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <meta property="og:title" content="NBCC | ISHARE Education" />
+  <meta property="og:description" content="An immersive 360 experience for the NBCC project with guided panoramic exploration." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+  <link rel="stylesheet" href="css/pages/healthcare-detail.css" />
+  <link rel="stylesheet" href="css/pages/education-detail.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="healthcare-detail education-detail">
+    <section class="video-hero" aria-label="NBCC intro video">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="img/nbcc/14.png">
+        <source src="img/nbcc/nbcc.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-hero-inner wrap">
+        <a class="healthcare-back video-hero-back" href="education.html">Back to Education Projects</a>
+
+        <div class="video-hero-kicker">Educational Cluster</div>
+
+        <h1 class="video-hero-title typo-hero">
+          <span class="grad">NBCC</span>
+        </h1>
+
+        <p class="video-hero-lead typo-body">
+          Explore the NBCC project in an immersive 360 environment featuring key spaces,
+          storytelling touchpoints, and guided panoramic navigation.
+        </p>
+      </div>
+
+      <div class="video-hero-scroll" aria-hidden="true">
+        Scroll <i></i>
+      </div>
+    </section>
+
+    <section class="section section-spaced"></section>
+
+    <section class="section">
+      <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Project hero">
+        <div class="hero-right">
+          <h1 class="hero-title typo-hero">
+            <span class="hero-line">NBCC Project Overview</span>
+            <span class="hero-line gradient">Spaces, Navigation and Storytelling</span>
+          </h1>
+
+          <div class="hero-meta" aria-label="Project meta">
+            <span>Educational Cluster</span><span class="dot"></span>
+            <span>Immersive Engagement</span><span class="dot"></span>
+            <span>360 Storytelling</span>
+          </div>
+
+          <p class="hero-subtitle">
+            NBCC combines project storytelling with interactive 360 environments,
+            helping stakeholders understand spaces, intent, and impact.
+          </p>
+
+          <p class="hero-subtitle">
+            This digital walkthrough allows donors and partners to navigate key locations,
+            evaluate opportunities, and connect directly with the project's vision.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#viewer" class="btn btn-primary">Open 360 Experience</a>
+            <a href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+               class="btn btn-orange btn-pill"
+               target="_blank"
+               rel="noopener"
+               title="Discover how to make tax efficient donations">
+              Discover How To Make Tax Efficient Donations
+            </a>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section id="viewer" aria-label="NBCC 360 panorama">
+      <iframe
+        id="panoFrame"
+        src="https://app.seekbeak.com/v/7MqRl5ZpzdW"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+    <section class="section" id="project-about">
+      <h2 class="table-title">About the Project</h2>
+      <p class="table-subtitle">
+        A curated 360 walkthrough designed to showcase NBCC's key spaces,
+        spatial logic, and stakeholder journey in a fully immersive environment.
+      </p>
+
+      <div class="table-wrap">
+        <table class="naming-table">
+          <thead>
+            <tr>
+              <th>Experience Area</th>
+              <th>Focus</th>
+              <th>Stakeholder Value</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Welcome Zone</td>
+              <td>First impression and orientation</td>
+              <td>Context clarity</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Core Learning Space</td>
+              <td>Program delivery environment</td>
+              <td>Impact visibility</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Collaboration Area</td>
+              <td>Group engagement and teamwork</td>
+              <td>Donor relevance</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Future Expansion Zone</td>
+              <td>Long-term development opportunities</td>
+              <td>Campaign momentum</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

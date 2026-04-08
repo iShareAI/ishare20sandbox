@@ -1,0 +1,27 @@
+main.education-detail .video-hero::before {
+  background: linear-gradient(to bottom, rgba(7, 30, 76, 0.42), rgba(7, 30, 76, 0.46));
+}
+
+main.education-detail .video-hero-title .grad {
+  background: linear-gradient(90deg, #ffffff 0%, #dbeafe 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+main.education-detail .hero-line.gradient {
+  background: linear-gradient(90deg, #1d6dff 0%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main.education-detail .healthcare-back,
+main.education-detail .video-hero-back {
+  color: #ffffff;
+}
+
+main.education-detail .table-title {
+  color: #0f172a;
+}

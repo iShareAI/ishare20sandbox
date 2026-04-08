@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>State University | ISHARE Education</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <meta property="og:title" content="State University | ISHARE Education" />
+  <meta property="og:description" content="An immersive 360° experience of higher education, research, and campus life." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+  <link rel="stylesheet" href="css/pages/healthcare-detail.css" />
+  <link rel="stylesheet" href="css/pages/education-detail.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="healthcare-detail education-detail">
+    <section class="video-hero" aria-label="Project intro video">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="img/stateuniversity/state-university-hero-video.mp4">
+        <source src="img/stateuniversity/state-university-hero-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-hero-inner wrap">
+        <a class="healthcare-back video-hero-back" href="education.html">Back to Education Projects</a>
+
+        <div class="video-hero-kicker">Educational Cluster</div>
+
+        <h1 class="video-hero-title typo-hero">
+          <span class="grad">State University</span>
+        </h1>
+
+        <p class="video-hero-lead typo-body">
+          Higher education, research, and campus life — an immersive 360° experience
+          showcasing academic spaces and student-centered design.
+        </p>
+      </div>
+
+      <div class="video-hero-scroll" aria-hidden="true">
+        Scroll <i></i>
+      </div>
+    </section>
+
+    <section class="section section-spaced"></section>
+
+    <section class="section">
+      <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Project hero">
+        <div class="hero-right">
+          <h1 class="hero-title typo-hero">
+            <span class="hero-line">State University</span>
+            <span class="hero-line gradient">Higher Education, Research and Campus Life</span>
+          </h1>
+
+          <div class="hero-meta" aria-label="Project meta">
+            <span>Educational Cluster</span><span class="dot"></span>
+            <span>Campus Experience</span><span class="dot"></span>
+            <span>Research and Innovation</span>
+          </div>
+
+          <p class="hero-subtitle">
+            The State University project presents a comprehensive academic campus designed
+            to support education, research, and community engagement.
+          </p>
+
+          <p class="hero-subtitle">
+            The immersive 360° experience highlights lecture halls, shared learning environments,
+            and the spatial organization of a contemporary university campus — helping donors
+            and stakeholders see exactly how their support shapes student life.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#viewer" class="btn btn-primary">Open 360 Experience</a>
+            <a href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+               class="btn btn-orange btn-pill"
+               target="_blank"
+               rel="noopener"
+               title="Discover how to make tax efficient donations">
+              Discover How To Make Tax Efficient Donations
+            </a>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section id="viewer" aria-label="360 viewer">
+      <iframe
+        id="panoFrame"
+        src="https://app.seekbeak.com/v/VvjMvYRQqlJ"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+    <section class="section" id="project-about">
+      <h2 class="table-title">About the Project</h2>
+      <p class="table-subtitle">
+        A 360° showcase of a contemporary university campus — lecture halls,
+        collaborative spaces, and student-centered environments.
+      </p>
+
+      <div class="table-wrap">
+        <table class="naming-table">
+          <thead>
+            <tr>
+              <th>Campus Area</th>
+              <th>Focus</th>
+              <th>Outcome</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Main Lecture Hall</td>
+              <td>Large-scale academic delivery</td>
+              <td>Engagement and reach</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Research Commons</td>
+              <td>Interdisciplinary collaboration</td>
+              <td>Innovation output</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Student Hub</td>
+              <td>Community and wellness support</td>
+              <td>Retention and belonging</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Innovation Lab</td>
+              <td>Applied technology and prototyping</td>
+              <td>Entrepreneurial readiness</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+main.culture-detail .video-hero::before {
+  background: linear-gradient(to bottom, rgba(41, 26, 15, 0.45), rgba(18, 13, 9, 0.58));
+}
+
+main.culture-detail .video-hero-title .grad {
+  background: linear-gradient(90deg, #ffffff 0%, #f8e7cf 50%, #f3d6ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+main.culture-detail .hero-line.gradient {
+  background: linear-gradient(90deg, #8a5a2d 0%, #b07a4a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main.culture-detail .table-title {
+  color: #111827;
+}
+
+main.culture-detail .culture-copy {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  color: #475569;
+  line-height: 1.7;
+  display: grid;
+  gap: 16px;
+}
