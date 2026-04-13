@@ -1,0 +1,246 @@
+/* ======================================================
+   Business Case section
+====================================================== */
+
+.sec-business {
+  background: radial-gradient(circle at 20% 0%, #f3f7ff 0%, #eef2f8 42%, #e8eef6 100%);
+  color: #0f1a2a;
+  padding: 88px 0;
+}
+
+.business-header {
+  max-width: 820px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.business-header .typo-hero {
+  margin-bottom: 14px;
+}
+
+.business-header .typo-body {
+  margin-bottom: 0;
+}
+
+.business-illustration {
+  margin: 0 auto 36px;
+  max-width: 920px;
+}
+
+.business-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.business-core {
+  max-width: 900px;
+  margin: 0 auto 44px;
+}
+
+
+.business-quote {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  padding: 32px 36px;
+  border-left: 3px solid #111111;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 16px;
+}
+
+.business-quote .typo-sub {
+  margin-bottom: 0;
+}
+
+.business-leadership {
+  margin: 0 0 100px;
+}
+
+.business-leadership .typo-sub {
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.core-box {
+  background: rgba(255, 255, 255, 0.78);
+  border: none;
+  border-radius: 24px;
+  padding: 24px 26px;
+  box-shadow: none;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.core-box .typo-sub {
+  margin-bottom: 8px;
+}
+
+.core-box .typo-body {
+  margin-bottom: 0;
+}
+
+.business-cases-head {
+  max-width: 820px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.business-cases-head .typo-hero {
+  margin-bottom: 10px;
+}
+
+.business-cases-head .typo-body {
+  margin-bottom: 0;
+}
+
+.business-cases-showcase {
+  margin-bottom: 36px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.business-cases-showcase .sec3-inner {
+  padding: 0;
+}
+
+.business-cases-showcase .campaign-card {
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid rgba(15, 26, 42, 0.14);
+  color: #0f1a2a;
+}
+
+.business-cases-showcase .campaign-media {
+  display: none;
+}
+
+.business-cases-showcase .campaign-card::after {
+  display: none;
+}
+
+.business-cases-showcase .campaign-copy {
+  color: #0f1a2a;
+  text-shadow: none;
+}
+
+.business-cases-showcase .campaign-raised {
+  color: #43556b;
+}
+
+.business-cases-showcase .campaign-raised::after {
+  content: none;
+}
+
+.business-cases-showcase .campaign-card::before {
+  content: "Open case";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f1a2a;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.business-cases-showcase .campaign-card:hover::before,
+.business-cases-showcase .campaign-card:focus-visible::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.business-cases-showcase .campaign-card:hover,
+.business-cases-showcase .campaign-card:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: -2px;
+}
+
+.business-synergy {
+  background: rgba(255, 255, 255, 0.86);
+  border: none;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.business-synergy .typo-sub {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.synergy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.synergy-item {
+  background: #f2f6ff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  line-height: 1.5;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #304154;
+}
+
+.business-leadership .synergy-item strong {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-family: "Sora", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #0f1a2a;
+}
+
+@media (max-width: 900px) {
+  .sec-business {
+    padding: 72px 0;
+  }
+
+  .synergy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-header {
+    text-align: left;
+  }
+
+  .business-quote {
+    margin-bottom: 56px;
+    padding: 24px;
+  }
+
+  .business-leadership {
+    margin-bottom: 72px;
+  }
+
+  .business-leadership .typo-sub {
+    text-align: left;
+  }
+
+  .business-synergy .typo-sub {
+    text-align: left;
+  }
+
+  .business-cases-head {
+    text-align: left;
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "version": "2026-04-10",
+  "project": "ISHARE",
+  "currency_assumption": "USD",
+  "sectors": [
+    {
+      "name": "Healthcare",
+      "sector_page": "healthcare.html",
+      "campaigns": [
+        {
+          "campaign_name": "Brightwell Medical Center",
+          "page_url": "healthcare/brightwellmedicalcenter.html",
+          "summary": "Healthcare campaign page with immersive-style presentation and naming opportunity interface.",
+          "has_pricing_table": true,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Pricing table behavior exists, but explicit values were not captured in this KB snapshot.",
+          "has_panorama": true,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "major gifts",
+            "campaign exploration",
+            "immersive donor experience"
+          ],
+          "source_file": "healthcare/brightwellmedicalcenter.html"
+        },
+        {
+          "campaign_name": "General Hospital",
+          "page_url": "healthcare/generalhospital.html",
+          "summary": "Large-scale healthcare fundraising campaign with named opportunities and immersive visual storytelling.",
+          "has_pricing_table": true,
+          "pricing_known": true,
+          "min_cost": 50000,
+          "max_cost": 20000000,
+          "cost_note": "Named opportunities range from $50,000 to $20,000,000.",
+          "has_panorama": true,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "major gifts",
+            "mid-level donors",
+            "naming opportunities"
+          ],
+          "source_file": "healthcare/generalhospital.html"
+        },
+        {
+          "campaign_name": "Ken Sargent House",
+          "page_url": "healthcare/kensargenthouse.html",
+          "summary": "Healthcare campaign with naming opportunities, panorama exploration, and strong donor engagement structure.",
+          "has_pricing_table": true,
+          "pricing_known": true,
+          "min_cost": 25000,
+          "max_cost": 250000,
+          "cost_note": "Named opportunities range from $25,000 to $250,000.",
+          "has_panorama": true,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "mid-level donors",
+            "broad donor participation",
+            "naming opportunities"
+          ],
+          "source_file": "healthcare/kensargenthouse.html"
+        },
+        {
+          "campaign_name": "Campus of Care",
+          "page_url": "healthcare/campusofcare.html",
+          "summary": "Healthcare fundraising campaign focused on named opportunities and immersive visual campaign presentation.",
+          "has_pricing_table": true,
+          "pricing_known": true,
+          "min_cost": 300000,
+          "max_cost": 10000000,
+          "cost_note": "Named opportunities include $300,000 to $10,000,000 tiers.",
+          "has_panorama": true,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "major gifts",
+            "institutional donors",
+            "naming opportunities"
+          ],
+          "source_file": "healthcare/campusofcare.html"
+        },
+        {
+          "campaign_name": "Cancer Research",
+          "page_url": "healthcare/cancerresearch.html",
+          "summary": "Healthcare campaign with campaign priorities, immersive storytelling, and major-donor fundraising potential.",
+          "has_pricing_table": true,
+          "pricing_known": true,
+          "min_cost": 250000,
+          "max_cost": 10000000,
+          "cost_note": "Campaign priorities range from $250,000 to $10,000,000.",
+          "has_panorama": true,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "major gifts",
+            "research-focused donors",
+            "campaign priorities"
+          ],
+          "source_file": "healthcare/cancerresearch.html"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "sector_page": "education.html",
+      "campaigns": [
+        {
+          "campaign_name": "Johnson Faculty of Business",
+          "page_url": "johnson-faculty-of-business.html",
+          "summary": "Education campaign page with institutional storytelling and donor-facing presentation.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "education impact",
+            "institutional donors"
+          ],
+          "source_file": "education.html"
+        },
+        {
+          "campaign_name": "Harris School of Medicine",
+          "page_url": "harris-school-of-medicine.html",
+          "summary": "Education and healthcare-adjacent campaign page focused on institutional impact and donor storytelling.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "education impact",
+            "healthcare-adjacent giving",
+            "institutional donors"
+          ],
+          "source_file": "education.html"
+        },
+        {
+          "campaign_name": "State University",
+          "page_url": "state-university.html",
+          "summary": "Education campaign page presenting institutional narrative and donor engagement opportunities.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "education impact",
+            "institutional donors"
+          ],
+          "source_file": "education.html"
+        },
+        {
+          "campaign_name": "NBCC",
+          "page_url": "nbcc.html",
+          "summary": "Education-oriented project page with donor-facing campaign presentation.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "education impact",
+            "institutional donors"
+          ],
+          "source_file": "education.html"
+        }
+      ]
+    },
+    {
+      "name": "Culture",
+      "sector_page": "culture.html",
+      "campaigns": [
+        {
+          "campaign_name": "Holodomor 1932-1933 Virtual Exhibit",
+          "page_url": "culture.html",
+          "summary": "Culture-focused immersive exhibit campaign with public history and heritage storytelling.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "heritage and culture",
+            "public history supporters"
+          ],
+          "source_file": "culture.html"
+        }
+      ]
+    },
+    {
+      "name": "Sporting Venues",
+      "sector_page": "sporting-venues.html",
+      "campaigns": [
+        {
+          "campaign_name": "Stadium",
+          "page_url": "stadium-project.html",
+          "summary": "Sporting venues campaign page focused on community engagement and venue storytelling.",
+          "has_pricing_table": false,
+          "pricing_known": false,
+          "min_cost": null,
+          "max_cost": null,
+          "cost_note": "Cost not specified in source page.",
+          "has_panorama": false,
+          "panorama_links": [],
+          "donation_links": [],
+          "ai_links": [],
+          "audience_fit": [
+            "sports community",
+            "venue supporters"
+          ],
+          "source_file": "sporting-venues.html"
+        }
+      ]
+    }
+  ],
+  "planned_or_missing_sector_pages": [
+    "international-aid.html",
+    "social-services.html",
+    "tourism.html"
+  ]
+}

@@ -132,20 +132,20 @@
             </div>
           </div>
 
-          <a href="index.html#projects">Projects</a>
+          <a href="business-case.html">Business Case</a>
 
           <div class="nav-dropdown">
-            <a href="index.html#pricing" class="nav-parent" aria-haspopup="true" aria-expanded="false">
+            <a href="packages.html#pricing" class="nav-parent" aria-haspopup="true" aria-expanded="false">
               Packages <span class="nav-arrow" aria-hidden="true">▾</span>
             </a>
             <div class="nav-menu" role="menu" aria-label="Packages submenu (footer)">
-              <a role="menuitem" href="index.html#pricing-basic">Basic</a>
-              <a role="menuitem" href="index.html#pricing-pro">Pro</a>
-              <a role="menuitem" href="index.html#pricing-enterprise">Enterprise</a>
+              <a role="menuitem" href="packages.html#pricing-basic">Basic</a>
+              <a role="menuitem" href="packages.html#pricing-pro">Pro</a>
+              <a role="menuitem" href="packages.html#pricing-enterprise">Enterprise</a>
             </div>
           </div>
 
-          <a href="index.html#impact">Impact</a>
+          <a href="impact.html">Impact</a>
           <a href="#contact">Contact</a>
         </nav>
 

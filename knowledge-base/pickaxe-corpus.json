@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ishare-004",
+    "title": "Main pages in repository",
+    "tags": ["sitemap","pages","content"],
+    "content": "Primary pages include index.html, healthcare.html, education.html, culture.html, sporting-venues.html, harris-school-of-medicine.html, johnson-faculty-of-business.html, nbcc.html, state-university.html, and stadium-project.html."
+  },
+  {
+    "id": "ishare-005",
+    "title": "Healthcare detail pages",
+    "tags": ["healthcare","detail-pages","content"],
+    "content": "Healthcare detail pages are brightwellmedicalcenter.html, campusofcare.html, cancerresearch.html, generalhospital.html, kensargenthouse.html."
+  },
+  {
+    "id": "ishare-008",
+    "title": "Panorama viewer interaction model",
+    "tags": ["viewer","panorama","healthcare"],
+    "content": "Healthcare campaigns support immersive panorama viewing and interactive exploration."
+  },
+  {
+    "id": "ishare-017",
+    "title": "Primary intent of platform",
+    "tags": ["fundraising","immersive","content"],
+    "content": "ISHARE is an immersive fundraising platform helping donors explore campaigns visually."
+  },
+  {
+    "id": "ishare-022",
+    "title": "Sector recommendation policy",
+    "tags": ["recommendation","sectors"],
+    "content": "Recommend sectors first, then campaigns with links."
+  },
+  {
+    "id": "ishare-023",
+    "title": "Cost sorting policy",
+    "tags": ["pricing","sorting"],
+    "content": "Sort campaigns by known cost. If missing, mark as not specified."
+  },
+  {
+    "id": "ishare-024",
+    "title": "Link-first answer policy",
+    "tags": ["links","ux"],
+    "content": "Always include direct campaign page links in responses."
+  },
+  {
+    "id": "ishare-025",
+    "title": "Campaign catalog source",
+    "tags": ["catalog","campaigns"],
+    "content": "campaign-catalog.json is the main source for campaigns and pricing."
+  }
+]

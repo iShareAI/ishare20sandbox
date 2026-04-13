@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Business Case 06: Precision Oncology Centre naming opportunities - transforming cancer care through personalized treatment, advanced science, and donor legacy."
+  />
+  <title>Business Case 06 | Precision Oncology Centre | ISHARE</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+
+  <style>
+    :root {
+      --bc-bg: #f5f4ef;
+      --bc-surface: #ffffff;
+      --bc-text: #111111;
+      --bc-muted: rgba(17, 17, 17, 0.72);
+      --bc-line: rgba(17, 17, 17, 0.10);
+      --bc-soft: rgba(17, 17, 17, 0.04);
+      --bc-accent: #d9ff66;
+      --bc-radius-lg: 28px;
+      --bc-radius-md: 20px;
+      --bc-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --bc-max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bc-bg);
+      color: var(--bc-text);
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--bc-max));
+      margin: 0 auto;
+    }
+
+    .oncology-page {
+      padding-top: 110px;
+      padding-bottom: 80px;
+    }
+
+    .bc-hero {
+      padding: 30px 0 34px;
+    }
+
+    .bc-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .bc-panel,
+    .bc-card,
+    .bc-quote,
+    .bc-kpi,
+    .bc-table-card,
+    .bc-cta {
+      background: var(--bc-surface);
+      border: 1px solid var(--bc-line);
+      border-radius: var(--bc-radius-lg);
+      box-shadow: var(--bc-shadow);
+    }
+
+    .bc-panel {
+      padding: 34px;
+      min-height: 100%;
+    }
+
+    .bc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+      margin-bottom: 18px;
+    }
+
+    .bc-hero h1,
+    .bc-section-title,
+    .bc-card h3,
+    .bc-mini-title {
+      font-family: "Sora", "Poppins", sans-serif;
+      line-height: 1.02;
+      margin: 0;
+    }
+
+    .bc-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      margin-bottom: 16px;
+      max-width: 10ch;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-subtitle {
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.7;
+      color: var(--bc-muted);
+      max-width: 74ch;
+      margin: 0 0 24px;
+    }
+
+    .bc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .bc-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bc-muted);
+    }
+
+    .bc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .bc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid var(--bc-text);
+      transition: 0.25s ease;
+    }
+
+    .bc-btn-primary {
+      background: var(--bc-text);
+      color: #fff;
+    }
+
+    .bc-btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.94;
+    }
+
+    .bc-btn-secondary {
+      background: transparent;
+      color: var(--bc-text);
+    }
+
+    .bc-btn-secondary:hover {
+      background: var(--bc-soft);
+    }
+
+    .bc-hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-kpi {
+      padding: 26px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bc-kpi-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+    }
+
+    .bc-kpi-value {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .bc-kpi p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .bc-section {
+      padding: 26px 0;
+    }
+
+    .bc-section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+
+    .bc-section-title {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .bc-section-intro {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 72ch;
+    }
+
+    .bc-summary {
+      padding: 34px;
+    }
+
+    .bc-summary p {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.9;
+      color: var(--bc-muted);
+    }
+
+    .bc-summary p + p {
+      margin-top: 16px;
+    }
+
+    .bc-grid-2,
+    .bc-grid-3,
+    .bc-grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bc-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bc-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .bc-card {
+      padding: 28px;
+      border-radius: var(--bc-radius-md);
+      min-height: 100%;
+    }
+
+    .bc-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .bc-card p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .bc-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--bc-muted);
+    }
+
+    .bc-list li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .bc-highlight {
+      background: linear-gradient(180deg, rgba(217, 255, 102, 0.45), rgba(217, 255, 102, 0.18));
+    }
+
+    .bc-quote {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bc-quote::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--bc-text);
+    }
+
+    .bc-quote p {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.45;
+      letter-spacing: -0.03em;
+      max-width: 30ch;
+    }
+
+    .bc-mini-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .bc-capability-number,
+    .bc-stake-tag,
+    .bc-money-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .bc-money-tag {
+      min-height: 38px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .bc-kpi-row {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .bc-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .bc-metric {
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .bc-metric strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-metric span {
+      color: var(--bc-muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .bc-anchor-offset {
+      scroll-margin-top: 110px;
+    }
+
+    @media (max-width: 1100px) {
+      .bc-hero-grid,
+      .bc-kpi-row,
+      .bc-grid-4,
+      .bc-grid-3,
+      .bc-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 24px, var(--bc-max));
+      }
+
+      .oncology-page {
+        padding-top: 90px;
+        padding-bottom: 50px;
+      }
+
+      .bc-panel,
+      .bc-summary,
+      .bc-card,
+      .bc-quote,
+      .bc-kpi,
+      .bc-cta {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .bc-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .bc-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="oncology-page">
+    <section class="bc-hero">
+      <div class="container">
+        <div class="bc-hero-grid">
+          <div class="bc-panel">
+            <div class="bc-eyebrow">Business Case 06</div>
+            <h1>Precision Oncology Centre</h1>
+            <p class="bc-subtitle">
+              A transformational naming opportunity that advances personalized cancer care,
+              precision treatment, and research-driven outcomes for patients and families.
+            </p>
+
+            <div class="bc-meta">
+              <span>$10,000,000 Naming Opportunity</span>
+              <span>Cancer Care Leadership</span>
+              <span>Personalized Treatment Infrastructure</span>
+            </div>
+
+            <div class="bc-actions">
+              <a class="bc-btn bc-btn-primary" href="#overview">Read the case</a>
+              <a class="bc-btn bc-btn-secondary" href="#naming-opportunities">Naming opportunities</a>
+            </div>
+          </div>
+
+          <div class="bc-hero-side">
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Campaign Promise</div>
+              <div class="bc-kpi-value">Personalized cancer care</div>
+              <p>
+                The Precision Oncology Centre represents a shift away from one-size-fits-all treatment
+                toward therapies guided by each patient’s unique genetic and molecular profile.
+              </p>
+            </div>
+
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Donor Legacy</div>
+              <div class="bc-kpi-value">A permanent name on hope</div>
+              <p>
+                This opportunity connects donor vision and philanthropy with every treatment, every discovery,
+                and every life touched by the future of precision medicine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">The Vision</h2>
+        </div>
+
+        <div class="bc-summary bc-panel">
+          <p>
+            Cancer is not one disease. It is thousands. For too long, treatment followed a broad, generalized model.
+            The Precision Oncology Centre signals the end of that era.
+          </p>
+          <p>
+            Here, every diagnosis is analyzed at the cellular level. Every treatment plan is shaped around the biology
+            of the individual. Every decision is informed by genomic sequencing, molecular profiling, multidisciplinary expertise,
+            and advanced treatment planning.
+          </p>
+          <p>
+            A transformative $10 million naming gift will help establish the Centre as a national leader in personalized cancer care,
+            connecting advanced science with patient-centred healing and long-term discovery.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="main-gift" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">The Precision Oncology Centre</h2>
+          <p class="bc-section-intro">
+            Transforming cancer care. Personalizing every treatment. Saving more lives.
+          </p>
+        </div>
+
+        <div class="bc-quote">
+          <p>
+            Your name on this Centre will tell every patient who enters that someone believed their life was worth fighting for.
+          </p>
+        </div>
+
+        <div class="bc-grid-2" style="margin-top: 18px;">
+          <article class="bc-card bc-highlight">
+            <div class="bc-money-tag">$10,000,000 Naming Opportunity</div>
+            <h3>What This Gift Makes Possible</h3>
+            <ul class="bc-list">
+              <li>Genomic sequencing and molecular profiling capabilities.</li>
+              <li>A dedicated multidisciplinary tumour board.</li>
+              <li>AI-powered treatment planning and clinical trial matching.</li>
+              <li>State-of-the-art infusion and treatment suites.</li>
+              <li>Research and innovation infrastructure to attract top talent.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>Your Legacy</h3>
+            <p>
+              The Centre will stand as a long-term expression of donor vision, generosity, and belief in a future
+              where medicine is personal. It will carry that legacy into every discovery, every treatment pathway,
+              and every life saved for generations to come.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">The Impact</h2>
+          <p class="bc-section-intro">
+            Every year, thousands of patients and families face the life-changing reality of a cancer diagnosis.
+            This Centre changes what happens next.
+          </p>
+        </div>
+
+        <div class="bc-kpi-row">
+          <div class="bc-panel">
+            <h3 class="bc-mini-title">Why This Matters</h3>
+            <div class="bc-metric-grid">
+              <div class="bc-metric">
+                <strong>Smarter care</strong>
+                <span>Treatments are guided by each patient’s unique biology rather than broad assumptions.</span>
+              </div>
+              <div class="bc-metric">
+                <strong>Faster decisions</strong>
+                <span>Multidisciplinary coordination helps move patients to the most effective therapies more quickly.</span>
+              </div>
+              <div class="bc-metric">
+                <strong>Better outcomes</strong>
+                <span>Patients gain access to more precise, targeted, and personalized treatment pathways.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bc-kpi">
+            <div class="bc-kpi-label">Donor Meaning</div>
+            <div class="bc-kpi-value">Place-based hope</div>
+            <p>
+              The impact is not abstract. It is visible in where patients receive care, how they experience that care,
+              and what becomes possible because of one donor’s choice to lead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="naming-opportunities" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Naming Opportunities</h2>
+          <p class="bc-section-intro">
+            Each opportunity is designed to connect donor legacy with one of the most human and meaningful moments in the patient journey.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <div class="bc-money-tag">$5,000,000</div>
+            <h3>Welcome Area</h3>
+            <p>
+              The first step in every patient’s journey. More than a lobby, this is the place where fear begins
+              to give way to hope and where the Centre first communicates, without words, that it was built for them.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-money-tag">$1,000,000</div>
+            <h3>Reception Desk</h3>
+            <p>
+              The first face, the first voice, and the first moment of reassurance. A living expression of the donor’s gift,
+              active in every arrival, every orientation, and every first impression the Centre creates.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-money-tag">$2,500,000</div>
+            <h3>Patient Waiting Area</h3>
+            <p>
+              Not a waiting room, but a healing environment designed to reduce anxiety, support dignity,
+              and create a restorative space for patients, families, and caregivers.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-money-tag">$500,000</div>
+            <h3>Patient Recovery Area</h3>
+            <p>
+              The space between treatment and home. A calm, supportive environment where patients recover,
+              regain strength, and receive compassionate transition support before leaving the Centre.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-money-tag">$250,000</div>
+            <h3>Clinical Examination Room</h3>
+            <p>
+              One of eight essential rooms where diagnoses are explained, treatment plans become personal,
+              and the most important conversations in medicine take place.
+            </p>
+          </article>
+
+          <article class="bc-card bc-highlight">
+            <div class="bc-money-tag">Permanent Legacy</div>
+            <h3>Every Space Carries Meaning</h3>
+            <p>
+              These opportunities are not simply plaques on walls. They are donor-linked experiences woven into care,
+              memory, reassurance, and healing for thousands of patients each year.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="welcome-area" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Welcome Area</h2>
+          <p class="bc-section-intro">The first step in every patient’s journey begins here.</p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card bc-highlight">
+            <div class="bc-money-tag">$5,000,000 Naming Opportunity</div>
+            <h3>More Than a Lobby. A Lifeline.</h3>
+            <p>
+              The Welcome Area is where uncertainty begins to soften. It is the emotional threshold of the Centre -
+              the first place where patients and families realize they are not entering an institution alone,
+              but a system of care built around them.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Legacy Value</h3>
+            <p>
+              A naming gift here connects donor legacy with every first arrival, every family entering with fear,
+              and every moment in which the Centre quietly says: we’ve got you.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reception-desk" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Reception Desk</h2>
+          <p class="bc-section-intro">The first face. The first voice. The first moment of hope.</p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card">
+            <div class="bc-money-tag">$1,000,000 Naming Opportunity</div>
+            <h3>What This Gift Supports</h3>
+            <ul class="bc-list">
+              <li>Purpose-built reception design that signals warmth and professionalism.</li>
+              <li>Dedicated patient navigation staff.</li>
+              <li>State-of-the-art check-in and patient management technology.</li>
+              <li>Multilingual welcome resources.</li>
+              <li>Calming design, local art, and thoughtful environmental details.</li>
+              <li>Ongoing training for reception and navigation excellence.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>The Meaning of First Contact</h3>
+            <p>
+              The Reception Desk is not the beginning of administration. It is the beginning of healing.
+              Every patient, every family, every day starts here - and the donor’s name becomes part of that first experience.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="patient-waiting-area" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Patient Waiting Area</h2>
+          <p class="bc-section-intro">Not a waiting room. A healing environment.</p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card bc-highlight">
+            <div class="bc-money-tag">$2,500,000 Naming Opportunity</div>
+            <h3>What Your Gift Creates</h3>
+            <ul class="bc-list">
+              <li>Natural light, biophilic design, living walls, and restorative materials.</li>
+              <li>Flexible seating for individuals, families, and caregivers.</li>
+              <li>Family and caregiver zones.</li>
+              <li>Quiet reflection spaces.</li>
+              <li>Digital engagement tools and educational content.</li>
+              <li>Refreshment and nourishment stations.</li>
+              <li>Local and Indigenous art installations.</li>
+              <li>Wi-Fi, charging, and child-friendly areas.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>The Clinical Case for Great Design</h3>
+            <p>
+              This is not an amenity. It is a clinical investment. Thoughtfully designed patient environments can reduce anxiety,
+              support communication, improve treatment adherence, and ease caregiver burden. The waiting experience shapes the emotional reality of cancer care.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="patient-recovery-area" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Patient Recovery Area</h2>
+          <p class="bc-section-intro">Where treatment ends. Where strength returns. Where the journey home begins.</p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card">
+            <div class="bc-money-tag">$500,000 Naming Opportunity</div>
+            <h3>What Your Gift Creates</h3>
+            <ul class="bc-list">
+              <li>Private recovery bays with comfort and dignity.</li>
+              <li>Adjustable lighting and environmental controls.</li>
+              <li>Monitoring technology and dedicated clinical support.</li>
+              <li>Support-person seating.</li>
+              <li>Nourishment and hydration stations.</li>
+              <li>Discharge navigation support.</li>
+              <li>Comfort amenities and calming sensory design.</li>
+              <li>Transportation coordination services.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>Why Recovery Space Matters</h3>
+            <p>
+              Recovery is not a footnote in the patient journey. It is a critical chapter. The quality of the post-treatment environment
+              affects comfort, discharge confidence, adherence, and the emotional tone patients carry with them as they leave.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="clinical-exam-room" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Clinical Examination Room</h2>
+          <p class="bc-section-intro">Where science meets the human being. Where care becomes personal.</p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card bc-highlight">
+            <div class="bc-money-tag">One of Eight | $250,000</div>
+            <h3>What Your Gift Creates</h3>
+            <ul class="bc-list">
+              <li>Private, purpose-built consultation space.</li>
+              <li>Diagnostic display technology for imaging and genomic data.</li>
+              <li>Collaborative furnishings that position physician and patient side by side.</li>
+              <li>Integrated telehealth capability.</li>
+              <li>Soundproofing and full conversation privacy.</li>
+              <li>Family seating for support persons.</li>
+              <li>Calming artwork and environmental design.</li>
+              <li>Point-of-care educational and digital resources.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>The Most Human Moment in Medicine</h3>
+            <p>
+              This is where a diagnosis is explained, a treatment plan becomes understandable,
+              and a patient begins to believe they can face what comes next. Small in footprint, but immeasurable in impact.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="legacy" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Legacy and Meaning</h2>
+          <p class="bc-section-intro">
+            Each naming opportunity carries more than recognition. It carries emotional presence in moments patients and families will never forget.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>Visible Legacy</h3>
+            <p>
+              Donor naming is woven into lived patient experience, not isolated on ceremonial signage alone.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Daily Relevance</h3>
+            <p>
+              These spaces are activated every day through arrivals, conversations, treatment, recovery, and hope.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Permanent Meaning</h3>
+            <p>
+              The donor’s name becomes part of the Centre’s emotional architecture - remembered not only for generosity,
+              but for what that generosity made patients feel.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-cta bc-panel">
+          <h2 class="bc-section-title" style="font-size: clamp(1.7rem, 3vw, 2.7rem);">
+            Conclusion
+          </h2>
+          <p>
+            The Precision Oncology Centre is more than a healthcare project. It is a declaration that the future of cancer care
+            should be personal, precise, compassionate, and worthy of the people whose lives depend on it.
+          </p>
+          <p>
+            These naming opportunities invite donors to shape that future in ways that are visible, lasting, and deeply human -
+            from the first step through the door to the final recovery moment before returning home.
+          </p>
+          <div class="bc-actions" style="margin-top: 4px;">
+            <a class="bc-btn bc-btn-primary" href="business-case.html">Back to Business Cases</a>
+            <a class="bc-btn bc-btn-secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

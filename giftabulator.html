@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Business Case 01: Giftabulator® — transforming charitable giving through visualization and tax-smart strategy."
+  />
+  <title>Business Case 01 | Giftabulator® | ISHARE</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+
+  <style>
+    :root {
+      --bc-bg: #f7f7f3;
+      --bc-surface: #ffffff;
+      --bc-text: #111111;
+      --bc-muted: rgba(17, 17, 17, 0.7);
+      --bc-line: rgba(17, 17, 17, 0.1);
+      --bc-soft: rgba(17, 17, 17, 0.04);
+      --bc-accent: #d9ff66;
+      --bc-radius-lg: 28px;
+      --bc-radius-md: 20px;
+      --bc-radius-sm: 14px;
+      --bc-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --bc-max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bc-bg);
+      color: var(--bc-text);
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--bc-max));
+      margin: 0 auto;
+    }
+
+    .giftabulator-page {
+      padding-top: 110px;
+      padding-bottom: 80px;
+    }
+
+    .bc-hero {
+      padding: 30px 0 34px;
+    }
+
+    .bc-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .bc-panel,
+    .bc-card,
+    .bc-quote,
+    .bc-kpi,
+    .bc-table-card,
+    .bc-cta {
+      background: var(--bc-surface);
+      border: 1px solid var(--bc-line);
+      border-radius: var(--bc-radius-lg);
+      box-shadow: var(--bc-shadow);
+    }
+
+    .bc-panel {
+      padding: 34px;
+      min-height: 100%;
+    }
+
+    .bc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+      margin-bottom: 18px;
+    }
+
+    .bc-hero h1,
+    .bc-title,
+    .bc-section-title,
+    .bc-card h3,
+    .bc-mini-title {
+      font-family: "Sora", "Poppins", sans-serif;
+      line-height: 1.02;
+      margin: 0;
+    }
+
+    .bc-hero h1 {
+      font-size: clamp(2.6rem, 5vw, 5.1rem);
+      margin-bottom: 16px;
+      max-width: 12ch;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-subtitle {
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.7;
+      color: var(--bc-muted);
+      max-width: 68ch;
+      margin: 0 0 24px;
+    }
+
+    .bc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .bc-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bc-muted);
+    }
+
+    .bc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .bc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid var(--bc-text);
+      transition: 0.25s ease;
+    }
+
+    .bc-btn-primary {
+      background: var(--bc-text);
+      color: #fff;
+    }
+
+    .bc-btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.94;
+    }
+
+    .bc-btn-secondary {
+      background: transparent;
+      color: var(--bc-text);
+    }
+
+    .bc-btn-secondary:hover {
+      background: var(--bc-soft);
+    }
+
+    .bc-hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-kpi {
+      padding: 26px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bc-kpi-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+    }
+
+    .bc-kpi-value {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .bc-kpi p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .bc-section {
+      padding: 26px 0;
+    }
+
+    .bc-section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+      max-width: 860px;
+    }
+
+    .bc-section-title {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .bc-section-intro {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 72ch;
+    }
+
+    .bc-summary {
+      padding: 34px;
+    }
+
+    .bc-summary p {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.9;
+      color: var(--bc-muted);
+    }
+
+    .bc-summary p + p {
+      margin-top: 16px;
+    }
+
+    .bc-grid-3,
+    .bc-grid-2,
+    .bc-grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bc-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bc-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .bc-card {
+      padding: 28px;
+      border-radius: var(--bc-radius-md);
+      min-height: 100%;
+    }
+
+    .bc-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .bc-card p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .bc-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--bc-muted);
+    }
+
+    .bc-list li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .bc-highlight {
+      background: linear-gradient(180deg, rgba(217, 255, 102, 0.45), rgba(217, 255, 102, 0.18));
+    }
+
+    .bc-quote {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bc-quote::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--bc-text);
+    }
+
+    .bc-quote p {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.45;
+      letter-spacing: -0.03em;
+      max-width: 28ch;
+    }
+
+    .bc-mini-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .bc-capability-number,
+    .bc-stake-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .bc-kpi-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .bc-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .bc-metric {
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .bc-metric strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-metric span {
+      color: var(--bc-muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .bc-table-wrap {
+      overflow-x: auto;
+    }
+
+    .bc-table-card {
+      padding: 20px;
+      border-radius: var(--bc-radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 15px 14px;
+      border-bottom: 1px solid var(--bc-line);
+      vertical-align: top;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bc-muted);
+      font-weight: 800;
+    }
+
+    .bc-check {
+      font-weight: 800;
+    }
+
+    .bc-cta {
+      padding: 34px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .bc-cta p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      max-width: 75ch;
+    }
+
+    .bc-footer-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--bc-muted);
+    }
+
+    .bc-anchor-offset {
+      scroll-margin-top: 110px;
+    }
+
+    @media (max-width: 1100px) {
+      .bc-hero-grid,
+      .bc-kpi-row,
+      .bc-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 24px, var(--bc-max));
+      }
+
+      .giftabulator-page {
+        padding-top: 90px;
+        padding-bottom: 50px;
+      }
+
+      .bc-panel,
+      .bc-summary,
+      .bc-card,
+      .bc-quote,
+      .bc-kpi,
+      .bc-table-card,
+      .bc-cta {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .bc-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .bc-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="giftabulator-page">
+    <section class="bc-hero">
+      <div class="container">
+        <div class="bc-hero-grid">
+          <div class="bc-panel">
+            <div class="bc-eyebrow">Business Case 01</div>
+            <h1>Giftabulator®</h1>
+            <p class="bc-subtitle">
+              Transforming charitable giving through visualization and tax-smart strategy.
+              Designed for charitable organizations, financial advisors, and philanthropic donors.
+            </p>
+
+            <div class="bc-meta">
+              <span>Prepared by FUNDING matters Inc.</span>
+              <span>Date: February 27, 2026</span>
+              <span>Smart Giving Infrastructure</span>
+            </div>
+
+            <div class="bc-actions">
+              <a class="bc-btn bc-btn-primary" href="#executive-summary">Read the case</a>
+              <a class="bc-btn bc-btn-secondary" href="#recommendations">Implementation path</a>
+            </div>
+          </div>
+
+          <div class="bc-hero-side">
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Core Value</div>
+              <div class="bc-kpi-value">Instant clarity</div>
+              <p>
+                Giftabulator® makes complex donation planning visible in real time, helping donors understand
+                how much they can give, how much tax they may save, and how their gift can create greater impact.
+              </p>
+            </div>
+
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Why it matters</div>
+              <div class="bc-kpi-value">Larger gifts</div>
+              <p>
+                By shifting supporters from cash donations to asset-based giving, charities, advisors, and donors
+                can unlock a more strategic path to major and planned gifts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="executive-summary" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Executive Summary</h2>
+        </div>
+
+        <div class="bc-summary bc-panel">
+          <p>
+            Giftabulator® is a donor engagement and gift planning tool that instantly visualizes tax-efficient donation
+            scenarios, empowering donors to maximize their charitable impact while optimizing financial outcomes.
+            By making complex planned giving strategies more transparent and accessible, it transforms conversations
+            between charities, advisors, and donors.
+          </p>
+          <p>
+            The core challenge is that traditional planned giving conversations are often opaque, time-consuming,
+            and dependent on specialized expertise. Donors struggle to understand tax benefits, charities lack tools
+            to illustrate scenarios in real time, and financial advisors need efficient ways to integrate philanthropy
+            into wealth planning discussions.
+          </p>
+          <p>
+            Giftabulator® solves this by providing immediate, interactive visualization of giving scenarios using
+            stocks, mutual funds, real estate, life insurance, RRSP/RRIF assets, and other vehicles. The result is
+            a more confident donor, a better fundraising conversation, and a stronger pathway to significantly larger gifts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">The Problem</h2>
+          <p class="bc-section-intro">
+            Traditional planned giving remains inaccessible and inefficient for the three groups that matter most:
+            charities, advisors, and donors.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <div class="bc-stake-tag">01</div>
+            <h3>For Charities</h3>
+            <p>
+              Most donors continue giving cash simply because they do not understand the more compelling alternatives.
+              Planned giving options remain mysterious to many supporters, and fundraisers often lack tools to model
+              scenarios live during donor conversations.
+            </p>
+            <ul class="bc-list">
+              <li>Donor knowledge gaps limit larger gifts.</li>
+              <li>Static follow-up materials often fail to convert interest into action.</li>
+              <li>Organizations leave significant revenue unrealized when asset-based giving is not explained clearly.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-stake-tag">02</div>
+            <h3>For Financial Advisors</h3>
+            <p>
+              Advisors want to integrate philanthropy into holistic wealth planning, but charitable planning is often
+              too slow, too technical, and too difficult to illustrate in real time.
+            </p>
+            <ul class="bc-list">
+              <li>Planned giving calculations can be time-intensive.</li>
+              <li>Clients rarely initiate philanthropic discussions on their own.</li>
+              <li>Without strong visualization tools, philanthropy stays secondary instead of strategic.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-stake-tag">03</div>
+            <h3>For Donors</h3>
+            <p>
+              Donors often face decision paralysis. They do not know which assets to donate, how different giving
+              vehicles compare, or how to align generosity with financial efficiency.
+            </p>
+            <ul class="bc-list">
+              <li>Complex technical language creates unnecessary barriers.</li>
+              <li>Traditional planned giving materials can feel intimidating rather than inspiring.</li>
+              <li>Many donors give less than they could because the pathway to smart giving is unclear.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">The Solution</h2>
+          <p class="bc-section-intro">
+            Giftabulator® makes smart giving visible, immediate, and easier to act on.
+          </p>
+        </div>
+
+        <div class="bc-quote">
+          <p>
+            Giftabulator® turns planned giving from a difficult, delayed conversation into an interactive decision tool that works in real time.
+          </p>
+        </div>
+
+        <div class="bc-grid-3" style="margin-top: 18px;">
+          <article class="bc-card">
+            <div class="bc-capability-number">1</div>
+            <h3>Real-Time Asset Donation Scenarios</h3>
+            <p>
+              Users can input asset type, value, adjusted cost base, province or territory, income level, and desired gift amount.
+              The platform instantly calculates charitable tax credit, tax savings, net gift cost, cash comparisons, and capital gains tax avoided.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">2</div>
+            <h3>Endowment Growth Visualization</h3>
+            <p>
+              Giftabulator® helps donors see how a gift may grow over time, what annual disbursement it can support,
+              and how it may create long-term legacy impact through endowment funding and naming opportunities.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">3</div>
+            <h3>Customizable Branding</h3>
+            <p>
+              Charities can tailor the experience with their own identity, giving priorities, impact stories,
+              recognition thresholds, and QR-code access for meetings, events, and campaigns.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">4</div>
+            <h3>Instant Report Generation</h3>
+            <p>
+              After exploring scenarios, users can generate PDF reports showing methodology, side-by-side options,
+              next steps, and contact details for charity or advisor follow-up.
+            </p>
+          </article>
+
+          <article class="bc-card bc-highlight">
+            <div class="bc-capability-number">5</div>
+            <h3>iShare® Integration</h3>
+            <p>
+              When connected to the iShare® ecosystem, Giftabulator® becomes part of a larger donor journey that blends
+              financial clarity, immersive storytelling, AI-driven personalization, and stronger donor motivation.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">Example</div>
+            <h3>What Donors Can See</h3>
+            <p>
+              A donor comparing a cash gift with an appreciated stock donation can immediately see the difference in
+              charitable impact, tax savings, and net out-of-pocket cost, making generosity feel more achievable.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stakeholders" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Business Value by Stakeholder</h2>
+          <p class="bc-section-intro">
+            The platform creates distinct strategic value for organizations, advisors, and donors.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>For Charitable Organizations</h3>
+            <ul class="bc-list">
+              <li>Accelerates gift size by helping donors understand asset-based giving.</li>
+              <li>Makes planned giving more accessible without requiring specialized staff.</li>
+              <li>Supports dynamic donor meetings through live “what if” scenario exploration.</li>
+              <li>Reduces decision friction and moves donors from curiosity to commitment faster.</li>
+              <li>Strengthens pipeline for future major and legacy gifts.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>For Financial Advisors</h3>
+            <ul class="bc-list">
+              <li>Deepens client relationships through values-aligned planning.</li>
+              <li>Differentiates advisory practices in competitive markets.</li>
+              <li>Removes manual calculation burden during client conversations.</li>
+              <li>Supports charitable conversations without sacrificing wealth-planning credibility.</li>
+              <li>Opens the door to estate and intergenerational planning discussions.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>For Donors</h3>
+            <ul class="bc-list">
+              <li>Provides immediate clarity and confidence around complex giving options.</li>
+              <li>Shows how to maximize charitable impact while improving tax efficiency.</li>
+              <li>Allows private scenario exploration before formal commitment.</li>
+              <li>Connects giving decisions to long-term legacy impact.</li>
+              <li>Creates a more empowering and emotionally rewarding giving experience.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roi" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">ROI Perspective</h2>
+          <p class="bc-section-intro">
+            The economic case is not just about software cost. It is about reducing friction that prevents larger gifts from happening.
+          </p>
+        </div>
+
+        <div class="bc-kpi-row">
+          <div class="bc-panel">
+            <h3 class="bc-mini-title">Illustrative Charity Example</h3>
+            <p class="bc-section-intro" style="max-width: none;">
+              Assume a mid-sized charity with 500 active donors and $2.5M in annual revenue. If the organization
+              improves planned gift conversion by 30% and average planned gift size by 40%, annual planned giving
+              revenue may increase from $125,000 to $227,500.
+            </p>
+
+            <div class="bc-metric-grid">
+              <div class="bc-metric">
+                <strong>$125K</strong>
+                <span>Current planned giving revenue</span>
+              </div>
+              <div class="bc-metric">
+                <strong>$227.5K</strong>
+                <span>Illustrative revenue with Giftabulator®</span>
+              </div>
+              <div class="bc-metric">
+                <strong>$102.5K</strong>
+                <span>Illustrative incremental annual revenue</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bc-kpi">
+            <div class="bc-kpi-label">Illustrative ROI</div>
+            <div class="bc-kpi-value">8:1-20:1</div>
+            <p>
+              Depending on configuration and scale, an annual investment in the platform may be offset through
+              improved gift conversion, stronger asset-based giving, reduced manual scenario work, and a more
+              productive planned giving pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">How the Donor Journey Changes</h2>
+          <p class="bc-section-intro">
+            The shift is not incremental. It changes how donors discover, understand, and act on charitable opportunities.
+          </p>
+        </div>
+
+        <div class="bc-grid-4">
+          <article class="bc-card">
+            <div class="bc-capability-number">01</div>
+            <h3>Discovery</h3>
+            <p>
+              A donor enters through a campaign page, QR code, advisor conversation, or fundraising event and begins exploring giving possibilities.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">02</div>
+            <h3>Exploration</h3>
+            <p>
+              Giftabulator® makes asset-based scenarios visible, allowing donors to compare options and understand tax-smart giving more clearly.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">03</div>
+            <h3>Inspiration</h3>
+            <p>
+              Through endowment modeling and optional iShare® integration, donors connect financial clarity to long-term emotional impact.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">04</div>
+            <h3>Action</h3>
+            <p>
+              Donors export reports, contact advisors or development staff, and move toward gift commitment with greater confidence and less hesitation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="advantages" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Competitive Advantages</h2>
+          <p class="bc-section-intro">
+            Giftabulator® does not replace expert planned giving advice for the most complex cases.
+            It expands access to smart giving for the much larger group of donors who need clarity before they act.
+          </p>
+        </div>
+
+        <div class="bc-table-wrap">
+          <div class="bc-table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Traditional Consultant</th>
+                  <th>Generic Calculator</th>
+                  <th>Giftabulator®</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scenario speed</td>
+                  <td>Hours to days</td>
+                  <td>Fast</td>
+                  <td class="bc-check">Instant</td>
+                </tr>
+                <tr>
+                  <td>Branding and customization</td>
+                  <td>Limited</td>
+                  <td>Weak</td>
+                  <td class="bc-check">Strong, organization-specific</td>
+                </tr>
+                <tr>
+                  <td>Donor accessibility</td>
+                  <td>Meeting-dependent</td>
+                  <td>Open but generic</td>
+                  <td class="bc-check">24/7 self-service and guided use</td>
+                </tr>
+                <tr>
+                  <td>Visual experience</td>
+                  <td>Static documents</td>
+                  <td>Basic utility</td>
+                  <td class="bc-check">Interactive and donor-centric</td>
+                </tr>
+                <tr>
+                  <td>Scalability</td>
+                  <td>Limited by expert time</td>
+                  <td>High but shallow</td>
+                  <td class="bc-check">High and strategically integrated</td>
+                </tr>
+                <tr>
+                  <td>Integration with donor ecosystem</td>
+                  <td>Low</td>
+                  <td>None</td>
+                  <td class="bc-check">Designed to connect with iShare®</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="implementation" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Implementation Considerations</h2>
+          <p class="bc-section-intro">
+            Success depends on more than deployment. It depends on how well the tool is integrated into donor communication,
+            staff confidence, and organizational process.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>Privacy and Security</h3>
+            <p>
+              Giftabulator® can operate with donor anonymity by design. Users can explore scenarios without immediately
+              sharing personal information, and organizations can introduce the tool without increasing friction at the start of the journey.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Training and Change Management</h3>
+            <p>
+              Development staff need confidence in how to introduce the tool: not as a calculator alone, but as a way to explore options together.
+              Advisor partnerships and impact storytelling should reinforce, not compete with, the financial conversation.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Measurement</h3>
+            <p>
+              Track usage, scenario completion, conversion to commitment, average gift size, share of asset-based gifts,
+              pipeline growth, and staff confidence to understand both financial and operational return.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Pricing and Investment</h2>
+          <p class="bc-section-intro">
+            Pricing depends on organization size, feature requirements, and customization level.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>Typical Organization Ranges</h3>
+            <ul class="bc-list">
+              <li>Small nonprofits: approximately $5,000-$8,000 annually</li>
+              <li>Mid-sized organizations: approximately $8,000-$15,000 annually</li>
+              <li>Large institutions: approximately $15,000-$25,000 annually</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>Advisor Subscriptions</h3>
+            <p>
+              Financial advisors may adopt Giftabulator® across their client base at an estimated range of approximately
+              $3,000-$8,000 annually depending on scale and features.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Optional Add-Ons</h3>
+            <ul class="bc-list">
+              <li>iShare® integration for immersive donor experiences</li>
+              <li>Advanced analytics and donor segmentation</li>
+              <li>Custom impact calculators</li>
+              <li>Training and consulting support for planned giving programs</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommendations" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Recommendations</h2>
+          <p class="bc-section-intro">
+            The platform is especially relevant for organizations and advisors ready to move from generic giving conversations
+            toward a more modern, strategic, and donor-friendly system.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>For Charitable Organizations</h3>
+            <ul class="bc-list">
+              <li>Implement if you want to grow planned giving and major gifts.</li>
+              <li>Use it when staff need better ways to explain tax-smart options.</li>
+              <li>Pair it with campaigns, donor meetings, and event-based cultivation.</li>
+              <li>Launch with pilot donors, measure early results, then scale.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>For Financial Advisors</h3>
+            <ul class="bc-list">
+              <li>Adopt it if you serve philanthropic clients and want stronger differentiation.</li>
+              <li>Use it in annual reviews and wealth-planning discussions.</li>
+              <li>Build relationships with local charities for collaborative giving opportunities.</li>
+              <li>Track retention, satisfaction, and values-based planning outcomes.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>For Donors</h3>
+            <ul class="bc-list">
+              <li>Explore it if you want to give more strategically while improving tax efficiency.</li>
+              <li>Use it when comparing cash, stock, real estate, or legacy giving options.</li>
+              <li>Generate a report and review it with your advisor or the charity team.</li>
+              <li>Integrate charitable giving into broader financial and estate planning.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-cta">
+          <h2 class="bc-section-title" style="font-size: clamp(1.7rem, 3vw, 2.7rem);">
+            Conclusion
+          </h2>
+          <p>
+            Giftabulator® democratizes access to sophisticated philanthropic planning by turning complex giving strategy
+            into an accessible and engaging experience. Charities gain stronger donor education and revenue potential,
+            advisors deepen client relationships through values-aligned planning, and donors gain the clarity and confidence
+            needed to act more generously.
+          </p>
+          <p>
+            The question is no longer whether smart giving should be visualized. The question is how quickly organizations
+            and advisors will adopt the tools that make transformational philanthropy easier to understand and easier to achieve.
+          </p>
+          <div class="bc-actions" style="margin-top: 4px;">
+            <a class="bc-btn bc-btn-primary" href="business-case.html">Back to Business Cases</a>
+            <a class="bc-btn bc-btn-secondary" href="index.html">Back to Home</a>
+          </div>
+          <div class="bc-footer-note">
+            Start the conversation. Visualize the impact. Transform giving.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

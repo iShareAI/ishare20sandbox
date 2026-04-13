@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Business Case 05: Using AI and BuilderBILL to elevate hospital foundation fundraising through stronger donor conversations, coaching, and frontline alignment."
+  />
+  <title>Business Case 05 | BuilderBILL™ for Hospital Foundations | ISHARE</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+
+  <style>
+    :root {
+      --bc-bg: #f5f6f3;
+      --bc-surface: #ffffff;
+      --bc-text: #111111;
+      --bc-muted: rgba(17, 17, 17, 0.72);
+      --bc-line: rgba(17, 17, 17, 0.1);
+      --bc-soft: rgba(17, 17, 17, 0.04);
+      --bc-accent: #d9ff66;
+      --bc-radius-lg: 28px;
+      --bc-radius-md: 20px;
+      --bc-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --bc-max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bc-bg);
+      color: var(--bc-text);
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--bc-max));
+      margin: 0 auto;
+    }
+
+    .hospital-page {
+      padding-top: 110px;
+      padding-bottom: 80px;
+    }
+
+    .bc-hero {
+      padding: 30px 0 34px;
+    }
+
+    .bc-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .bc-panel,
+    .bc-card,
+    .bc-quote,
+    .bc-kpi,
+    .bc-table-card,
+    .bc-cta {
+      background: var(--bc-surface);
+      border: 1px solid var(--bc-line);
+      border-radius: var(--bc-radius-lg);
+      box-shadow: var(--bc-shadow);
+    }
+
+    .bc-panel {
+      padding: 34px;
+      min-height: 100%;
+    }
+
+    .bc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+      margin-bottom: 18px;
+    }
+
+    .bc-hero h1,
+    .bc-section-title,
+    .bc-card h3,
+    .bc-mini-title {
+      font-family: "Sora", "Poppins", sans-serif;
+      line-height: 1.02;
+      margin: 0;
+    }
+
+    .bc-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.9rem);
+      margin-bottom: 16px;
+      max-width: 12ch;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-subtitle {
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.7;
+      color: var(--bc-muted);
+      max-width: 72ch;
+      margin: 0 0 24px;
+    }
+
+    .bc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .bc-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bc-muted);
+    }
+
+    .bc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .bc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid var(--bc-text);
+      transition: 0.25s ease;
+    }
+
+    .bc-btn-primary {
+      background: var(--bc-text);
+      color: #fff;
+    }
+
+    .bc-btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.94;
+    }
+
+    .bc-btn-secondary {
+      background: transparent;
+      color: var(--bc-text);
+    }
+
+    .bc-btn-secondary:hover {
+      background: var(--bc-soft);
+    }
+
+    .bc-hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-kpi {
+      padding: 26px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bc-kpi-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bc-muted);
+    }
+
+    .bc-kpi-value {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .bc-kpi p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .bc-section {
+      padding: 26px 0;
+    }
+
+    .bc-section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+      max-width: 860px;
+    }
+
+    .bc-section-title {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .bc-section-intro {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      max-width: 72ch;
+    }
+
+    .bc-summary {
+      padding: 34px;
+    }
+
+    .bc-summary p {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.9;
+      color: var(--bc-muted);
+    }
+
+    .bc-summary p + p {
+      margin-top: 16px;
+    }
+
+    .bc-grid-2,
+    .bc-grid-3,
+    .bc-grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .bc-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bc-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bc-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .bc-card {
+      padding: 28px;
+      border-radius: var(--bc-radius-md);
+      min-height: 100%;
+    }
+
+    .bc-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .bc-card p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .bc-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--bc-muted);
+    }
+
+    .bc-list li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .bc-highlight {
+      background: linear-gradient(180deg, rgba(217, 255, 102, 0.45), rgba(217, 255, 102, 0.18));
+    }
+
+    .bc-quote {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bc-quote::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--bc-text);
+    }
+
+    .bc-quote p {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      line-height: 1.45;
+      letter-spacing: -0.03em;
+      max-width: 31ch;
+    }
+
+    .bc-mini-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .bc-capability-number,
+    .bc-stake-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .bc-kpi-row {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .bc-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .bc-metric {
+      background: var(--bc-soft);
+      border: 1px solid var(--bc-line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .bc-metric strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .bc-metric span {
+      color: var(--bc-muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .bc-table-wrap {
+      overflow-x: auto;
+    }
+
+    .bc-table-card {
+      padding: 20px;
+      border-radius: var(--bc-radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 15px 14px;
+      border-bottom: 1px solid var(--bc-line);
+      vertical-align: top;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bc-muted);
+      font-weight: 800;
+    }
+
+    .bc-check {
+      font-weight: 800;
+    }
+
+    .bc-cta {
+      padding: 34px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .bc-cta p {
+      margin: 0;
+      color: var(--bc-muted);
+      line-height: 1.8;
+      max-width: 75ch;
+    }
+
+    .bc-footer-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--bc-muted);
+    }
+
+    .bc-anchor-offset {
+      scroll-margin-top: 110px;
+    }
+
+    @media (max-width: 1100px) {
+      .bc-hero-grid,
+      .bc-kpi-row,
+      .bc-grid-4,
+      .bc-grid-3,
+      .bc-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .bc-metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 24px, var(--bc-max));
+      }
+
+      .hospital-page {
+        padding-top: 90px;
+        padding-bottom: 50px;
+      }
+
+      .bc-panel,
+      .bc-summary,
+      .bc-card,
+      .bc-quote,
+      .bc-kpi,
+      .bc-table-card,
+      .bc-cta {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .bc-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .bc-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="hospital-page">
+    <section class="bc-hero">
+      <div class="container">
+        <div class="bc-hero-grid">
+          <div class="bc-panel">
+            <div class="bc-eyebrow">Business Case 05</div>
+            <h1>BuilderBILL™ for Hospital Foundation Fundraising</h1>
+            <p class="bc-subtitle">
+              Using AI-driven coaching to strengthen donor conversations, grateful patient outreach,
+              physician and volunteer engagement, and frontline fundraising execution in hospital foundations.
+            </p>
+
+            <div class="bc-meta">
+              <span>AI Fundraising Coaching</span>
+              <span>Hospital Foundations</span>
+              <span>Development, Leadership, Clinicians</span>
+            </div>
+
+            <div class="bc-actions">
+              <a class="bc-btn bc-btn-primary" href="#summary">Read the case</a>
+              <a class="bc-btn bc-btn-secondary" href="#implementation">Implementation approach</a>
+            </div>
+          </div>
+
+          <div class="bc-hero-side">
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Core Role</div>
+              <div class="bc-kpi-value">Always-on fundraising coach</div>
+              <p>
+                BuilderBILL™ helps hospital foundation teams prepare for calls, emails, meetings,
+                and donor follow-up with better structure, stronger language, and clearer objectives.
+              </p>
+            </div>
+
+            <div class="bc-kpi">
+              <div class="bc-kpi-label">Institutional Value</div>
+              <div class="bc-kpi-value">More aligned frontline fundraising</div>
+              <p>
+                It helps align donor-facing conversations with campaign priorities, clinical needs,
+                privacy expectations, grateful patient strategy, and leadership participation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Purpose</h2>
+        </div>
+
+        <div class="bc-summary bc-panel">
+          <p>
+            This business case describes how AI-driven coaching and BuilderBILL™ can help hospital foundations
+            strengthen fundraising performance by training and supporting internal teams and physician or volunteer champions
+            to engage donors more effectively by phone, email, and in meetings.
+          </p>
+          <p>
+            Hospital philanthropy is complex and high stakes. Teams must navigate grateful patients and families,
+            clinical partnerships, privacy and regulatory considerations, and highly technical priorities such as
+            equipment, capital projects, research, and endowment.
+          </p>
+          <p>
+            BuilderBILL™ helps turn that complexity into a more structured, repeatable, and coachable fundraising system
+            by improving preparation, practice, debrief, and message consistency across the foundation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-ai" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Why AI for Hospital Philanthropy</h2>
+          <p class="bc-section-intro">
+            AI role-play and coaching tools are already used in sectors where conversations are complex,
+            regulated, and relationship-driven. Hospital fundraising shares those same conditions.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <div class="bc-stake-tag">01</div>
+            <h3>High-Stakes Conversations</h3>
+            <p>
+              Hospital philanthropy involves grateful patients, families, clinicians, boards, and donors
+              making emotionally significant decisions in sensitive contexts.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-stake-tag">02</div>
+            <h3>Technical Priorities</h3>
+            <p>
+              Foundations must explain capital needs, clinical equipment, research initiatives,
+              education, innovation, and endowment in language donors can understand and connect with.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-stake-tag">03</div>
+            <h3>Compliance and Consistency</h3>
+            <p>
+              Privacy, ethics, and brand requirements mean staff need more than enthusiasm.
+              They need disciplined preparation and aligned messaging.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-it-does" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">What BuilderBILL™ Does</h2>
+          <p class="bc-section-intro">
+            BuilderBILL™ acts as an always-on fundraising coach for hospital foundation teams and external-facing partners.
+          </p>
+        </div>
+
+        <div class="bc-quote">
+          <p>
+            BuilderBILL™ helps hospital foundations move from informal, uneven fundraising preparation to a more consistent and scalable coaching system.
+          </p>
+        </div>
+
+        <div class="bc-grid-2" style="margin-top: 18px;">
+          <article class="bc-card">
+            <div class="bc-capability-number">1</div>
+            <h3>Tailored Call Guides and Visit Plans</h3>
+            <p>
+              Creates call guides, email drafts, and donor meeting plans aligned with your case for support,
+              campaign priorities, and gift tables.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">2</div>
+            <h3>Role-Play and Practice</h3>
+            <p>
+              Serves as a practice partner for meetings with grateful patients, family decision-makers,
+              corporate partners, clinicians, and physician champions, with immediate feedback and alternative language.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">3</div>
+            <h3>Interaction Objectives</h3>
+            <p>
+              Helps staff define whether an interaction is about qualification, discovery, cultivation,
+              solicitation, stewardship, or follow-up, and clarifies the desired outcome before contact.
+            </p>
+          </article>
+
+          <article class="bc-card bc-highlight">
+            <div class="bc-capability-number">4</div>
+            <h3>Best-Practice Capture</h3>
+            <p>
+              Captures effective scripts, scenarios, and response patterns so teams can standardize good practice,
+              reduce dependence on shadowing, and ramp new staff more quickly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Use Cases in a Hospital Foundation</h2>
+          <p class="bc-section-intro">
+            BuilderBILL™ supports both internal foundation teams and the leadership, clinicians, and volunteers who participate in donor engagement.
+          </p>
+        </div>
+
+        <div class="bc-grid-2">
+          <article class="bc-card">
+            <h3>A. Inside Team</h3>
+            <ul class="bc-list">
+              <li>Onboarding new fundraisers and coordinators with guided practice on grateful patient calls and discovery visits.</li>
+              <li>Building scenario libraries for post-discharge follow-up, memorial gifts, lapsed donors, and corporate leads.</li>
+              <li>Supporting campaign and priority roll-outs with donor-friendly messaging for equipment, capital, research, and service lines.</li>
+              <li>Improving alignment across annual, major, planned giving, events, stewardship, and operations teams.</li>
+              <li>Drafting personalized email templates and call talk-tracks within brand, privacy, and compliance expectations.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <h3>B. External-Facing Team</h3>
+            <ul class="bc-list">
+              <li>Preparing gift officers, CEOs, Chiefs of Staff, CNOs, and physician champions for donor meetings.</li>
+              <li>Generating concise pre-visit briefings with likely interests and suggested questions.</li>
+              <li>Supporting structured debrief and follow-up after donor meetings and stewardship moments.</li>
+              <li>Helping translate meeting notes into pipeline updates and forecast movement.</li>
+              <li>Training board members and volunteers for ambassador roles, warm introductions, and soft asks.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="placement" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Supporting Priority and Program Placement</h2>
+          <p class="bc-section-intro">
+            Hospital foundations manage a wide range of funding priorities. BuilderBILL™ helps match donor interest and capacity to the right opportunity.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>Best-Fit Prospect Mapping</h3>
+            <p>
+              Maps donor interests, affiliations, and capacity to capital projects, equipment needs,
+              research, education, innovation initiatives, and endowment opportunities.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Clinical Translation</h3>
+            <p>
+              Translates technical clinical projects and equipment into clearer, emotionally resonant
+              donor language that connects gifts to patient care and community impact.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Structured Ask Framing</h3>
+            <p>
+              Supports "good / better / best" framing for current, pledged, and legacy gifts,
+              while respecting the realities of privacy, ethics, and healthcare fundraising practice.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="implementation" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Implementation Approach</h2>
+          <p class="bc-section-intro">
+            A phased rollout allows the foundation to configure, test, and scale BuilderBILL™ in a practical and measurable way.
+          </p>
+        </div>
+
+        <div class="bc-grid-4">
+          <article class="bc-card">
+            <div class="bc-capability-number">Phase 1</div>
+            <h3>Design and Configuration</h3>
+            <ul class="bc-list">
+              <li>Align BuilderBILL™ with case for support, brand, ethics, and privacy standards.</li>
+              <li>Build hospital-specific scenarios, scripts, and objection-handling content.</li>
+              <li>Include questions about public funding, privacy, naming, and recognition.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">Phase 2</div>
+            <h3>Pilot with Core Team</h3>
+            <ul class="bc-list">
+              <li>Run an 8-12 week pilot with selected major gift, annual, and grateful patient officers.</li>
+              <li>Include managers to reinforce adoption and coaching.</li>
+              <li>Measure quality contacts, meeting conversion, proposals, and time to proposal.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card">
+            <div class="bc-capability-number">Phase 3</div>
+            <h3>Scale and Integrate</h3>
+            <ul class="bc-list">
+              <li>Extend to stewardship, events, board members, and key clinical partners.</li>
+              <li>Where useful, connect usage data to CRM and learning systems.</li>
+              <li>Link practice, activity, and results more clearly over time.</li>
+            </ul>
+          </article>
+
+          <article class="bc-card bc-highlight">
+            <div class="bc-capability-number">Engagement</div>
+            <h3>Proposed Rollout</h3>
+            <ul class="bc-list">
+              <li>Discovery and configuration over 4-6 weeks.</li>
+              <li>Defined 3-month pilot with clear metrics and feedback loops.</li>
+              <li>Scale-up phase including manager and leadership integration.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Value for Hospital Foundation Leadership</h2>
+          <p class="bc-section-intro">
+            BuilderBILL™ is not only a frontline tool. It strengthens institutional coaching, alignment, and fundraising visibility.
+          </p>
+        </div>
+
+        <div class="bc-kpi-row">
+          <div class="bc-panel">
+            <h3 class="bc-mini-title">Leadership Benefits</h3>
+
+            <div class="bc-metric-grid">
+              <div class="bc-metric">
+                <strong>Better conversations</strong>
+                <span>More consistent and higher-quality donor and grateful patient interactions across the foundation.</span>
+              </div>
+              <div class="bc-metric">
+                <strong>Faster ramp-up</strong>
+                <span>New staff become effective more quickly with less reliance on informal shadowing.</span>
+              </div>
+              <div class="bc-metric">
+                <strong>Stronger alignment</strong>
+                <span>Clinical priorities, campaign needs, and donor-facing language stay more closely connected.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bc-kpi">
+            <div class="bc-kpi-label">Leadership Outcome</div>
+            <div class="bc-kpi-value">Clearer coaching insight</div>
+            <p>
+              Structured AI-captured practice helps leadership see where staff need support,
+              whether the challenge is comfort making the ask, handling objections, or explaining complex hospital priorities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Why This Approach Stands Out</h2>
+          <p class="bc-section-intro">
+            Many hospital foundations still rely on shadowing, informal scripting, or senior staff availability.
+            BuilderBILL™ adds a practical coaching layer that can scale.
+          </p>
+        </div>
+
+        <div class="bc-table-wrap">
+          <div class="bc-table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Approach</th>
+                  <th>Preparation Speed</th>
+                  <th>Consistency</th>
+                  <th>Scalability</th>
+                  <th>Coaching Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ad hoc shadowing and mentoring</td>
+                  <td>Variable</td>
+                  <td>Low</td>
+                  <td>Limited</td>
+                  <td>Depends on experienced staff time</td>
+                </tr>
+                <tr>
+                  <td>Static scripts and briefing notes</td>
+                  <td>Fast to distribute</td>
+                  <td>Moderate</td>
+                  <td>Moderate</td>
+                  <td>Low adaptability</td>
+                </tr>
+                <tr>
+                  <td>External training only</td>
+                  <td>Periodic</td>
+                  <td>Moderate</td>
+                  <td>Limited by budget and scheduling</td>
+                  <td>High but intermittent</td>
+                </tr>
+                <tr>
+                  <td class="bc-check">BuilderBILL™</td>
+                  <td class="bc-check">Immediate</td>
+                  <td class="bc-check">High</td>
+                  <td class="bc-check">High</td>
+                  <td class="bc-check">Continuous, scenario-based support</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommendations" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-section-head">
+          <h2 class="bc-section-title">Recommended Use</h2>
+          <p class="bc-section-intro">
+            BuilderBILL™ is especially relevant for hospital foundations that want more consistent donor preparation,
+            stronger physician and leadership participation, and better frontline message alignment.
+          </p>
+        </div>
+
+        <div class="bc-grid-3">
+          <article class="bc-card">
+            <h3>Use it for Grateful Patient and Major Gifts</h3>
+            <p>
+              Strengthen discovery, cultivation, solicitation, and follow-up with more structured preparation
+              and better handling of sensitive donor contexts.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Use it for Campaigns and Clinical Priorities</h3>
+            <p>
+              Help teams translate equipment, capital, research, and service-line priorities into donor-friendly language.
+            </p>
+          </article>
+
+          <article class="bc-card">
+            <h3>Use it to Support Leadership and Volunteers</h3>
+            <p>
+              Prepare boards, executives, clinicians, and volunteer champions for stronger meeting participation,
+              warm introductions, and stewardship presence.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="bc-section bc-anchor-offset">
+      <div class="container">
+        <div class="bc-cta">
+          <h2 class="bc-section-title" style="font-size: clamp(1.7rem, 3vw, 2.7rem);">
+            Conclusion
+          </h2>
+          <p>
+            Hospital foundations need more than strong priorities and compelling cases for support.
+            They need a practical way to help staff, leaders, clinicians, and volunteers communicate those priorities
+            clearly and confidently in donor settings.
+          </p>
+          <p>
+            BuilderBILL™ provides that capability through AI-supported coaching, structured preparation,
+            and repeatable practice. The result is stronger frontline fundraising performance, better alignment,
+            and a more resilient hospital philanthropy system.
+          </p>
+          <div class="bc-actions" style="margin-top: 4px;">
+            <a class="bc-btn bc-btn-primary" href="business-case.html">Back to Business Cases</a>
+            <a class="bc-btn bc-btn-secondary" href="index.html">Back to Home</a>
+          </div>
+          <div class="bc-footer-note">
+            Prepare better. Engage with confidence. Advance hospital philanthropy more effectively.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

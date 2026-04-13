@@ -97,20 +97,20 @@
         </div>
       </div>
 
-      <a href="index.html#projects">Projects</a>
+      <a href="business-case.html">Business Case</a>
 
       <div class="nav-dropdown">
-        <a href="index.html#pricing" class="nav-parent" aria-haspopup="true" aria-expanded="false">
+        <a href="packages.html#pricing" class="nav-parent" aria-haspopup="true" aria-expanded="false">
           Packages <span class="nav-arrow" aria-hidden="true">▾</span>
         </a>
         <div class="nav-menu" role="menu" aria-label="Packages submenu">
-          <a role="menuitem" href="index.html#pricing-basic">Basic</a>
-          <a role="menuitem" href="index.html#pricing-pro">Pro</a>
-          <a role="menuitem" href="index.html#pricing-enterprise">Enterprise</a>
+          <a role="menuitem" href="packages.html#pricing-basic">Basic</a>
+          <a role="menuitem" href="packages.html#pricing-pro">Pro</a>
+          <a role="menuitem" href="packages.html#pricing-enterprise">Enterprise</a>
         </div>
       </div>
 
-      <a href="index.html#impact">Impact</a>
+      <a href="impact.html">Impact</a>
       <a href="index.html#contact">Contact</a>
     </nav>
 
@@ -138,9 +138,9 @@
     <a href="index.html#hero" class="m-link">Home</a>
     <a href="index.html#about" class="m-link">About</a>
     <a href="index.html#directions" class="m-link">Campaigns</a>
-    <a href="index.html#projects" class="m-link">Projects</a>
-    <a href="index.html#pricing" class="m-link">Packages</a>
-    <a href="index.html#impact" class="m-link">Impact</a>
+    <a href="business-case.html" class="m-link">Business Case</a>
+    <a href="packages.html#pricing" class="m-link">Packages</a>
+    <a href="impact.html" class="m-link">Impact</a>
     <a href="index.html#contact" class="m-link">Contact</a>
     <a href="https://ishare.ai/9HT0SLLTBN" class="m-link" target="_blank" rel="noopener noreferrer">Use our AI</a>
 
