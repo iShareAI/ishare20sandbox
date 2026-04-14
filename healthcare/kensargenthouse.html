@@ -18,6 +18,25 @@
   <link rel="stylesheet" href="../css/sections/footer.css" />
   <link rel="stylesheet" href="../css/pages/healthcare-detail.css" />
   <link rel="stylesheet" href="../css/pages/kensargenthouse.css" />
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("embed") === "1") {
+        document.documentElement.classList.add("embed-example");
+      }
+    })();
+  </script>
+
+  <style>
+    html.embed-example #site-header {
+      display: none;
+    }
+
+    html.embed-example .section.section-spaced {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
