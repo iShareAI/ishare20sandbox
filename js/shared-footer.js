@@ -1,5 +1,5 @@
 (() => {
-  const isHealthcareDetail = /\/healthcare\/[^/]+\.html$/i.test(window.location.pathname);
+  const isNestedDetailPage = /\/(?:healthcare|packages)\/[^/]+\.html$/i.test(window.location.pathname);
 
   const fixRelativePaths = (root, prefix) => {
     const skip = /^(?:[a-z]+:|#|\/\/)/i;
@@ -158,7 +158,7 @@
     <div class="utility-bar utility-bar--footer" aria-label="Partner navigation (footer)">
       <div class="container">
         <nav class="utility-nav" aria-label="Partner links (footer)">
-          <a class="utility-link" href="https://fundingmatters.com/" target="_blank" rel="noopener"><span class="utility-text">FUNDING matters® Inc.</span></a>
+          <a class="utility-link" href="https://fundingmatters.com/" target="_blank" rel="noopener"><span class="utility-text">FUNDING matters Inc.</span></a>
           <a class="utility-link" href="https://www.giftabulator.com/" target="_blank" rel="noopener"><span class="utility-text">GIFTABULATOR®</span></a>
           <a class="utility-link" href="https://philanthropylab.ca/" target="_blank" rel="noopener"><span class="utility-text">PhilanthropyLab®</span></a>
           <a class="utility-link" href="https://ishare.ai/9HT0SLLTBN" target="_blank" rel="noopener noreferrer"><span class="utility-text">BuilderBillAI<sup class="tm-mark">TM</sup></span></a>
@@ -177,7 +177,7 @@
   const host = document.getElementById("site-footer");
   if (!host) return;
   host.innerHTML = sharedFooterHtml;
-  if (isHealthcareDetail) {
+  if (isNestedDetailPage) {
     fixRelativePaths(host, "../");
   }
 })();

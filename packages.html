@@ -179,6 +179,64 @@
       line-height: 1.7;
     }
 
+    .pro-example {
+      margin-top: 34px;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--pkg-surface);
+      border: 1px solid var(--pkg-line);
+    }
+
+    .pro-example-kicker {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid #b9e949;
+      background: var(--pkg-accent);
+      color: #111111;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pro-example h2 {
+      margin: 0 0 10px;
+      font-family: "Sora", "Poppins", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .pro-example p {
+      margin: 0;
+      color: var(--pkg-muted);
+      line-height: 1.8;
+      max-width: 88ch;
+    }
+
+    .pro-example-frame {
+      margin-top: 18px;
+      border: 1px solid var(--pkg-line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .pro-example-frame iframe {
+      width: 100%;
+      min-height: 1200px;
+      border: 0;
+      display: block;
+    }
+
+    .pro-example-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     @media (max-width: 980px) {
       .packages-grid {
         grid-template-columns: 1fr;
@@ -216,48 +274,77 @@
           <span class="plan-chip">Basic</span>
           <h2>Basic</h2>
           <p class="price">$2,500<span>/month</span></p>
-          <p>For smaller campaigns launching with focused objectives and a lean team.</p>
+          <p>For lean teams that need a very simple campaign launch.</p>
           <ul class="feature-list">
             <li>1 campaign environment</li>
-            <li>Core storytelling structure</li>
-            <li>Standard analytics dashboard</li>
+            <li>Simple project page template</li>
+            <li>Basic performance snapshot</li>
             <li>Email support</li>
           </ul>
-          <a class="btn btn-secondary" href="index.html#contact">Start Basic</a>
+          <a class="btn btn-secondary" href="packages/basic.html">Choose</a>
         </article>
 
         <article id="pricing-pro" class="package-card featured">
           <span class="plan-chip">Most Popular</span>
           <h2>Pro</h2>
           <p class="price">$6,000<span>/month</span></p>
-          <p>For multi-priority campaigns requiring stronger segmentation and richer engagement.</p>
+          <p>For growth campaigns that need better journeys, reporting, and donor engagement.</p>
           <ul class="feature-list">
             <li>Up to 3 campaign environments</li>
             <li>Advanced storytelling journeys</li>
             <li>Enhanced analytics and reporting</li>
+            <li>ISHARE + GIFTABULATOR handoff workflow</li>
             <li>Priority support</li>
           </ul>
-          <a class="btn btn-primary" href="index.html#contact">Choose Pro</a>
+          <a class="btn btn-primary" href="packages/pro.html">Choose</a>
         </article>
 
         <article id="pricing-enterprise" class="package-card">
           <span class="plan-chip">Enterprise</span>
           <h2>Enterprise</h2>
           <p class="price">Custom<span>pricing</span></p>
-          <p>For institutions running complex campaigns with cross-functional leadership teams.</p>
+          <p>For institutions that need full integration across the entire ISHARE ecosystem, including projects like Ken Sargent House.</p>
           <ul class="feature-list">
             <li>Unlimited campaign environments</li>
+            <li>Full integration of ISHARE ecosystem tools</li>
             <li>Custom integrations and workflows</li>
+            <li>BuilderBillAI, GIFTABULATOR, and PhilanthropyLab alignment</li>
             <li>Executive reporting and enablement</li>
             <li>Dedicated strategic support</li>
           </ul>
-          <a class="btn btn-secondary" href="index.html#contact">Contact Sales</a>
+          <a class="btn btn-secondary" href="packages/enterprise.html">Choose</a>
         </article>
       </section>
 
       <p class="packages-note">
         Need help choosing? We can recommend the right package after a short discovery call.
       </p>
+
+      <section class="pro-example" aria-label="Pro package example">
+        <span class="pro-example-kicker">Pro Example</span>
+        <h2>Ken Sargent House Campaign Experience</h2>
+        <p>
+          This is a full Pro-level campaign example. It combines immersive storytelling,
+          interactive 360 priorities, naming opportunities, donation pathways, and guided donor
+          engagement in one connected experience. The complete Ken Sargent House page is embedded
+          below so your team can review the full information architecture and interaction flow
+          directly inside Packages.
+        </p>
+
+        <div class="pro-example-frame">
+          <iframe
+            src="healthcare/kensargenthouse.html"
+            title="Ken Sargent House full campaign example"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+
+        <div class="pro-example-actions">
+          <a class="btn btn-secondary" href="healthcare/kensargenthouse.html">Open Full Example</a>
+          <a class="btn btn-primary" href="packages/pro.html">Choose Pro</a>
+        </div>
+      </section>
     </div>
   </main>
 

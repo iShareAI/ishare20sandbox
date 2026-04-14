@@ -1,5 +1,5 @@
 (() => {
-  const isHealthcareDetail = /\/healthcare\/[^/]+\.html$/i.test(window.location.pathname);
+  const isNestedDetailPage = /\/(?:healthcare|packages)\/[^/]+\.html$/i.test(window.location.pathname);
 
   const fixRelativePaths = (root, prefix) => {
     const skip = /^(?:[a-z]+:|#|\/\/)/i;
@@ -36,7 +36,7 @@
               d="M4 16.5v-13h-.25a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H16v13h.25a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-3.5a.75.75 0 0 1 0-1.5H4Z"/>
           </svg>
         </span>
-        <span class="utility-text">FUNDING matters® Inc.</span>
+        <span class="utility-text">FUNDING matters Inc.</span>
       </a>
 
       <a class="utility-link" href="https://www.giftabulator.com/" target="_blank" rel="noopener">
@@ -154,7 +154,7 @@
   if (!host) return;
 
   host.innerHTML = sharedHeaderHtml;
-  if (isHealthcareDetail) {
+  if (isNestedDetailPage) {
     fixRelativePaths(host, "../");
   }
 })();
