@@ -82,17 +82,21 @@
   );
 }
 
-#healthcare-projects .campaign-card--text {
+#healthcare-projects .campaign-card--text,
+#sporting-venues-projects .campaign-card--text {
   background: #ffffff;
   color: #0e141b;
   border-color: rgba(0, 0, 0, 0.12);
+  cursor: default;
 }
 
-#healthcare-projects .campaign-card--text::after {
+#healthcare-projects .campaign-card--text::after,
+#sporting-venues-projects .campaign-card--text::after {
   opacity: 0;
 }
 
-#healthcare-projects .campaign-copy {
+#healthcare-projects .campaign-copy,
+#sporting-venues-projects .campaign-copy {
   position: relative;
   z-index: 2;
   width: min(86%, 340px);
@@ -103,10 +107,16 @@
   text-align: center;
 }
 
-#healthcare-projects .campaign-note {
-  color: #0e141b;
+#healthcare-projects .campaign-note,
+#sporting-venues-projects .campaign-note {
+  color: #071b75;
   font-size: clamp(13px, 1.05vw, 16px);
   line-height: 1.45;
+}
+
+#healthcare-projects .campaign-card--text .campaign-label,
+#sporting-venues-projects .campaign-card--text .campaign-label {
+  color: #0e141b;
 }
 
 @media (max-width: 768px) {

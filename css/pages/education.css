@@ -108,6 +108,10 @@
   line-height: 1.45;
 }
 
+#education-projects .campaign-card--text .campaign-label {
+  color: #0e141b;
+}
+
 @media (max-width: 768px) {
   .section-spacer {
     height: 36px;
