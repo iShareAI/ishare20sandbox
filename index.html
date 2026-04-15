@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="css/base/typography.css">
 <link rel="stylesheet" href="css/components/buttons.css">
 <link rel="stylesheet" href="css/components/header.css">
+<link rel="stylesheet" href="css/components/modal.css">
 <link rel="stylesheet" href="css/sections/hero.css">
 <link rel="stylesheet" href="css/sections/spacer.css">
 <link rel="stylesheet" href="css/sections/sec2.css">
@@ -81,6 +82,7 @@
         <a class="btn btn-secondary" href="#directions">View Campaigns</a>
         <!-- replicated primary style to match first button -->
         <button class="btn btn-primary" type="button" onclick="window.open('https://ishare.ai/9HT0SLLTBN','_blank')">Use our AI</button>
+        <button class="btn btn-primary btn-funding-matters" type="button" id="openFundingMattersModal">What Is FUNDING matters Inc.?</button>
       </div>
     </div>
 
@@ -89,6 +91,26 @@
     </div>
   </div>
 </section>
+
+<div class="modal deck-modal" id="fundingMattersModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fundingMattersModalTitle">
+  <div class="modal-content" role="document">
+    <div class="deck-modal-head">
+      <h2 id="fundingMattersModalTitle">What Is FUNDING matters Inc.</h2>
+      <button class="modal-close" type="button" id="closeFundingMattersModal" aria-label="Close popup">&times;</button>
+    </div>
+    <div class="deck-modal-frame-wrap">
+      <iframe
+        id="fundingMattersFrame"
+        title="FUNDING matters Inc. pitch deck"
+        src="about:blank"
+        data-src="funding-matters-pitch.html"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+  </div>
+</div>
+<div class="deck-modal-backdrop" id="fundingMattersBackdrop" aria-hidden="true"></div>
  
 
 </main>
@@ -565,6 +587,7 @@
   <script src="js/shared-footer.js?v=20260331" defer></script>
   <script src="js/header.js" defer></script>
   <script src="js/reviews.js" defer></script>
+  <script src="js/main.js" defer></script>
 
 
 
