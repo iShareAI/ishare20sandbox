@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISHARE® International Aid</title>
+  <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
+
+  <meta property="og:title" content="International Aid | ISHARE®" />
+  <meta property="og:description" content="Immersive 360° experiences for international aid, humanitarian, and development projects." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base/variables.css" />
+  <link rel="stylesheet" href="css/base/reset.css" />
+  <link rel="stylesheet" href="css/base/typography.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/sections/hero.css" />
+  <link rel="stylesheet" href="css/sections/spacer.css" />
+  <link rel="stylesheet" href="css/sections/sec2.css" />
+  <link rel="stylesheet" href="css/sections/sec3.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
+  <link rel="stylesheet" href="css/pages/international-aid.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="intaid-hero">
+      <img class="video-bg" src="img/international-aid.png" alt="" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="typo-hero">International Aid</h1>
+        <p class="typo-body">
+          Bring transparency and impact to humanitarian campaigns through immersive virtual
+          experiences. Help donors see exactly where their contributions go and the lives they change.
+        </p>
+        <a class="btn btn-primary" href="#projects-grid">Explore Projects</a>
+      </div>
+    </section>
+
+    <div class="spacer section-spacer" aria-hidden="true"></div>
+
+    <!-- About -->
+    <section id="about" class="sec2">
+      <div class="content">
+        <div class="align-container">
+          <div class="sec2-grid">
+            <div class="sec2-zone sec2-zone--visual">
+              <img
+                src="img/international-aid.png"
+                alt="International Aid"
+                class="sec2-visual-img"
+              />
+            </div>
+
+            <div class="sec2-zone sec2-zone--text">
+              <div class="sec2-text">
+                <h2 class="typo-hero intaid-about-title">Why ISHARE International Aid Matters?</h2>
+
+                <p class="typo-body">
+                  International aid and humanitarian organisations face a unique challenge —
+                  the communities they serve are often thousands of kilometres from the donors
+                  who fund them. Traditional reports and photographs can only convey so much.
+                  Immersive technology bridges that gap.
+                </p>
+
+                <p class="typo-body">
+                  iShare.ai International Aid helps NGOs, foundations, and development agencies
+                  present field operations, infrastructure projects, and community outcomes
+                  through 360 virtual environments that donors can explore from anywhere in
+                  the world.
+                </p>
+
+                <p class="typo-body">
+                  By combining immersive storytelling with transparent project data, iShare.ai
+                  makes international aid campaigns more accountable, engaging, and effective —
+                  giving development teams a modern way to build donor trust and sustain
+                  long-term partnerships.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer section-spacer" aria-hidden="true"></div>
+
+    <!-- Projects Grid -->
+    <section id="intaid-projects" class="sec3">
+      <div class="sec3-inner">
+        <h2 class="sec3-title typo-hero">Featured International Aid Projects</h2>
+
+        <div id="projects-grid" class="sec3-grid" role="list">
+          <!-- Info Card -->
+          <div class="campaign-card campaign-card--text" role="listitem">
+            <div class="campaign-copy">
+              <span class="campaign-label typo-util">Coming Soon</span>
+              <span class="campaign-note">Projects in this sector are being developed. Invite donors to step inside humanitarian initiatives and explore the impact of their contributions on communities worldwide.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/shared-header.js" defer></script>
+  <script src="js/shared-footer.js?v=20260331" defer></script>
+  <script src="js/header.js" defer></script>
+</body>
+</html>

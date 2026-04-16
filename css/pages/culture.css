@@ -1,0 +1,121 @@
+#culture-hero {
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+#culture-hero .container {
+  width: 100%;
+  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+#culture-hero h1 {
+  margin-bottom: 20px;
+}
+
+#culture-hero p {
+  max-width: 640px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  #culture-hero {
+    min-height: 100svh;
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  #culture-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 16px;
+  }
+
+  #culture-hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  #culture-hero {
+    padding: 40px 16px;
+  }
+
+  #culture-hero h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 12px;
+  }
+
+  #culture-hero p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.section-spacer {
+  height: 56px;
+}
+
+#about .culture-about-title {
+  color: #8a5a2d;
+}
+
+/* Card overlays for culture projects */
+#culture-projects .campaign-card::after {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.45) 48%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+}
+
+#culture-projects .campaign-card--text {
+  background: #ffffff;
+  color: #0e141b;
+  border-color: rgba(0, 0, 0, 0.12);
+  cursor: default;
+}
+
+#culture-projects .campaign-card--text::after {
+  opacity: 0;
+}
+
+#culture-projects .campaign-copy {
+  position: relative;
+  z-index: 2;
+  width: min(86%, 340px);
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#culture-projects .campaign-note {
+  color: #5a3a1a;
+  font-size: clamp(13px, 1.05vw, 16px);
+  line-height: 1.45;
+}
+
+#culture-projects .campaign-card--text .campaign-label {
+  color: #0e141b;
+}
+
+@media (max-width: 768px) {
+  .section-spacer {
+    height: 36px;
+  }
+}

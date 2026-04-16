@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fort York | ISHARE® Culture</title>
+  <link rel="icon" type="image/svg+xml" href="../img/isharefavicon.svg" />
+
+  <meta property="og:title" content="Fort York | ISHARE® Culture" />
+  <meta property="og:description" content="An immersive 360 virtual experience exploring Fort York National Historic Site — Toronto's birthplace and a landmark of Canadian military and cultural heritage." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../css/base/variables.css" />
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/base/typography.css" />
+  <link rel="stylesheet" href="../css/components/buttons.css" />
+  <link rel="stylesheet" href="../css/components/header.css" />
+  <link rel="stylesheet" href="../css/sections/footer.css" />
+  <link rel="stylesheet" href="../css/pages/healthcare-detail.css" />
+  <link rel="stylesheet" href="../css/pages/culture-detail.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="healthcare-detail culture-detail">
+    <section class="video-hero" aria-label="Project intro video">
+      <video class="video-bg" autoplay muted loop playsinline preload="metadata"
+        poster="../img/culture/fortyork/2.JPG">
+        <source src="../img/culture/fortyork/heroyork.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-hero-inner wrap">
+        <a class="healthcare-back video-hero-back" href="../culture.html">Back to Culture Projects</a>
+
+        <div class="video-hero-kicker">Culture Project</div>
+
+        <h1 class="video-hero-title typo-hero">
+          <span class="grad">Fort York</span>
+        </h1>
+
+        <p class="video-hero-lead typo-body">
+          An immersive 360 virtual experience exploring Fort York National Historic Site —
+          Toronto's birthplace and a landmark of Canadian military and cultural heritage,
+          brought to life through interactive panoramic environments.
+        </p>
+      </div>
+
+      <div class="video-hero-scroll" aria-hidden="true">
+        Scroll <i></i>
+      </div>
+    </section>
+
+    <section class="section section-spaced"></section>
+
+    <section class="section">
+      <header class="hero-phil is-brand compact luxe" role="banner" aria-label="Project hero">
+        <div class="hero-right">
+          <h1 class="hero-title typo-hero">
+            <span class="hero-line">Fort York</span>
+            <span class="hero-line gradient">Where Toronto Began</span>
+          </h1>
+
+          <div class="hero-meta" aria-label="Project meta">
+            <span>National Historic Site</span><span class="dot"></span>
+            <span>Military Heritage</span><span class="dot"></span>
+            <span>Cultural Landmark</span>
+          </div>
+
+          <p class="hero-subtitle">
+            Fort York is the founding site of the City of Toronto, established in 1793.
+            This national historic site preserves original War of 1812 fortifications,
+            barracks, and blockhouses that tell the story of Canada's early military
+            and civic development.
+          </p>
+
+          <p class="hero-subtitle">
+            Through immersive 360 environments, visitors can explore the fort's grounds,
+            engage with interpretive displays, and experience the historic architecture
+            that connects modern Toronto to its origins.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#viewer" class="btn btn-primary">Open 360 Experience</a>
+            <a href="https://ishare.giftabulatornow.com/app/give-now?locale=en-CA"
+               class="btn btn-orange btn-pill"
+               target="_blank"
+               rel="noopener"
+               title="Discover how to make tax efficient donations">
+              Discover How To Make Tax Efficient Donations
+            </a>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section id="viewer" aria-label="360 viewer">
+      <iframe
+        id="panoFrame"
+        src="https://seekbeak.com/v/3pzOWGwazM2"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+    <section class="section" id="project-about">
+      <h2 class="table-title">About Fort York</h2>
+
+      <p class="table-subtitle">
+        Fort York National Historic Site is the birthplace of urban Toronto and one of
+        Canada's most significant War of 1812 landmarks.
+      </p>
+
+      <div class="culture-copy">
+        <p>
+          The site preserves a collection of original early 19th-century military buildings,
+          including blockhouses, barracks, and powder magazines. Visitors can explore restored
+          interiors, view period artifacts, and learn about the Battle of York and the military
+          history that shaped Upper Canada.
+        </p>
+        <p>
+          This immersive 360 experience allows remote exploration of the fort's grounds and
+          buildings, expanding access for educators, students, and heritage enthusiasts
+          who cannot visit in person.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/shared-header.js" defer></script>
+  <script src="../js/shared-footer.js?v=20260331" defer></script>
+  <script src="../js/header.js" defer></script>
+</body>
+</html>

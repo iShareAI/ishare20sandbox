@@ -3,13 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sporting Venues | ISHARE</title>
+  <title>ISHARE® Sporting Venues</title>
   <link rel="icon" type="image/svg+xml" href="img/isharefavicon.svg" />
 
-  <meta property="og:title" content="Sporting Venues | ISHARE" />
+  <meta property="og:title" content="Sporting Venues | ISHARE®" />
   <meta property="og:description" content="Immersive 360° experiences for stadiums, arenas, and sporting complexes." />
   <meta property="og:type" content="website" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/base/variables.css" />
   <link rel="stylesheet" href="css/base/reset.css" />
   <link rel="stylesheet" href="css/base/typography.css" />
@@ -20,7 +29,7 @@
   <link rel="stylesheet" href="css/sections/sec2.css" />
   <link rel="stylesheet" href="css/sections/sec3.css" />
   <link rel="stylesheet" href="css/sections/footer.css" />
-  <link rel="stylesheet" href="css/pages/healthcare.css" />
+  <link rel="stylesheet" href="css/pages/sporting-venues.css" />
 </head>
 <body>
   <div id="site-header"></div>
@@ -28,9 +37,9 @@
   <main>
 
     <!-- Hero -->
-    <section id="healthcare-hero">
+    <section id="sporting-hero">
       <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="img/sport.jpg">
-        <source src="img/sporting%20venues.mp4" type="video/mp4" />
+        <source src="img/sportingvenue/stadium-hero-video.mp4" type="video/mp4" />
       </video>
       <div class="overlay"></div>
       <div class="container">
@@ -60,7 +69,7 @@
 
             <div class="sec2-zone sec2-zone--text">
               <div class="sec2-text">
-                <h2 class="typo-hero healthcare-about-title">Why ISHARE Sporting Venues Matters?</h2>
+                <h2 class="typo-hero sporting-about-title">Why ISHARE Sporting Venues Matters?</h2>
 
                 <p class="typo-body">
                   Stadiums, arenas, and multipurpose venues are more than facilities — they are
@@ -96,11 +105,27 @@
         <h2 class="sec3-title typo-hero">Featured Sporting Venues</h2>
 
         <div id="projects-grid" class="sec3-grid" role="list">
-          <a class="campaign-card tone-4" href="stadium-project.html" role="listitem">
-            <div class="campaign-media" style="background-image: url('img/sport.jpg');" aria-hidden="true"></div>
-            <span class="campaign-label typo-util">Stadium</span>
+          <!-- Project Card 1: FMI Stadium -->
+          <a class="campaign-card tone-1" href="sporting-venues/fmi-stadium.html" role="listitem">
+            <div class="campaign-media" aria-hidden="true">
+              <video autoplay muted loop playsinline preload="metadata">
+                <source src="img/sportingvenue/stadium-hero-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <span class="campaign-label typo-util">FMI Stadium</span>
           </a>
 
+          <!-- Project Card 2: Hockey Arena -->
+          <a class="campaign-card tone-2" href="sporting-venues/hockey-arena.html" role="listitem">
+            <div class="campaign-media" aria-hidden="true">
+              <video autoplay muted loop playsinline preload="metadata">
+                <source src="img/sportingvenue/herostadium.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <span class="campaign-label typo-util">Hockey Arena</span>
+          </a>
+
+          <!-- Info Card -->
           <div class="campaign-card campaign-card--text" role="listitem">
             <div class="campaign-copy">
               <span class="campaign-label typo-util">Use Case</span>
