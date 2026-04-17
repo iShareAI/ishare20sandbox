@@ -180,4 +180,46 @@
   if (isNestedDetailPage) {
     fixRelativePaths(host, "../");
   }
+
+  /* ── AI Bot Floating Button (global) ── */
+  const imgPrefix = isNestedDetailPage ? "../" : "";
+  const fab = document.createElement("div");
+  fab.id = "aiBotFab";
+  fab.className = "ai-bot-fab";
+  fab.innerHTML =
+    '<div class="ai-bot-tooltip" id="aiBotTooltip">' +
+      '<span>Ask BuilderBill AI\u2122</span>' +
+      '<button class="ai-bot-tooltip-close" id="aiBotTooltipClose" aria-label="Close tooltip">\u00d7</button>' +
+    '</div>' +
+    '<button class="ai-bot-btn" id="aiBotBtn" type="button" aria-label="Open BuilderBill AI assistant">' +
+      '<img src="' + imgPrefix + 'img/aibill.png" alt="BuilderBill AI" class="ai-bot-avatar" />' +
+      '<span class="ai-bot-pulse"></span>' +
+    '</button>';
+  document.body.appendChild(fab);
+
+  var style = document.createElement("style");
+  style.textContent =
+    '.ai-bot-fab{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;transform:translateX(120px);animation:aiBotSlideIn .6s cubic-bezier(.34,1.56,.64,1) 1.5s forwards}' +
+    '@keyframes aiBotSlideIn{to{transform:translateX(0)}}' +
+    '.ai-bot-tooltip{display:flex;align-items:center;gap:8px;background:#111;color:#fff;padding:10px 16px;border-radius:14px;font-family:"Plus Jakarta Sans","Inter",sans-serif;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.18);opacity:0;transform:translateY(6px);animation:aiBotTooltipIn .4s ease 2.2s forwards;transition:opacity .3s ease,transform .3s ease}' +
+    '.ai-bot-tooltip.hidden{opacity:0!important;transform:translateY(6px)!important;pointer-events:none}' +
+    '.ai-bot-tooltip-close{background:none;border:none;color:rgba(255,255,255,.5);font-size:16px;cursor:pointer;padding:0 0 0 4px;line-height:1;transition:color .2s}' +
+    '.ai-bot-tooltip-close:hover{color:#fff}' +
+    '@keyframes aiBotTooltipIn{to{opacity:1;transform:translateY(0)}}' +
+    '.ai-bot-btn{position:relative;width:94px;height:94px;border-radius:50%;border:3px solid rgba(217,255,102,.8);background:#111;cursor:pointer;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease}' +
+    '.ai-bot-btn:hover{transform:scale(1.1);box-shadow:0 10px 40px rgba(0,0,0,.35)}' +
+    '.ai-bot-btn:active{transform:scale(.95)}' +
+    '.ai-bot-avatar{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;pointer-events:none;transform:scaleX(-1)}' +
+    '.ai-bot-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(217,255,102,.6);animation:aiBotPulse 2.5s ease-out infinite;pointer-events:none}' +
+    '@keyframes aiBotPulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.35);opacity:0}100%{transform:scale(1.35);opacity:0}}' +
+    '@media(max-width:600px){.ai-bot-fab{bottom:18px;right:18px}.ai-bot-btn{width:78px;height:78px}}';
+  document.head.appendChild(style);
+
+  document.getElementById("aiBotBtn").addEventListener("click", function(){
+    window.open("https://ishare.ai/9HT0SLLTBN", "_blank");
+  });
+  document.getElementById("aiBotTooltipClose").addEventListener("click", function(e){
+    e.stopPropagation();
+    document.getElementById("aiBotTooltip").classList.add("hidden");
+  });
 })();
