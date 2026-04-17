@@ -145,7 +145,7 @@
             </div>
           </div>
 
-          <a href="impact.html">Impact</a>
+          <a href="impact.html">Media</a>
           <a href="#contact">Contact</a>
         </nav>
 

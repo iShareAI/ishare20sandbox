@@ -110,7 +110,7 @@
         </div>
       </div>
 
-      <a href="impact.html">Impact</a>
+      <a href="impact.html">Media</a>
       <a href="index.html#contact">Contact</a>
     </nav>
 
@@ -140,7 +140,7 @@
     <a href="index.html#directions" class="m-link">Campaigns</a>
     <a href="business-case.html" class="m-link">Business Case</a>
     <a href="packages.html#pricing" class="m-link">Packages</a>
-    <a href="impact.html" class="m-link">Impact</a>
+    <a href="impact.html" class="m-link">Media</a>
     <a href="index.html#contact" class="m-link">Contact</a>
     <a href="https://ishare.ai/9HT0SLLTBN" class="m-link" target="_blank" rel="noopener noreferrer">Use our AI</a>
 
@@ -157,4 +157,24 @@
   if (isNestedDetailPage) {
     fixRelativePaths(host, "../");
   }
+
+  /* ── Calendly widget (global) ── */
+  var calCss = document.createElement("link");
+  calCss.rel = "stylesheet";
+  calCss.href = "https://assets.calendly.com/assets/external/widget.css";
+  document.head.appendChild(calCss);
+
+  var calJs = document.createElement("script");
+  calJs.src = "https://assets.calendly.com/assets/external/widget.js";
+  calJs.async = true;
+  document.head.appendChild(calJs);
+
+  /* Attach popup to every "Book a Demo" button (header + mobile + footer) */
+  document.addEventListener("click", function(e) {
+    var btn = e.target.closest("button");
+    if (btn && btn.textContent.trim() === "Book a Demo" && window.Calendly) {
+      e.preventDefault();
+      Calendly.initPopupWidget({ url: "https://calendly.com/fundingmatters/giftabulator" });
+    }
+  });
 })();
