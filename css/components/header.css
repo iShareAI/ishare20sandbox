@@ -212,6 +212,18 @@
   gap: 12px;
 }
 
+/* Match header CTA color with footer brand color */
+.topbar-actions .btn.btn-primary{
+  background: rgba(236, 173, 44, 1);
+  border-color: rgba(236, 173, 44, 1);
+  color: #ffffff;
+}
+
+.topbar-actions .btn.btn-primary:hover{
+  background: rgba(216, 156, 33, 1);
+  border-color: rgba(216, 156, 33, 1);
+}
+
 .topbar-cta{
   background: none;
   border: none;
