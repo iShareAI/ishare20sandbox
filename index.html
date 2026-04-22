@@ -35,6 +35,15 @@
 <link rel="stylesheet" href="css/sections/sec3.css">
 <link rel="stylesheet" href="css/sections/footer.css">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B00JN6GQJZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B00JN6GQJZ');
+</script>
 </head>
 
 <body>
@@ -52,7 +61,7 @@
     preload="metadata"
     poster="img/hero-poster.jpg"
   >
-    <source src="img/herov1.mp4" type="video/mp4" />
+    <source src="img/herov2.mp4" type="video/mp4" />
   </video>
 
   <div class="overlay"></div>
@@ -169,6 +178,8 @@
   <div class="content">
     <div class="align-container">
 
+      <h2 class="typo-sub">The best fundraisers aren't born confident — they become confident through practice. You're doing exactly the right thing by being here.</h2>
+
       <div class="sec2-grid">
         <!-- Zone 1 (visual area - invisible block for layout control) -->
         <div class="sec2-zone sec2-zone--visual">
@@ -256,7 +267,8 @@
   </div>
 </section>
 
-<!-- SECOND SPACER (REVIEWS) -->
+<!-- SECOND SPACER (REVIEWS) - DISABLED -->
+<template id="reviews-disabled">
 <div class="spacer spacer-reviews" id="reviews">
   <div class="spacer-inner">
    <!-- <h2 class="reviews-title human">What Canadians Say About iShare</h2>   -->
@@ -513,6 +525,7 @@
     </div>
   </div>
 </div>
+</template>
 
 
 
@@ -603,8 +616,8 @@
 
         <div class="sec2-zone sec2-zone--text">
           <div class="sec2-text">
-            <h2 class="typo-hero">A Message from the President</h2>
-            <p class="typo-body"><strong>William Petruck — President and CEO</strong></p>
+            <h2 class="typo-hero">A Message from Bill</h2>
+            <p class="typo-body"><strong>Bill Petruck — President and CEO</strong></p>
 
             <p class="typo-body">
               He combines this with experience with private funders and their interests in financially
