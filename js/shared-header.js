@@ -57,7 +57,7 @@
         <span class="utility-text">PhilanthropyLab®</span>
       </a>
 
-      <a class="utility-link" href="https://ishare.ai/9HT0SLLTBN" target="_blank" rel="noopener noreferrer">
+      <a class="utility-link" href="https://ishare.ai/deployment-e23aa75b-02ed-43f9-bc30-567c532ff8cc" target="_blank" rel="noopener noreferrer">
         <span class="utility-ico" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 2l1.2 4.2L17.4 8 13.2 9.2 12 13.4 10.8 9.2 6.6 8l4.2-1.8L12 2z"/>
@@ -142,7 +142,7 @@
     <a href="packages.html#pricing" class="m-link">Packages</a>
     <a href="impact.html" class="m-link">Media</a>
     <a href="index.html#contact" class="m-link">Contact</a>
-    <a href="https://ishare.ai/9HT0SLLTBN" class="m-link" target="_blank" rel="noopener noreferrer">Use our AI</a>
+    <a href="https://ishare.ai/deployment-e23aa75b-02ed-43f9-bc30-567c532ff8cc" class="m-link" target="_blank" rel="noopener noreferrer">Use our AI</a>
 
     <button class="btn btn-primary" type="button">Book a Demo</button>
   </div>

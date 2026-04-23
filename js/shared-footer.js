@@ -161,7 +161,7 @@
           <a class="utility-link" href="https://fundingmatters.com/" target="_blank" rel="noopener"><span class="utility-text">FUNDING matters Inc.</span></a>
           <a class="utility-link" href="https://www.giftabulator.com/" target="_blank" rel="noopener"><span class="utility-text">GIFTABULATOR®</span></a>
           <a class="utility-link" href="https://philanthropylab.ca/" target="_blank" rel="noopener"><span class="utility-text">PhilanthropyLab®</span></a>
-          <a class="utility-link" href="https://ishare.ai/9HT0SLLTBN" target="_blank" rel="noopener noreferrer"><span class="utility-text">BuilderBillAI<sup class="tm-mark">TM</sup></span></a>
+          <a class="utility-link" href="https://ishare.ai/deployment-e23aa75b-02ed-43f9-bc30-567c532ff8cc" target="_blank" rel="noopener noreferrer"><span class="utility-text">BuilderBillAI<sup class="tm-mark">TM</sup></span></a>
         </nav>
       </div>
     </div>
@@ -216,7 +216,7 @@
   document.head.appendChild(style);
 
   document.getElementById("aiBotBtn").addEventListener("click", function(){
-    window.open("https://ishare.ai/9HT0SLLTBN", "_blank");
+    window.open("https://ishare.ai/deployment-e23aa75b-02ed-43f9-bc30-567c532ff8cc", "_blank");
   });
   document.getElementById("aiBotTooltipClose").addEventListener("click", function(e){
     e.stopPropagation();
