@@ -188,7 +188,7 @@
   fab.className = "ai-bot-fab";
   fab.innerHTML =
     '<div class="ai-bot-tooltip" id="aiBotTooltip">' +
-      '<span>Ask BuilderBill AI\u2122</span>' +
+      '<span>Ask About IshareAI\u2122</span>' +
       '<button class="ai-bot-tooltip-close" id="aiBotTooltipClose" aria-label="Close tooltip">\u00d7</button>' +
     '</div>' +
     '<button class="ai-bot-btn" id="aiBotBtn" type="button" aria-label="Open BuilderBill AI assistant">' +
