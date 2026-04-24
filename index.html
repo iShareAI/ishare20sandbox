@@ -88,7 +88,7 @@
         
         <a class="btn btn-secondary" href="#directions">View Campaigns</a>
         <!-- replicated primary style to match first button -->
-        <button class="btn btn-primary" type="button" onclick="window.open('https://ishare.ai/','_blank')">Use our AI</button>
+        <button class="btn btn-primary" type="button" id="openAiLeadModal">Use our AI</button>
         <button class="btn btn-primary btn-funding-matters" type="button" id="openFundingMattersModal">What Is FUNDING matters Inc.?</button>
       </div>
     </div>
@@ -118,6 +118,48 @@
   </div>
 </div>
 <div class="deck-modal-backdrop" id="fundingMattersBackdrop" aria-hidden="true"></div>
+
+<div class="modal ai-lead-modal" id="aiLeadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="aiLeadModalTitle">
+  <div class="modal-content" role="document">
+    <div class="ai-lead-modal-head">
+      <h2 id="aiLeadModalTitle">Let's get acquainted</h2>
+      <button class="modal-close" type="button" id="closeAiLeadModal" aria-label="Close popup">&times;</button>
+    </div>
+
+    <form id="aiLeadForm" class="ai-lead-form" action="https://formsubmit.co/wpetruck@ishare.ca" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New iShare AI lead from website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Thank you for reaching out to iShare. Access the iShare Pickaxe portal here: https://ishare.ai/">
+
+      <div class="ai-form-grid">
+        <label class="ai-field">
+          <span>Name *</span>
+          <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+        </label>
+
+        <label class="ai-field">
+          <span>Email *</span>
+          <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+        </label>
+      </div>
+
+      <label class="ai-field">
+        <span>Organization *</span>
+        <input type="text" name="organization" autocomplete="organization" placeholder="Your organization" required>
+      </label>
+
+      <label class="ai-field">
+        <span>Message</span>
+        <textarea name="message" rows="5" placeholder="What's on your mind?"></textarea>
+      </label>
+
+      <p class="ai-lead-note" id="aiLeadStatus" aria-live="polite"></p>
+
+      <button class="ai-submit" id="aiLeadSubmit" type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
  
 
 </main>
