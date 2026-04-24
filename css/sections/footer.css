@@ -162,12 +162,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 96px;
+  height: 96px;
   margin-top: 26px;
   color: #ffffff;
   text-decoration: none;
   transition: opacity 0.2s ease;
+}
+
+.footer-top svg{
+  width: 80px !important;
+  height: 80px !important;
 }
 
 .footer-top:hover{
@@ -274,6 +279,18 @@
 
 .topbar-actions--footer .topbar-cta:hover {
   background: rgba(255,255,255,0.9);
+}
+
+/* Footer Book a Demo button uses .btn.btn-primary in shared-footer.js */
+.topbar-actions--footer .btn.btn-primary {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0b0f14;
+}
+
+.topbar-actions--footer .btn.btn-primary:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.9);
 }
 
 /* If logo is dark — invert (you can remove if not needed) */

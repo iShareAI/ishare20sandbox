@@ -176,6 +176,47 @@
   opacity: .55;
 }
 
+.campaign-card--message{
+  background: #ffffff;
+  border-color: rgba(14, 20, 27, 0.22);
+  cursor: default;
+}
+
+.campaign-card--message::after{
+  background: none;
+  opacity: 0;
+}
+
+.campaign-card--message:hover{
+  transform: none;
+  border-color: rgba(14, 20, 27, 0.28);
+  background: #f8f9fb;
+}
+
+.campaign-card--message .campaign-copy{
+  gap: 14px;
+  width: min(88%, 440px);
+  color: #0e141b;
+  text-shadow: none;
+}
+
+.campaign-card--message .campaign-label{
+  font-size: clamp(12px, 1vw, 15px);
+  letter-spacing: .14em;
+  color: #0e141b;
+}
+
+.campaign-message{
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.45;
+  color: #0e141b;
+  text-transform: none;
+  letter-spacing: .01em;
+  text-wrap: balance;
+}
+
 /* ================= IMAGES PER TILE ================= */
 
 
