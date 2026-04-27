@@ -1,4 +1,11 @@
 (() => {
+  const badPaths = ["/home", "/index", "/main"];
+
+  if (badPaths.includes(window.location.pathname)) {
+    window.location.replace("/");
+    return;
+  }
+
   const isNestedDetailPage = /\/(?:healthcare|culture|sporting-venues|packages)\/[^/]+\.html$/i.test(window.location.pathname);
 
   const fixRelativePaths = (root, prefix) => {
