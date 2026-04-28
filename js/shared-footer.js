@@ -197,11 +197,12 @@
       const fallbackStyle = document.createElement("style");
       fallbackStyle.id = "seekbeak-fallback-style";
       fallbackStyle.textContent =
-        '.seekbeak-fallback{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#0f172a;color:#fff;font:600 13px/1.35 "Plus Jakarta Sans","Inter",sans-serif;text-decoration:none;align-items:center;justify-content:center;gap:8px}' +
+        '.seekbeak-fallback{display:none;margin-top:12px;text-decoration:none;align-items:center;justify-content:center}' +
         '.seekbeak-fallback.is-visible{display:flex}' +
-        '.seekbeak-fallback:hover{background:#1e293b}' +
-        '.seekbeak-fallback-overlay{position:absolute;left:12px;right:12px;bottom:12px;z-index:8;margin-top:0}' +
-        '.seekbeak-fallback-overlay{box-shadow:0 8px 24px rgba(2,6,23,.28)}';
+        '.seekbeak-fallback-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:rgba(15,23,42,.92);color:#fff;box-shadow:0 8px 24px rgba(2,6,23,.28);border:1px solid rgba(148,163,184,.35)}' +
+        '.seekbeak-fallback-btn:hover{background:#1e293b}' +
+        '.seekbeak-fallback-btn svg{width:18px;height:18px;display:block}' +
+        '.seekbeak-fallback-overlay{position:absolute;right:12px;bottom:12px;z-index:8;margin-top:0}';
       document.head.appendChild(fallbackStyle);
     }
 
@@ -234,7 +235,12 @@
       fallbackLink.target = "_blank";
       fallbackLink.rel = "noopener noreferrer";
       fallbackLink.dataset.src = src;
-      fallbackLink.textContent = "Open iShare 360 viewer";
+      fallbackLink.innerHTML =
+        '<span class="seekbeak-fallback-btn" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '<path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '</svg>' +
+        '</span>';
       fallbackLink.setAttribute("aria-label", "Open iShare 360 viewer in a new tab");
 
       const isViewerEmbed = frame.id === "panoFrame" || Boolean(frame.closest("#viewer"));
@@ -264,7 +270,7 @@
         if (!loaded) {
           fallbackLink.classList.add("is-visible");
         }
-      }, isMobile ? 3500 : 6000);
+      }, isMobile ? 8000 : 12000);
     });
   };
 

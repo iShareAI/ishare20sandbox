@@ -64,8 +64,6 @@
       margin: 0 auto;
       padding: 14px;
       display: grid;
-      grid-template-rows: 1fr auto;
-      gap: 10px;
     }
 
     .viewer-frame {
@@ -76,19 +74,6 @@
       border-radius: 14px;
       background: #000;
       box-shadow: 0 16px 44px rgba(2, 6, 23, 0.55);
-    }
-
-    .helper {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-      text-align: center;
-      padding: 0 8px 6px;
-    }
-
-    .helper a {
-      color: var(--text);
-      text-decoration-color: rgba(226, 232, 240, 0.45);
     }
 
     .error {
@@ -137,7 +122,6 @@
         '</header>' +
         '<main class="viewer-wrap">' +
           '<iframe class="viewer-frame" title="iShare 360 Panorama" src="' + src + '" loading="eager" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
-          '<div class="helper">Powered by iShare immersive experience.</div>' +
         '</main>';
     })();
   </script>
