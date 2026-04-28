@@ -1,4 +1,4 @@
-# Pickaxe Ready Text and PDFs
+﻿# Pickaxe Ready Text and PDFs
 
 ## 1) Ready-to-paste Role Text
 
@@ -83,3 +83,4 @@ If you want richer retrieval responses, also upload:
 - 04-integrations-behavior-and-risks.md
 - 05-bot-capabilities-and-playbooks.md
 - 06-pickaxe-role.md
+

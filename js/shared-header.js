@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const isNestedDetailPage = /\/(?:healthcare|culture|sporting-venues|packages)\/[^/]+\.html$/i.test(window.location.pathname);
 
   const fixRelativePaths = (root, prefix) => {
@@ -178,3 +178,4 @@
     }
   });
 })();
+

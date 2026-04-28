@@ -1,4 +1,4 @@
-/* ======================================================
+﻿/* ======================================================
    TOP UTILITY BAR (ABOVE HEADER)
    Project: iShare®
    Note: This file styles ONLY .utility-* elements.
@@ -70,3 +70,4 @@
   .utility-text{ display: none; } /* show only icons on mobile */
   .utility-link{ padding: 6px 10px; }
 }
+

@@ -1,4 +1,4 @@
-/* =====================================================
+﻿/* =====================================================
    ISHARE HEADER MODULE
    Utility Bar + Topbar + Mobile Drawer
 ===================================================== */
@@ -470,3 +470,4 @@ body.mobile-open{
 .topbar a:active{
   text-decoration: none !important;
 }
+

@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const badPaths = ["/home", "/index", "/main"];
 
   if (badPaths.includes(window.location.pathname)) {
@@ -182,10 +182,11 @@
 
 </footer>`;
   const host = document.getElementById("site-footer");
-  if (!host) return;
-  host.innerHTML = sharedFooterHtml;
-  if (isNestedDetailPage) {
-    fixRelativePaths(host, "../");
+  if (host) {
+    host.innerHTML = sharedFooterHtml;
+    if (isNestedDetailPage) {
+      fixRelativePaths(host, "../");
+    }
   }
 
   const enhanceSeekBeakEmbeds = () => {
@@ -250,6 +251,9 @@
           parent.style.position = "relative";
         }
         fallbackLink.classList.add("seekbeak-fallback-overlay");
+        if (isMobile) {
+          fallbackLink.classList.add("is-visible");
+        }
       }
 
       parent.insertBefore(fallbackLink, frame.nextSibling);
