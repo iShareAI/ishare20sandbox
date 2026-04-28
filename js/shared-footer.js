@@ -188,6 +188,84 @@
     fixRelativePaths(host, "../");
   }
 
+  const enhanceSeekBeakEmbeds = () => {
+    const isMobile = window.matchMedia("(max-width: 900px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    const embeds = document.querySelectorAll('iframe[src*="app.seekbeak.com"]');
+    if (!embeds.length) return;
+
+    if (!document.getElementById("seekbeak-fallback-style")) {
+      const fallbackStyle = document.createElement("style");
+      fallbackStyle.id = "seekbeak-fallback-style";
+      fallbackStyle.textContent =
+        '.seekbeak-fallback{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#0f172a;color:#fff;font:600 13px/1.35 "Plus Jakarta Sans","Inter",sans-serif;text-decoration:none;align-items:center;justify-content:center;gap:8px}' +
+        '.seekbeak-fallback.is-visible{display:flex}' +
+        '.seekbeak-fallback:hover{background:#1e293b}' +
+        '.seekbeak-fallback-note{display:none;margin-top:8px;color:#475569;font:500 12px/1.4 "Plus Jakarta Sans","Inter",sans-serif}' +
+        '.seekbeak-fallback-note.is-visible{display:block}';
+      document.head.appendChild(fallbackStyle);
+    }
+
+    embeds.forEach((frame) => {
+      const src = frame.getAttribute("src");
+      if (!src) return;
+
+      if (isMobile && frame.loading === "lazy" && (frame.id === "panoFrame" || frame.closest("#viewer"))) {
+        frame.loading = "eager";
+      }
+
+      const parent = frame.parentElement;
+      if (!parent || parent.querySelector('.seekbeak-fallback[data-src="' + src + '"]')) return;
+
+      const fallbackLink = document.createElement("a");
+      fallbackLink.className = "seekbeak-fallback";
+      fallbackLink.href = src;
+      fallbackLink.target = "_blank";
+      fallbackLink.rel = "noopener noreferrer";
+      fallbackLink.dataset.src = src;
+      fallbackLink.textContent = "Open 360 panorama in new tab";
+      fallbackLink.setAttribute("aria-label", "Open panorama in a new tab");
+
+      const fallbackNote = document.createElement("div");
+      fallbackNote.className = "seekbeak-fallback-note";
+      fallbackNote.textContent = "If the embedded panorama does not load on mobile, use this link.";
+
+      parent.insertBefore(fallbackLink, frame.nextSibling);
+      parent.insertBefore(fallbackNote, fallbackLink.nextSibling);
+
+      let loaded = false;
+      frame.addEventListener("load", () => {
+        loaded = true;
+        if (!isMobile) {
+          fallbackLink.classList.remove("is-visible");
+          fallbackNote.classList.remove("is-visible");
+        }
+      });
+
+      frame.addEventListener("error", () => {
+        fallbackLink.classList.add("is-visible");
+        fallbackNote.classList.add("is-visible");
+      });
+
+      if (isMobile) {
+        fallbackLink.classList.add("is-visible");
+        fallbackNote.classList.add("is-visible");
+      } else {
+        window.setTimeout(() => {
+          if (!loaded) {
+            fallbackLink.classList.add("is-visible");
+            fallbackNote.classList.add("is-visible");
+          }
+        }, 6000);
+      }
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", enhanceSeekBeakEmbeds, { once: true });
+  } else {
+    enhanceSeekBeakEmbeds();
+  }
+
   /* ── AI Bot Floating Button (global) ── */
   const imgPrefix = isNestedDetailPage ? "../" : "";
   const fab = document.createElement("div");
