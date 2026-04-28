@@ -11,11 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const setFrameTitleFromSelect = () => {
+    const currentOption = select.options[select.selectedIndex];
+    const label = currentOption ? currentOption.textContent.trim() : "";
+    frame.title = label ? `360 Panorama: ${label}` : "360 Panorama Viewer";
+  };
+
   select.addEventListener("change", () => {
     const nextUrl = select.value.trim();
     if (!nextUrl) return;
     frame.src = nextUrl;
     setActiveRowByUrl(nextUrl);
+    setFrameTitleFromSelect();
   });
 
   rows.forEach((row) => {
@@ -28,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       frame.src = url;
       select.value = url;
       setActiveRowByUrl(url);
+      setFrameTitleFromSelect();
     });
 
     row.addEventListener("keydown", (event) => {
@@ -39,4 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setActiveRowByUrl(frame.getAttribute("src") || "");
+  setFrameTitleFromSelect();
 });

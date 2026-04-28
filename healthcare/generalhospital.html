@@ -135,7 +135,7 @@
         id="panoFrame"
         src="https://app.seekbeak.com/v/A0zrX6AMqvQ"
         allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin">
+        referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
       </iframe>
     </section>
 
@@ -300,23 +300,6 @@
   
   <script src="../js/generalhospital-survey.js" defer></script>
   <script src="../js/generalhospital-viewer.js" defer></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const select = document.getElementById("panoSelect");
-  const frame = document.getElementById("panoFrame");
-
-  console.log("select:", select);
-  console.log("frame:", frame);
-
-  if (!select || !frame) return;
-
-  select.addEventListener("change", () => {
-    console.log("changed to:", select.value);
-    frame.src = select.value;
-  });
-});
-</script>
   
 </body>
 </html>

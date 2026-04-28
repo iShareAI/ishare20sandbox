@@ -8,6 +8,8 @@
         const url = row.getAttribute("data-pano");
         if (!url) return;
         frame.src = url;
+        const label = row.cells && row.cells.length ? row.cells[0].textContent.trim() : "";
+        frame.title = label ? `360 Panorama: ${label}` : "360 Panorama Viewer";
         document.querySelectorAll(".naming-table tbody tr.active").forEach((active) => {
           active.classList.remove("active");
         });
