@@ -44,6 +44,16 @@
   overflow: hidden;
 }
 
+/* Mobile reliability: make the anchor card itself the tap target. */
+a.campaign-card{
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a.campaign-card > *{
+  pointer-events: none;
+}
+
 .campaign-card:hover{
   background: #e8eaee;
   border-color: rgba(101, 215, 235, 0.89);
