@@ -200,10 +200,8 @@
         '.seekbeak-fallback{display:none;margin-top:12px;padding:10px 14px;border-radius:10px;background:#0f172a;color:#fff;font:600 13px/1.35 "Plus Jakarta Sans","Inter",sans-serif;text-decoration:none;align-items:center;justify-content:center;gap:8px}' +
         '.seekbeak-fallback.is-visible{display:flex}' +
         '.seekbeak-fallback:hover{background:#1e293b}' +
-        '.seekbeak-fallback-note{display:none;margin-top:8px;color:#475569;font:500 12px/1.4 "Plus Jakarta Sans","Inter",sans-serif}' +
-        '.seekbeak-fallback-note.is-visible{display:block}' +
         '.seekbeak-fallback-overlay{position:absolute;left:12px;right:12px;bottom:12px;z-index:8;margin-top:0}' +
-        '.seekbeak-fallback-note-overlay{position:absolute;left:12px;right:12px;bottom:58px;z-index:8;margin-top:0;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.92)}';
+        '.seekbeak-fallback-overlay{box-shadow:0 8px 24px rgba(2,6,23,.28)}';
       document.head.appendChild(fallbackStyle);
     }
 
@@ -239,10 +237,6 @@
       fallbackLink.textContent = "Open iShare 360 viewer";
       fallbackLink.setAttribute("aria-label", "Open iShare 360 viewer in a new tab");
 
-      const fallbackNote = document.createElement("div");
-      fallbackNote.className = "seekbeak-fallback-note";
-      fallbackNote.textContent = "If the embedded panorama does not load on mobile, use this link.";
-
       const isViewerEmbed = frame.id === "panoFrame" || Boolean(frame.closest("#viewer"));
       if (isViewerEmbed) {
         const parentStyle = window.getComputedStyle(parent);
@@ -250,37 +244,27 @@
           parent.style.position = "relative";
         }
         fallbackLink.classList.add("seekbeak-fallback-overlay");
-        fallbackNote.classList.add("seekbeak-fallback-note-overlay");
       }
 
       parent.insertBefore(fallbackLink, frame.nextSibling);
-      parent.insertBefore(fallbackNote, fallbackLink.nextSibling);
 
       let loaded = false;
       frame.addEventListener("load", () => {
         loaded = true;
         if (!isMobile) {
           fallbackLink.classList.remove("is-visible");
-          fallbackNote.classList.remove("is-visible");
         }
       });
 
       frame.addEventListener("error", () => {
         fallbackLink.classList.add("is-visible");
-        fallbackNote.classList.add("is-visible");
       });
 
-      if (isMobile) {
-        fallbackLink.classList.add("is-visible");
-        fallbackNote.classList.add("is-visible");
-      } else {
-        window.setTimeout(() => {
-          if (!loaded) {
-            fallbackLink.classList.add("is-visible");
-            fallbackNote.classList.add("is-visible");
-          }
-        }, 6000);
-      }
+      window.setTimeout(() => {
+        if (!loaded) {
+          fallbackLink.classList.add("is-visible");
+        }
+      }, isMobile ? 3500 : 6000);
     });
   };
 
