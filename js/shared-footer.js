@@ -211,6 +211,18 @@
       const src = frame.getAttribute("src");
       if (!src) return;
 
+      const idMatch = src.match(/\/v\/([A-Za-z0-9]+)/i);
+      const panoId = idMatch ? idMatch[1] : "";
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+      const firstSegment = pathParts[0] || "";
+      const knownRootDirs = new Set(["healthcare", "culture", "sporting-venues", "packages", "home", "index", "main", "css", "js", "img"]);
+      const repoPrefix = window.location.hostname.endsWith("github.io") && firstSegment && !knownRootDirs.has(firstSegment)
+        ? `/${firstSegment}`
+        : "";
+      const ishareViewerUrl = panoId
+        ? `${window.location.origin}${repoPrefix}/pano-viewer.html?id=${encodeURIComponent(panoId)}`
+        : src;
+
       if (isMobile && frame.loading === "lazy" && (frame.id === "panoFrame" || frame.closest("#viewer"))) {
         frame.loading = "eager";
       }
@@ -220,12 +232,12 @@
 
       const fallbackLink = document.createElement("a");
       fallbackLink.className = "seekbeak-fallback";
-      fallbackLink.href = src;
+      fallbackLink.href = ishareViewerUrl;
       fallbackLink.target = "_blank";
       fallbackLink.rel = "noopener noreferrer";
       fallbackLink.dataset.src = src;
-      fallbackLink.textContent = "Open 360 panorama in new tab";
-      fallbackLink.setAttribute("aria-label", "Open panorama in a new tab");
+      fallbackLink.textContent = "Open iShare 360 viewer";
+      fallbackLink.setAttribute("aria-label", "Open iShare 360 viewer in a new tab");
 
       const fallbackNote = document.createElement("div");
       fallbackNote.className = "seekbeak-fallback-note";
