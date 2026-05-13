@@ -17,10 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     frame.title = label ? `360 Panorama: ${label}` : "360 Panorama Viewer";
   };
 
+  const updatePanorama = (url) => {
+    frame.src = url;
+    frame.setAttribute("data-pano-label", 
+      select.options[select.selectedIndex]?.textContent?.trim() || "");
+    // Trigger MutationObserver in shared-footer.js
+  };
+
   select.addEventListener("change", () => {
     const nextUrl = select.value.trim();
     if (!nextUrl) return;
-    frame.src = nextUrl;
+    updatePanorama(nextUrl);
     setActiveRowByUrl(nextUrl);
     setFrameTitleFromSelect();
   });
@@ -32,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     row.addEventListener("click", () => {
       const url = row.getAttribute("data-pano");
       if (!url) return;
-      frame.src = url;
       select.value = url;
+      updatePanorama(url);
       setActiveRowByUrl(url);
       setFrameTitleFromSelect();
     });
