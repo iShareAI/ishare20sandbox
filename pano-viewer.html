@@ -121,8 +121,17 @@
           '<a href="javascript:history.back()" aria-label="Back" style="color:#e2e8f0;text-decoration:none;font-weight:600;">Back</a>' +
         '</header>' +
         '<main class="viewer-wrap">' +
-          '<iframe class="viewer-frame" title="iShare 360 Panorama" src="' + src + '" loading="eager" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+          '<div class="viewer-frame snap-embed" data-aspect-width="16" data-aspect-height="9">' +
+            '<span>iShare 360 Panorama</span>' +
+            '<a href="' + src + '" target="_blank">Snap Content</a>' +
+          '</div>' +
         '</main>';
+
+      const sbScript = document.createElement("script");
+      sbScript.async = true;
+      sbScript.src = "https://app.seekbeak.com/js/sbembed.js";
+      sbScript.charset = "utf-8";
+      shell.appendChild(sbScript);
     })();
   </script>
 </body>

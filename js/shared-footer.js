@@ -190,91 +190,111 @@
   }
 
   const enhanceSeekBeakEmbeds = () => {
-    const isMobile = window.matchMedia("(max-width: 900px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
     const embeds = document.querySelectorAll('iframe[src*="app.seekbeak.com"]');
     if (!embeds.length) return;
 
-    if (!document.getElementById("seekbeak-fallback-style")) {
-      const fallbackStyle = document.createElement("style");
-      fallbackStyle.id = "seekbeak-fallback-style";
-      fallbackStyle.textContent =
-        '.seekbeak-fallback{display:none;margin-top:12px;text-decoration:none;align-items:center;justify-content:center}' +
-        '.seekbeak-fallback.is-visible{display:flex}' +
-        '.seekbeak-fallback-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:rgba(15,23,42,.92);color:#fff;box-shadow:0 8px 24px rgba(2,6,23,.28);border:1px solid rgba(148,163,184,.35)}' +
-        '.seekbeak-fallback-btn:hover{background:#1e293b}' +
-        '.seekbeak-fallback-btn svg{width:18px;height:18px;display:block}' +
-        '.seekbeak-fallback-overlay{position:absolute;right:12px;bottom:12px;z-index:8;margin-top:0}';
-      document.head.appendChild(fallbackStyle);
+    if (!document.getElementById("seekbeak-snap-style")) {
+      const style = document.createElement("style");
+      style.id = "seekbeak-snap-style";
+      style.textContent =
+        ".seekbeak-snap-host{display:block;width:100%}" +
+        ".seekbeak-snap-host .snap-embed{width:100%;height:100%}" +
+        ".seekbeak-snap-host .snap-embed iframe{width:100%;height:100%}";
+      document.head.appendChild(style);
     }
 
-    embeds.forEach((frame) => {
-      const src = frame.getAttribute("src");
-      if (!src) return;
+    const cleanLabel = (rawLabel) => {
+      const safe = String(rawLabel || "").replace(/^360\s+Panorama:\s*/i, "").trim();
+      return safe || "360 Panorama Viewer";
+    };
 
-      const idMatch = src.match(/\/v\/([A-Za-z0-9]+)/i);
-      const panoId = idMatch ? idMatch[1] : "";
-      const pathParts = window.location.pathname.split("/").filter(Boolean);
-      const firstSegment = pathParts[0] || "";
-      const knownRootDirs = new Set(["healthcare", "culture", "sporting-venues", "packages", "home", "index", "main", "css", "js", "img"]);
-      const repoPrefix = window.location.hostname.endsWith("github.io") && firstSegment && !knownRootDirs.has(firstSegment)
-        ? `/${firstSegment}`
-        : "";
-      const ishareViewerUrl = panoId
-        ? `${window.location.origin}${repoPrefix}/pano-viewer.html?id=${encodeURIComponent(panoId)}`
-        : src;
+    const findLabelFromSelect = (src) => {
+      if (!src) return "";
+      const option = document.querySelector(`select option[value="${src}"]`);
+      return option ? option.textContent.trim() : "";
+    };
 
-      if (isMobile && frame.loading === "lazy" && (frame.id === "panoFrame" || frame.closest("#viewer"))) {
-        frame.loading = "eager";
-      }
+    const createSnapEmbed = (src, label) => {
+      const snap = document.createElement("div");
+      snap.className = "snap-embed";
+      snap.setAttribute("data-aspect-width", "16");
+      snap.setAttribute("data-aspect-height", "9");
+
+      const title = document.createElement("span");
+      title.textContent = cleanLabel(label);
+      snap.appendChild(title);
+
+      const link = document.createElement("a");
+      link.href = src;
+      link.target = "_blank";
+      link.textContent = "Snap Content";
+      snap.appendChild(link);
+
+      return snap;
+    };
+
+    const mountSeekBeakSnap = (frame) => {
+      if (!frame || frame.dataset.seekbeakSnapBound === "1") return;
 
       const parent = frame.parentElement;
-      if (!parent || parent.querySelector('.seekbeak-fallback[data-src="' + src + '"]')) return;
+      const src = frame.getAttribute("src");
+      if (!parent || !src) return;
 
-      const fallbackLink = document.createElement("a");
-      fallbackLink.className = "seekbeak-fallback";
-      fallbackLink.href = ishareViewerUrl;
-      fallbackLink.target = "_blank";
-      fallbackLink.rel = "noopener noreferrer";
-      fallbackLink.dataset.src = src;
-      fallbackLink.innerHTML =
-        '<span class="seekbeak-fallback-btn" aria-hidden="true">' +
-          '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-            '<path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-          '</svg>' +
-        '</span>';
-      fallbackLink.setAttribute("aria-label", "Open iShare 360 viewer in a new tab");
+      const host = document.createElement("div");
+      host.className = "seekbeak-snap-host";
+      frame.insertAdjacentElement("afterend", host);
 
-      const isViewerEmbed = frame.id === "panoFrame" || Boolean(frame.closest("#viewer"));
-      if (isViewerEmbed) {
-        const parentStyle = window.getComputedStyle(parent);
-        if (parentStyle.position === "static") {
-          parent.style.position = "relative";
+      const applyFrameSizeToHost = () => {
+        const computed = window.getComputedStyle(frame);
+        if (computed.height && computed.height !== "auto" && computed.height !== "0px") {
+          host.style.minHeight = computed.height;
         }
-        fallbackLink.classList.add("seekbeak-fallback-overlay");
-        if (isMobile) {
-          fallbackLink.classList.add("is-visible");
-        }
-      }
+      };
 
-      parent.insertBefore(fallbackLink, frame.nextSibling);
+      const render = () => {
+        const currentSrc = frame.getAttribute("src");
+        if (!currentSrc) return;
+        const label = frame.getAttribute("data-pano-label") || frame.getAttribute("title") || findLabelFromSelect(currentSrc);
 
-      let loaded = false;
-      frame.addEventListener("load", () => {
-        loaded = true;
-        if (!isMobile) {
-          fallbackLink.classList.remove("is-visible");
+        host.innerHTML = "";
+        host.appendChild(createSnapEmbed(currentSrc, label));
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://app.seekbeak.com/js/sbembed.js";
+        script.charset = "utf-8";
+        host.appendChild(script);
+      };
+
+      frame.style.visibility = "hidden";
+      frame.style.pointerEvents = "none";
+      frame.style.display = "none";
+      frame.setAttribute("aria-hidden", "true");
+      frame.setAttribute("tabindex", "-1");
+
+      applyFrameSizeToHost();
+      render();
+
+      const observer = new MutationObserver((mutations) => {
+        const shouldRender = mutations.some((mutation) => mutation.type === "attributes");
+        if (shouldRender) {
+          applyFrameSizeToHost();
+          render();
         }
       });
-
-      frame.addEventListener("error", () => {
-        fallbackLink.classList.add("is-visible");
+      observer.observe(frame, {
+        attributes: true,
+        attributeFilter: ["src", "title", "data-pano-label"]
       });
 
-      window.setTimeout(() => {
-        if (!loaded) {
-          fallbackLink.classList.add("is-visible");
-        }
-      }, isMobile ? 8000 : 12000);
+      frame.dataset.seekbeakSnapBound = "1";
+    };
+
+    window.IShareSeekBeak = window.IShareSeekBeak || {};
+    window.IShareSeekBeak.mountFromIframe = mountSeekBeakSnap;
+
+    embeds.forEach((frame) => {
+      mountSeekBeakSnap(frame);
     });
   };
 
