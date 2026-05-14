@@ -131,12 +131,10 @@
         </select>
       </div>
 
-      <iframe
-        id="panoFrame"
-        src="https://app.seekbeak.com/v/A0zrX6AMqvQ"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
-      </iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://app.seekbeak.com/v/A0zrX6AMqvQ">Open panorama</a>
+      </div>
     </section>
 
     <section class="section">
@@ -177,7 +175,7 @@
       <div class="wf-title">Our Process &mdash; workflow</div>
       <div class="wf-grid">
         <div class="wf-video">
-          <iframe src="https://www.youtube.com/embed/zF-baikA_dw?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=zF-baikA_dw" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/zF-baikA_dw?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=zF-baikA_dw" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="wf-text">
           <h3 class="wf-h">Stage One &mdash; Intake &amp; Analysis</h3>
@@ -235,7 +233,7 @@
         </div>
 
         <div class="wf-video">
-          <iframe src="https://www.youtube.com/embed/O0hyodrVwE8?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=O0hyodrVwE8" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/O0hyodrVwE8?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=O0hyodrVwE8" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -243,7 +241,7 @@
     <div class="wf">
       <div class="wf-grid">
         <div class="wf-video">
-          <iframe src="https://www.youtube.com/embed/yP8u3NFmKkQ?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=yP8u3NFmKkQ" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/yP8u3NFmKkQ?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=yP8u3NFmKkQ" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="wf-text">
@@ -255,7 +253,7 @@
 
     <div class="wf wf-full">
       <div class="wf-video full">
-        <iframe src="https://www.youtube.com/embed/DtJShgf8Zm4?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=DtJShgf8Zm4" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/DtJShgf8Zm4?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=DtJShgf8Zm4" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="wf-text wide">
         <h3 class="wf-h">Stage Four &mdash; Cinematic Walkthrough (film through the interior)</h3>
@@ -271,14 +269,14 @@
         </div>
 
         <div class="wf-video">
-          <iframe src="https://www.youtube.com/embed/1HixZRdJEec?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1HixZRdJEec" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/1HixZRdJEec?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1HixZRdJEec" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
     <div class="wf-bleed">
       <div class="hero-video">
-        <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=gNnFtDIplMM" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=gNnFtDIplMM" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -295,10 +293,11 @@
   
 
   <script src="../js/shared-header.js" defer></script>
-  <script src="../js/shared-footer.js?v=20260513.2" defer></script>
+  <script src="../js/shared-footer.js?v=20260514.1" defer></script>
   <script src="../js/header.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
   
-  <script src="../js/generalhospital-viewer.js?v=20260513.2" defer></script>
+  <script src="../js/generalhospital-viewer.js?v=20260514.4" defer></script>
   
 </body>
 </html>

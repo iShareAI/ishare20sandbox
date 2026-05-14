@@ -95,12 +95,10 @@
         </select>
       </div>
 
-      <iframe
-        id="panoFrame"
-        src="https://app.seekbeak.com/v/VvjMv2MRqlJ"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
-      </iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://app.seekbeak.com/v/VvjMv2MRqlJ">Open panorama</a>
+      </div>
     </section>
 
     <section class="section" id="naming">
@@ -210,7 +208,7 @@
 
       <div class="wf-bleed">
         <div class="hero-video">
-          <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1X_Co8E2RHI" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=1X_Co8E2RHI" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -221,7 +219,8 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js?v=20260513" defer></script>
   <script src="../js/header.js" defer></script>
-  <script src="../js/campusofcare-viewer.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
+  <script src="../js/campusofcare-viewer.js?v=20260514.4" defer></script>
   <script src="../js/campusofcare-reveal.js" defer></script>
 </body>
 </html>

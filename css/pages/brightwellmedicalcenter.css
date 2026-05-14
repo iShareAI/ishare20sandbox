@@ -150,6 +150,18 @@ body {
   border: none;
 }
 
+#viewer .snap-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#viewer .snap-embed iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .table-title {
   text-align: left;
   font-family: "Plus Jakarta Sans", system-ui;

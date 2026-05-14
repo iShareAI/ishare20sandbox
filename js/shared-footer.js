@@ -190,7 +190,9 @@
   }
 
   const enhanceSeekBeakEmbeds = () => {
-    const embeds = document.querySelectorAll('iframe[src*="app.seekbeak.com"]');
+    const embeds = Array.from(document.querySelectorAll('iframe[src*="app.seekbeak.com"]')).filter(
+      (frame) => frame.dataset.seekbeakNative !== "1"
+    );
     if (!embeds.length) return;
 
     if (!document.getElementById("seekbeak-snap-style")) {

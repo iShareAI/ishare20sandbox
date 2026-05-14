@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fort York | ISHARE® Culture</title>
+  <title>Fort York | ISHAREï¿½ Culture</title>
   <link rel="icon" type="image/png" href="../img/ishare.png" />
 
-  <meta property="og:title" content="Fort York | ISHARE® Culture" />
-  <meta property="og:description" content="An immersive 360 virtual experience exploring Fort York National Historic Site — Toronto's birthplace and a landmark of Canadian military and cultural heritage." />
+  <meta property="og:title" content="Fort York | ISHAREï¿½ Culture" />
+  <meta property="og:description" content="An immersive 360 virtual experience exploring Fort York National Historic Site ï¿½ Toronto's birthplace and a landmark of Canadian military and cultural heritage." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="../css/base/variables.css" />
@@ -48,7 +48,7 @@
         </h1>
 
         <p class="video-hero-lead typo-body">
-          An immersive 360 virtual experience exploring Fort York National Historic Site —
+          An immersive 360 virtual experience exploring Fort York National Historic Site ï¿½
           Toronto's birthplace and a landmark of Canadian military and cultural heritage,
           brought to life through interactive panoramic environments.
         </p>
@@ -103,13 +103,10 @@
     </section>
 
     <section id="viewer" aria-label="360 viewer">
-      <iframe
-        id="panoFrame"
-        src="https://seekbeak.com/v/3pzOWGwazM2"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin">
-      </iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://seekbeak.com/v/3pzOWGwazM2">Open panorama</a>
+      </div>
     </section>
 
     <section class="section" id="project-about">
@@ -141,6 +138,7 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js?v=20260513" defer></script>
   <script src="../js/header.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
 </body>
 </html>
 

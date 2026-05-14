@@ -1,5 +1,36 @@
 (() => {
   const frame = document.getElementById("panoFrame");
+
+  const renderSnapEmbed = (url, label) => {
+    if (!frame) return;
+    frame.setAttribute("data-pano-label", label || "");
+    frame.setAttribute("data-pano-url", url);
+
+    // SeekBeak wraps #panoFrame after initial render; update its iframe src directly.
+    const sbIframe = frame.parentElement?.querySelector("iframe");
+    if (sbIframe) {
+      sbIframe.src = url;
+      return;
+    }
+
+    // Fallback: SeekBeak not yet initialized — rebuild placeholder and re-trigger.
+    const title = document.createElement("span");
+    title.textContent = label ? `360 Panorama: ${label}` : "360 Panorama Viewer";
+    const link = document.createElement("a");
+    link.href = url;
+    link.textContent = "Open panorama";
+    link.target = "_blank";
+    link.rel = "noopener";
+    frame.innerHTML = "";
+    frame.append(title, link);
+    frame.classList.add("snap-embed");
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://app.seekbeak.com/js/sbembed.js";
+    script.charset = "utf-8";
+    document.body.appendChild(script);
+  };
+
   if (frame) {
     document.querySelectorAll(".naming-table tbody tr[data-pano]").forEach((row) => {
       row.tabIndex = 0;
@@ -7,8 +38,8 @@
       const openPano = () => {
         const url = row.getAttribute("data-pano");
         if (!url) return;
-        frame.src = url;
         const label = row.cells && row.cells.length ? row.cells[0].textContent.trim() : "";
+        renderSnapEmbed(url, label);
         frame.title = label ? `360 Panorama: ${label}` : "360 Panorama Viewer";
         document.querySelectorAll(".naming-table tbody tr.active").forEach((active) => {
           active.classList.remove("active");

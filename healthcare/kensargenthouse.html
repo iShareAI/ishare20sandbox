@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../css/pages/healthcare-detail.css" />
   <link rel="stylesheet" href="../css/pages/kensargenthouse.css" />
 
+    <script src="../js/campaign-switch.js" defer></script>
+
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
@@ -135,170 +137,88 @@
         </select>
       </div>
 
-      <iframe
-        id="panoFrame"
-        src="https://app.seekbeak.com/v/ydjWPL4eq32"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
-      </iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://app.seekbeak.com/v/ydjWPL4eq32">Open panorama</a>
+      </div>
     </section>
 
     <section class="section" id="naming">
-      <h2 class="table-title">Campaign Priorities</h2>
-
-      <div class="table-wrap">
-        <table class="naming-table">
-          <thead>
-            <tr>
-              <th>Space</th>
-              <th>Cost</th>
-              <th># Available</th>
-              <th>Donor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-pano="https://app.seekbeak.com/v/Xw1LWmR2qL8">
-              <td>Family &amp; Patient Communal Space</td>
-              <td class="cost">$250,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/vPq4PgXnqAw">
-              <td>Playground</td>
-              <td class="cost">$250,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/7MqROm7b1dW">
-              <td>Solar Panelling</td>
-              <td class="cost">$250,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/El18wnNMqOB">
-              <td>Dining Area</td>
-              <td class="cost">$150,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">SOLD</span></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/YbjNDVYp1A7">
-              <td>Kitchen</td>
-              <td class="cost">$150,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">SOLD</span></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/7MqROYMp1dW">
-              <td>Covered Porch</td>
-              <td class="cost">$150,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/5VjYM0Rpjob">
-              <td>Reception</td>
-              <td class="cost">$150,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/YojXWkdAz8e">
-              <td>Quiet Space</td>
-              <td class="cost">$100,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/RgqgM8nQz96">
-              <td>Suite A2 (Accessible Suite)</td>
-              <td class="cost">$75,000</td>
-              <td class="avail">2</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/RgqgM8nQz96">
-              <td>Suite A3 (Large Suite)</td>
-              <td class="cost">$75,000</td>
-              <td class="avail">2</td>
-              <td class="donor"></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/4wjnL6Or1md">
-              <td>Playroom</td>
-              <td class="cost">$75,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">SOLD</span></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/YojXWRoLz8e">
-              <td>Bedroom (Suite)</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">6</td>
-              <td class="donor">
-                <span class="badge badge-named">Fairview Health Complex Foundation</span>
-                <span class="badge badge-named">Aquatera</span>
-                <span class="badge badge-named">Canfor</span>
-              </td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/gd1p0Pn71XJ">
-              <td>Fitness Room</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">Tara Energy Services &amp; Bissel Family Funds</span></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/YbjNDVAD1A7">
-              <td>Laundry Room</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/Xw1LW54DqL8">
-              <td>Social Space</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">SOLD</span></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/YojXWRoLz8e">
-              <td>Suite A</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/76j0K3Q2zK9">
-              <td>Suite B</td>
-              <td class="cost">$50,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/4wjnL6Or1md">
-              <td>Children's Playroom</td>
-              <td class="cost">$25,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">Catwauk Compression</span></td>
-            </tr>
-            <tr data-pano="https://app.seekbeak.com/v/lVjKnKYrzBb">
-              <td>Comfort Corner (Small)</td>
-              <td class="cost">$25,000</td>
-              <td class="avail">1</td>
-              <td class="donor"></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/lVjKnKYrzBb">
-              <td>Comfort Corner</td>
-              <td class="cost">$25,000</td>
-              <td class="avail">0</td>
-              <td class="donor">
-                <span class="badge badge-named">Dynamud Logistic Services Inc.</span>
-                <span class="badge badge-named">Clearhills County</span>
-              </td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/R81yeNPn1Ad">
-              <td>Gazebo</td>
-              <td class="cost">$25,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">Game Host</span></td>
-            </tr>
-            <tr class="taken" data-pano="https://app.seekbeak.com/v/LrqV3Kar1bp">
-              <td>Pantry</td>
-              <td class="cost">$25,000</td>
-              <td class="avail">0</td>
-              <td class="donor"><span class="badge badge-named">NuVista Energy</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <h2 class="table-title">Campaign Priorities</h2>
+        <div style="margin-bottom: 1em;">
+          <button id="show-ksh-table" class="btn btn-primary active" type="button">Ken Sargent House</button>
+          <button id="show-brightwell-table" class="btn btn-primary" type="button">Brightwell Medical Center</button>
+        </div>
+        <div class="table-wrap">
+          <!-- Ken Sargent House Table -->
+          <table class="naming-table" id="ksh-campaign-table">
+            <thead>
+              <tr>
+                <th>Space</th>
+                <th>Cost</th>
+                <th># Available</th>
+                <th>Donor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-pano="https://app.seekbeak.com/v/Xw1LWmR2qL8"><td>Family &amp; Patient Communal Space</td><td class="cost">$250,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/vPq4PgXnqAw"><td>Playground</td><td class="cost">$250,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/7MqROm7b1dW"><td>Solar Panelling</td><td class="cost">$250,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/El18wnNMqOB"><td>Dining Area</td><td class="cost">$150,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">SOLD</span></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/YbjNDVYp1A7"><td>Kitchen</td><td class="cost">$150,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">SOLD</span></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/7MqROYMp1dW"><td>Covered Porch</td><td class="cost">$150,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/5VjYM0Rpjob"><td>Reception</td><td class="cost">$150,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/YojXWkdAz8e"><td>Quiet Space</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/RgqgM8nQz96"><td>Suite A2 (Accessible Suite)</td><td class="cost">$75,000</td><td class="avail">2</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/RgqgM8nQz96"><td>Suite A3 (Large Suite)</td><td class="cost">$75,000</td><td class="avail">2</td><td class="donor"></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/4wjnL6Or1md"><td>Playroom</td><td class="cost">$75,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">SOLD</span></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/YojXWRoLz8e"><td>Bedroom (Suite)</td><td class="cost">$50,000</td><td class="avail">6</td><td class="donor"><span class="badge badge-named">Fairview Health Complex Foundation</span> <span class="badge badge-named">Aquatera</span> <span class="badge badge-named">Canfor</span></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/gd1p0Pn71XJ"><td>Fitness Room</td><td class="cost">$50,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">Tara Energy Services &amp; Bissel Family Funds</span></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/YbjNDVAD1A7"><td>Laundry Room</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/Xw1LW54DqL8"><td>Social Space</td><td class="cost">$50,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">SOLD</span></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/YojXWRoLz8e"><td>Suite A</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/76j0K3Q2zK9"><td>Suite B</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/4wjnL6Or1md"><td>Children's Playroom</td><td class="cost">$25,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">Catwauk Compression</span></td></tr>
+              <tr data-pano="https://app.seekbeak.com/v/lVjKnKYrzBb"><td>Comfort Corner (Small)</td><td class="cost">$25,000</td><td class="avail">1</td><td class="donor"></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/lVjKnKYrzBb"><td>Comfort Corner</td><td class="cost">$25,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">Dynamud Logistic Services Inc.</span> <span class="badge badge-named">Clearhills County</span></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/R81yeNPn1Ad"><td>Gazebo</td><td class="cost">$25,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">Game Host</span></td></tr>
+              <tr class="taken" data-pano="https://app.seekbeak.com/v/LrqV3Kar1bp"><td>Pantry</td><td class="cost">$25,000</td><td class="avail">0</td><td class="donor"><span class="badge badge-named">NuVista Energy</span></td></tr>
+            </tbody>
+          </table>
+          <!-- Brightwell Medical Center Table (hidden by default) -->
+          <table class="naming-table" id="brightwell-campaign-table" style="display:none;">
+            <thead>
+              <tr>
+                <th>Space</th>
+                <th>Cost</th>
+                <th># Available</th>
+                <th>Donor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MRI Scan Room</td><td class="cost">$1,000,000</td><td class="avail">1</td><td class="donor">Special Recognition</td></tr>
+              <tr><td>Suite Corridor</td><td class="cost">$500,000</td><td class="avail">1</td><td class="donor">Special Recognition</td></tr>
+              <tr><td>Lobby</td><td class="cost">$200,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>ECHO</td><td class="cost">$250,000</td><td class="avail">1</td><td class="donor">Founder / Named</td></tr>
+              <tr><td>Main Waiting</td><td class="cost">$200,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>MRI Control Room</td><td class="cost">$350,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Reception</td><td class="cost">$200,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Patient Holding Area</td><td class="cost">$200,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Radiologist</td><td class="cost">$150,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Patient Prep</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Sub Waiting Room</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Storage</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>MRI Equipment Room</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>ECHO Waiting</td><td class="cost">$100,000</td><td class="avail">1</td><td class="donor">Founder</td></tr>
+              <tr><td>Staff W/R</td><td class="cost">$75,000</td><td class="avail">1</td><td class="donor">Patron</td></tr>
+              <tr><td>Storage</td><td class="cost">$75,000</td><td class="avail">1</td><td class="donor">Patron</td></tr>
+              <tr><td>Change Room</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor">Patron</td></tr>
+              <tr><td>BF Change Room</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor">Patron</td></tr>
+              <tr><td>Lockers</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor">Patron</td></tr>
+              <tr><td>Mechanical / Electrical</td><td class="cost">$50,000</td><td class="avail">1</td><td class="donor">Benefactor</td></tr>
+            </tbody>
+          </table>
+        </div>
     </section>
 
     <section class="ksh-showcase">
@@ -380,6 +300,7 @@
           <iframe
             src="https://www.youtube.com/embed/gNnFtDIplMM?autoplay=1&mute=1&controls=0&playsinline=1&modestbranding=1&rel=0&loop=1&playlist=frdUH-n-fng"
             allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
           </iframe>
         </div>
@@ -606,7 +527,7 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js?v=20260513" defer></script>
   <script src="../js/header.js" defer></script>
-  <script src="../js/kensargenthouse-viewer.js" defer></script>
+  <script src="../js/kensargenthouse-viewer.js?v=20260514.4" defer></script>
   <script src="../js/kensargenthouse-reveal.js" defer></script>
 
   <script>
@@ -713,6 +634,7 @@
     });
   })();
   </script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
 </body>
 </html>
 

@@ -72,7 +72,10 @@
     </section>
 
     <section id="viewer" aria-label="360 viewer">
-      <iframe id="panoFrame" src="https://app.seekbeak.com/v/OAzAWg5rqQp" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking"></iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://app.seekbeak.com/v/OAzAWg5rqQp">Open panorama</a>
+      </div>
     </section>
 
     <section class="section">
@@ -123,7 +126,10 @@
       <section id="energy-smart" class="feature alt" data-reveal>
         <figure class="media bleed-right">
           <div class="pano-embed">
-            <iframe src="https://app.seekbeak.com/v/YD1Gdxgozby" title="Welcoming Lobby 360" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="snap-embed" data-aspect-width="16" data-aspect-height="9">
+              <span>Welcoming Lobby 360</span>
+              <a href="https://app.seekbeak.com/v/YD1Gdxgozby">Open panorama</a>
+            </div>
           </div>
         </figure>
         <div class="copy">
@@ -139,7 +145,10 @@
       <section id="comfort-living" class="feature" data-reveal>
         <figure class="media bleed-left">
           <div class="pano-embed">
-            <iframe src="https://app.seekbeak.com/v/lVjKnwgGzBb" title="Radiologist 360" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="snap-embed" data-aspect-width="16" data-aspect-height="9">
+              <span>Radiologist 360</span>
+              <a href="https://app.seekbeak.com/v/lVjKnwgGzBb">Open panorama</a>
+            </div>
           </div>
         </figure>
         <div class="copy">
@@ -379,7 +388,8 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js?v=20260513" defer></script>
   <script src="../js/header.js" defer></script>
-  <script src="../js/brightwellmedicalcenter.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
+  <script src="../js/brightwellmedicalcenter.js?v=20260514.4" defer></script>
 </body>
 </html>
 

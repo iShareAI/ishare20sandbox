@@ -103,13 +103,10 @@
     </section>
 
     <section id="viewer" aria-label="360 viewer">
-      <iframe
-        id="panoFrame"
-        src="https://app.seekbeak.com/v/A0zrepPx1vQ"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
-      </iframe>
+      <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+        <span>360 Panorama Viewer</span>
+        <a href="https://app.seekbeak.com/v/A0zrepPx1vQ">Open panorama</a>
+      </div>
     </section>
 
     <section class="section" id="project-about">
@@ -126,6 +123,7 @@
   <script src="js/shared-header.js" defer></script>
   <script src="js/shared-footer.js?v=20260513" defer></script>
   <script src="js/header.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
 </body>
 </html>
 

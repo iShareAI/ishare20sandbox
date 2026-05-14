@@ -128,12 +128,10 @@
     </select>
   </div>
 
-  <iframe
-    id="panoFrame"
-    src="https://app.seekbeak.com/v/LrqVwvy51bp"
-    allowfullscreen
-    referrerpolicy="strict-origin-when-cross-origin" title="360 Panorama Viewer" loading="lazy" allow="accelerometer; gyroscope; fullscreen; xr-spatial-tracking">
-  </iframe>
+  <div class="snap-embed" id="panoFrame" data-aspect-width="16" data-aspect-height="9">
+    <span>360 Panorama Viewer</span>
+    <a href="https://app.seekbeak.com/v/LrqVwvy51bp">Open panorama</a>
+  </div>
 </section>
 
     <section class="section" id="naming">
@@ -218,8 +216,9 @@
   <script src="../js/shared-header.js" defer></script>
   <script src="../js/shared-footer.js?v=20260513" defer></script>
   <script src="../js/header.js" defer></script>
+  <script async src="https://app.seekbeak.com/js/sbembed.js"></script>
   <script src="../js/cancerresearch-story.js" defer></script>
-  <script src="../js/cancerresearch-viewer.js" defer></script>
+  <script src="../js/cancerresearch-viewer.js?v=20260514.4" defer></script>
 </body>
 </html>
 
